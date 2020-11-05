@@ -1,0 +1,2 @@
+IBM Notes mapping, aanpassingen specifiek gericht op de modules DAS en EBS.
+DAS en EBS zijn CZ specifieke modules / applicaties binnen IBM Notes.

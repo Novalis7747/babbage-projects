@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+
+fn=1100
+
+cb="callback(sendMailCard,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+

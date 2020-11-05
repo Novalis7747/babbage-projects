@@ -1,0 +1,7 @@
+<UserScriptConfig>
+	<Script basedir="Realworks_CRM" checkRemoteUpdates="1" dependhash="2edef44aa5f9876aefab54777cb522d7e19adb3d" description="Toegankelijkheid van Realworks CRM verbeteren." enabled="true" filename="Realworks_CRM.user.js" installTime="1460122987357" modified="1469694888190" name="Realworks CRM." namespace="http://www.babbage.com/" noframes="false" runAt="document-end" updateMetaStatus="unknown" uuid="8819ffef-f9e9-4424-ad15-2fc735b0bf24" version="0.9.1" installurl="file:///Z:/PortApps/PortableApps/firefoxportableesr/Data/profile/gm_scripts/Realworks_CRM/Realworks_CRM.user.js" updateurl="file:///Z:/PortApps/PortableApps/firefoxportableesr/Data/profile/gm_scripts/Realworks_CRM/Realworks_CRM.user.js">
+		<Grant>none</Grant>
+		<Include>*://crm.realworks.nl/*</Include>
+		<Require filename="Babbage_Javascript_Library.js"/>
+	</Script>
+</UserScriptConfig>

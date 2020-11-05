@@ -1,0 +1,44 @@
+/* grid 980 / 24 */
+
+	body 			{  width:980px; margin:0px auto; }
+	
+	div.cell_1	{ width:37px; margin-left:4px;}
+	div.cell_2	{ width:78px; margin-left:4px;}
+	div.cell_3	{ width:119px; margin-left:4px;}
+	div.cell_4	{ width:160px; margin-left:4px;}
+	div.cell_5	{ width:201px; margin-left:4px;}
+	div.cell_6	{ width:242px; margin-left:4px;}
+	div.cell_7	{ width:283px; margin-left:4px;}
+	div.cell_8	{ width:324px; margin-left:4px;}
+	div.cell_9	{ width:365px; margin-left:4px;}
+	div.cell_10	{ width:406px; margin-left:4px;}
+	div.cell_11	{ width:447px; margin-left:4px;}
+	div.cell_12	{ width:488px; margin-left:4px;}
+	div.cell_13	{ width:529px; margin-left:4px;}
+	div.cell_14	{ width:570px; margin-left:4px;}
+	div.cell_15	{ width:611px; margin-left:4px;}
+	div.cell_16	{ width:652px; margin-left:4px;}
+	div.cell_17	{ width:693px; margin-left:4px;}
+	div.cell_18	{ width:734px; margin-left:4px;}
+	div.cell_19	{ width:775px; margin-left:4px;}
+	div.cell_20	{ width:816px; margin-left:4px;}
+	div.cell_21	{ width:857px; margin-left:4px;}
+	div.cell_22	{ width:898px; margin-left:4px;}
+	div.cell_23	{ width:939px; margin-left:4px;}
+	div.cell_24	{ width:980px; }
+
+	div.cell					{ float:left; clear:none; overflow:hidden; text-overflow:clip;	white-space:nowrap;  min-height:2px; }
+	div.cell.text				{ vertical-align:middle; }
+	div.cellBox					{ float:left; clear:none; min-height:2px;}
+
+	div.cellBox.right			{ float:right; }
+	div.cell.right				{ float:right; }
+	
+	div.cell:first-of-type		{ margin-left:0px; }
+	div.cellBox:first-of-type	{ margin-left:0px; }
+
+
+	.popOver				{ width:990px; min-height:150px; margin-top:75px;}
+	.popOver.medium			{ width:621px; }  /* 15 cellen + 10 voor padding */
+	.popOver.small			{ width:293px; }  /* 7 cellen + 10 voor padding */
+	

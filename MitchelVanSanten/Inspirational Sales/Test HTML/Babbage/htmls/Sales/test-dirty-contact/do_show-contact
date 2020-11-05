@@ -1,0 +1,149 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+fn=1100
+
+cb="callback(contactsPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newContactCard,0,1,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+kaart="contact"
+php ${tools}/extract.php ${dir}/${fn}_new.html form \
+"set:table[newContact][contact.firstName][0][value]:AAANieuweContactName"		\
+"set:table[newContact][contact.idCompany][0][value]:6"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+cb="callback(contactsPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+fn=1110
+cb="callback(companyContactList,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newContactCard,2,0,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+kaart="contactCompany"
+php ${tools}/extract.php ${dir}/${fn}_new.html form \
+"set:table[newContact][contact.firstName][0][value]:AAANieuweContactName"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+cb="callback(companyContactList,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+# merge
+fn=1120
+
+cb="callback(contactsPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyContactList,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactCard,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Collega list" >> ${dir}/${fn}_new.html
+
+cb="callback(contactCard,2002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Collega list" >> ${dir}/${fn}_new.html
+
+cb="callback(contactColleagueList,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Collega list" >> ${dir}/${fn}_new.html
+
+
+cb="callback(mergeContactForm,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Merge form" >> ${dir}/${fn}_new.html
+
+kaart="merge"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 	\
+"set:table[merge][import.idContact][0][value]:2002" 		\
+> ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+cb="callback(contactsPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(companyContactList,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactCard,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Collega list" >> ${dir}/${fn}_new.html
+
+cb="callback(contactColleagueList,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Collega list" >> ${dir}/${fn}_new.html
+
+
+loadSql ${account} ../test.sql

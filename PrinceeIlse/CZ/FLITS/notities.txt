@@ -1,0 +1,4 @@
+PD: dit script is geschreven voor gebruik met TrixIE 0.1.3.0 en IE11.
+
+Dank aan: "Tony Abou-Assaleh", oplossing voor IE die geen JavaScript uitvoert zonder dat de developer tools geopend is.
+URL: http://stackoverflow.com/questions/1701754/ie8-javascript-doesnt-run-unless-developer-tools-is-open .

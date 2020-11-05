@@ -1,0 +1,60 @@
+20161108 PD: Als je de uren van een dag wenst in te voeren, dan komt er een klein pop-up venster.
+Daar kun je alleen cijfers invoeren. De oplossing is nu dat als men op de INSERT-toets drukt, dat men dan de datum
+te horen krijgt van het invoerveld. Dit wordt namelijk standaard niet uitgesproken met SuperNova 13.
+De INSERT-toets is uiteraard te veranderen naar een desgewenste toets.
+Getest met Windows 7 x86 (V.M.), IE11, TrixIE 0.1.3, SuperNova 13.59 DEMO.
+
+20161108 PD: Oude code. Probeersel. Voor nu even laten staan om terug te kunnen kijken.
+
+setTimeout(function() {
+  console.log('Test?');
+  var fec = document.getElementById('Assignment_0_AssignmentDetail_0_TimesheetRowGroup_0_Task_0_EntryTextBox_2');
+  fec.addEventListener("focus", myFocusFunction, true);
+}, 5000);
+
+  var fec2 = document.getElementById("Assignment_0_AssignmentDetail_0_TimesheetRowGroup_0_Task_0_EntryTextBox_0");
+  var fec4 = document.getElementById("Assignment_0_AssignmentDetail_0_TimesheetRowGroup_0_Task_0_EntryTextBox_2");
+  fec.addEventListener("focus", function() {
+    console.log("focus");
+  });
+  fec2.addEventListener("focus", function() {
+    console.log("focus2");
+  });
+  fec4.addEventListener("click", function() {
+    console.log("focus4");
+  });
+  console.log(fec);
+  console.log(fec2);
+  console.log(fec4);
+
+setInterval(function() {
+  var tds = document.querySelectorAll('.day[dayindex]'), di;
+  for (di = 0; di < tds.length; ++di) {
+    if (tds[di].getAttribute('dayindex') == 0) {
+      tds[di].setAttribute('aria-label', 'maandag');
+    }
+    if (tds[di].getAttribute('dayindex') == 1) {
+      tds[di].setAttribute('aria-label', 'dinsdag');
+    }
+    if (tds[di].getAttribute('dayindex') == 2) {
+      tds[di].setAttribute('aria-label', 'woensdag');
+    }
+    if (tds[di].getAttribute('dayindex') == 3) {
+      tds[di].setAttribute('aria-label', 'donderdag');
+    }
+    if (tds[di].getAttribute('dayindex') == 4) {
+      tds[di].setAttribute('aria-label', 'vrijdag');
+    }
+    if (tds[di].getAttribute('dayindex') == 5) {
+      tds[di].setAttribute('aria-label', 'zaterdag');
+    }
+    if (tds[di].getAttribute('dayindex') == 6) {
+      tds[di].setAttribute('aria-label', 'zondag');
+    }
+  }
+}, 7000);
+
+function myFocusFunction() {
+  document.getElementById('timesheetEntryControl_EntryTextBox').style.backgroundColor = 'green';
+  console.log('Test 4');
+}

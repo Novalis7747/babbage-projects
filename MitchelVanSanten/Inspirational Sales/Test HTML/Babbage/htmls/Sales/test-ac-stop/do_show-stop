@@ -1,0 +1,70 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+fn=1100
+
+cb="callback(contactCard,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(editCompanySettings,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+kaart="stop"
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_org.html
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form 			\
+"set:table[company][company.idCompanyStatus][0][value]:6" 		\
+> ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+cb="callback(contactCard,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactTaskCard,1002,44)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(companyCard,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+# reset company status
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form 		\
+> ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+cb="callback(contactCard,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1

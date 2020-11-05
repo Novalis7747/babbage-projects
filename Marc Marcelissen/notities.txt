@@ -1,0 +1,4 @@
+Scratchpad binnen geavanceerd inschakelen.
+Open scratchpad map aanklikken binnen NVDA.
+Daar de scripts voor Marc in plaatsen.
+Dit geldt vanaf versie 2019.1.x.

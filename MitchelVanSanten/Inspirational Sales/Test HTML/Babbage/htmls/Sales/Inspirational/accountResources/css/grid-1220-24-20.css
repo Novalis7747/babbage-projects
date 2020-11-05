@@ -1,0 +1,47 @@
+/* grid 1220 / 24 / 20 */
+
+	body 					{  width:1220px; margin:0px auto; }
+	body > .WebApp			{  width:1204px; margin:0px auto; }
+
+	div.cell_1	{ width:31px; margin-left:10px;padding-left:10px;}
+	div.cell_2	{ width:82px; margin-left:10px;padding-left:10px;}
+	div.cell_3	{ width:133px; margin-left:10px;padding-left:10px;}
+	div.cell_4	{ width:184px; margin-left:10px;padding-left:10px;}
+	div.cell_5	{ width:235px; margin-left:10px;padding-left:10px;}
+	div.cell_6	{ width:286px; margin-left:10px;padding-left:10px;}
+	div.cell_7	{ width:337px; margin-left:10px;padding-left:10px;}
+	div.cell_8	{ width:388px; margin-left:10px;padding-left:10px;}
+	div.cell_9	{ width:439px; margin-left:10px;padding-left:10px;}
+	div.cell_10	{ width:490px; margin-left:10px;padding-left:10px;}
+	div.cell_11	{ width:541px; margin-left:10px;padding-left:10px;}
+	div.cell_12	{ width:592px; margin-left:10px;padding-left:10px;}
+	div.cell_13	{ width:643px; margin-left:10px;padding-left:10px;}
+	div.cell_14	{ width:694px; margin-left:10px;padding-left:10px;}
+	div.cell_15	{ width:745px; margin-left:10px;padding-left:10px;}
+	div.cell_16	{ width:796px; margin-left:10px;padding-left:10px;}
+	div.cell_17	{ width:847px; margin-left:10px;padding-left:10px;}
+	div.cell_18	{ width:898px; margin-left:10px;padding-left:10px;}
+	div.cell_19	{ width:949px; margin-left:10px;padding-left:10px;}
+	div.cell_20	{ width:1000px; margin-left:10px;padding-left:10px;}
+	div.cell_21	{ width:1051px; margin-left:10px;padding-left:10px;}
+	div.cell_22	{ width:1102px; margin-left:10px;padding-left:10px;}
+	div.cell_23	{ width:1153px; margin-left:10px;padding-left:10px;}
+	div.cell_24	{ width:1204px; }
+
+	div.cell					{ float:left; clear:none; overflow:hidden; text-overflow:clip;	white-space:nowrap;  min-height:2px; }
+	div.cellBox					{ float:left; clear:none; min-height:2px; }
+
+	div.cellBox.right			{ float:right; }
+	div.cell.right				{ float:right; }
+	
+	div.cell:first-of-type		{ margin-left:0px; padding-left:0px; }
+	div.cellBox:first-of-type	{ margin-left:0px; padding-left:0px; }
+
+	.h40					{ height:40px; }
+	.h60					{ height:60px; }
+	
+	.popOver				{ width:1220px; min-height:150px; margin-top:75px;}
+	.popOver.medium			{ width:630px; }  /* 15 cellen + 10 voor padding */
+	.popOver.small			{ width:363px; }  /* 7 cellen + 10 voor padding */
+	
+	

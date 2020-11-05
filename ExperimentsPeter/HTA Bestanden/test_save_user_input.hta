@@ -1,0 +1,35 @@
+<html>
+
+<head>
+	<title>Save as TSV File</title>
+</head>
+
+<script Language="VBScript">
+	Sub SaveData
+		Set objFSO = CreateObject("Scripting.FileSystemObject")
+		If objFSO.FileExists("C:\Scripts\Test.tsv") Then
+			Set objFile = objFSO.OpenTextFile("Test.tsv", 8)
+			strLine = UserName.Value & vbTab & Email.Value & vbTab & _
+				Title.Value & vbTab & Country.Value & vbTab & Product.Value
+			objFile.WriteLine strLine
+			objFile.Close
+		Else
+			Set objFile = objFSO.CreateTextFile("Test.tsv")
+			strLine = UserName.Value & vbTab & Email.Value & vbTab & _
+				Title.Value & vbTab & Country.Value & vbTab & Product.Value
+			objFile.WriteLine strLine
+			objFile.Close
+		End If
+	End Sub
+</script>
+
+<body>
+	<input type="text" name="UserName" size="25"><p>
+	<input type="text" name="Email" size="25"><p>
+	<input type="text" name="Title" size="25"><p>
+	<input type="text" name="Country" size="25"><p>
+	<input type="text" name="Product" size="25"><p>
+	<input type="button" value="Run Button" onClick="SaveData">
+</body>
+
+</html>

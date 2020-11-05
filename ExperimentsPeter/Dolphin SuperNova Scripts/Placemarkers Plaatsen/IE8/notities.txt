@@ -1,0 +1,17 @@
+20150618 PD: Dit script werkt goed met IE8 en SuperNova 13.52.
+
+SuperNova 14.05 geeft een vreemde (uit het beeld lopende) markering?
+Werkt wel, maar is niet handig als mensen ook de markering aan hebben staan.
+
+IE9 werkt niet?
+
+Script schrijft nu de huidige URL (hardcoded) weg naar een .INI bestand.
+
+Problemen?
+
+Schrijft maar 1 URL weg.
+Haalt de informatie nog niet uit de DOM.
+In SuperNova 14 krijg je vreemde markering.
+In IE9 is het einde oefening.
+ExtClass toevoegen werkt niet? Triggert niet?
+

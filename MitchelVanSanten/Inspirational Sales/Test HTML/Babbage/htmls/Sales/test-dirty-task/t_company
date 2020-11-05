@@ -1,0 +1,44 @@
+#!/bin/bash
+
+
+
+
+cb="callback(insertTask,newTask,newTaskcompanySet)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"newTask":"task.subject":"0":"value":"newCompanyTask ook bij contact"	\
+table:"newTask":"task.subject":"0":"type":"text"	\
+table:"newTask":"task.idContact":"0":"type":"select"	\
+table:"newTask":"task.deadline":"0":"value":"01 Sep 2015"	\
+table:"newTask":"task.deadline":"0":"type":"date"	\
+table:"newTask":"task.deadlineTime":"0":"value":""	\
+table:"newTask":"task.deadlineTime":"0":"type":"text"	\
+table:"newTask":"task.idTaskPriority":"0":"type":"select"	\
+table:"newTask":"task.idTask":"0":"value":"0"	\
+table:"newTask":"task.idTask":"0":"type":"hidden"	\
+table:"newTask":"task.idAccount":"0":"value":"1"	\
+table:"newTask":"task.idAccount":"0":"type":"hidden"	\
+table:"newTask":"task.idCompany":"0":"value":"11"	\
+table:"newTask":"task.idCompany":"0":"type":"hidden"	\
+table:"newTask":"task.idCampagne":"0":"value":"2"	\
+table:"newTask":"task.idCampagne":"0":"type":"hidden"	\
+table:"newTask":"task.created":"0":"value":"42241"	\
+table:"newTask":"task.created":"0":"type":"hidden"	\
+table:"newTask":"task.idTaskStatus":"0":"value":"1"	\
+table:"newTask":"task.idTaskStatus":"0":"type":"hidden"	\
+table:"newTask":"task.task":"0":"value":""	\
+table:"newTask":"task.task":"0":"type":"hidden"	\
+table:"newTask":"task.idRep":"0":"value":"1"	\
+table:"newTask":"task.idRep":"0":"type":"hidden"	\
+table:"newTask":"task.idRepDone":"0":"value":"0"	\
+table:"newTask":"task.idRepDone":"0":"type":"hidden"	\
+table:"newTask":"task.doneDate":"0":"value":"0"	\
+table:"newTask":"task.doneDate":"0":"type":"hidden"	\
+table:"newTaskcompanySet":"company.idCompany":"0":"value":"11"	\
+table:"newTaskcompanySet":"company.idCompany":"0":"type":"hidden"	\
+table:"newTaskcompanySet":"company.idCompanyStatus":"0":"value":"3"	\
+table:"newTaskcompanySet":"company.idCompanyStatus":"0":"type":"hidden"	\
+table:"newTask":"task.idContact":"0":"value":"1011"	\
+table:"newTask":"task.idTaskPriority":"0":"value":"2"	\
+> ${dir}/${fn}_new.html 2>&1

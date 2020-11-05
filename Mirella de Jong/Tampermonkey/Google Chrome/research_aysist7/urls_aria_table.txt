@@ -1,0 +1,5 @@
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Table_Role
+https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Grid_Role
+https://stackoverflow.com/questions/31008192/using-aria-to-make-a-div-table-accessible
+https://www.w3.org/TR/2017/NOTE-wai-aria-practices-1.1-20171214/examples/table/table.html
+https://www.w3.org/TR/wai-aria-practices-1.1/#table

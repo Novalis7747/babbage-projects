@@ -1,0 +1,832 @@
+/* panStyleSpecifier.css */
+
+/* general */
+.clearBoth		{ clear:both; }
+.overflowXScroll 	{ overflow-x:scroll; }
+.overflowXHide 		{ overflow-x:hidden; }
+.overflowYScroll 	{ overflow-y:scroll; }
+.overflowYHide 		{ overflow-y:hidden; }
+.overflowHide		{ overflow:hidden; }
+.overflowScroll		{ overflow:scroll; }
+
+/* text alignment */
+.center		{ text-align:center; 	}
+.middle		{ vertical-align:middle;}
+
+/* font styling */
+.bold		{ font-weight:bold; 	}
+.italic		{ font-variant:italic; 	}
+
+
+/* float */
+div			{ clear:both;}
+div::after		{ visibility: hidden;	display: block;	font-size: 0;	content: ".";	clear: both;	height: 0;	}
+.floatRight		{ clear:none; float:right; }
+.floatLeft		{ clear:none; float:left; }
+
+/* width */
+.one.quarter	{ width:24.5%; }
+.two.quarter	{ width:49.5%; }
+.three.quarter	{ width:74.5%; }
+
+.width5 	{ width:5px; 	}
+.width10 	{ width:10px; 	}
+.width15 	{ width:15px; 	}
+.width20 	{ width:20px; 	}
+.width25 	{ width:25px; 	}
+.width30 	{ width:30px; 	}
+.width35 	{ width:35px; 	}
+.width40 	{ width:40px; 	}
+.width45 	{ width:45px; 	}
+.width50 	{ width:50px; 	}
+.width55 	{ width:55px; 	}
+.width60 	{ width:60px; 	}
+.width65 	{ width:65px; 	}
+.width70 	{ width:70px; 	}
+.width75 	{ width:75px; 	}
+.width80 	{ width:80px; 	}
+.width85 	{ width:85px; 	}
+.width90 	{ width:90px; 	}
+.width95 	{ width:95px; 	}
+.width100	{ width:100px; }
+.width125	{ width:125px; }
+.width150	{ width:150px; }
+.width175	{ width:175px; }
+.width200	{ width:200px; }
+.width225	{ width:225px; }
+.width250	{ width:250px; }
+.width275	{ width:275px; }
+.width300	{ width:300px; }
+.width425	{ width:425px; }
+.width450	{ width:450px; }
+.width475	{ width:475px; }
+.width500	{ width:500px; }
+.width525	{ width:525px; }
+.width550	{ width:550px; }
+.width575	{ width:575px; }
+.width600	{ width:600px; }
+.width625	{ width:625px; }
+.width650	{ width:650px; }
+.width675	{ width:675px; }
+.width700	{ width:700px; }
+.width725	{ width:725px; }
+.width750	{ width:750px; }
+.width775	{ width:775px; }
+.width800	{ width:800px; }
+.width825	{ width:825px; }
+.width850	{ width:850px; }
+.width875	{ width:875px; }
+.width900	{ width:900px; }
+.width925	{ width:925px; }
+.width950	{ width:950px; }
+.width975	{ width:975px; }
+.width1000	{ width:1000px; }
+
+
+
+
+
+/* font-szie */
+.fontSize6	{ font-size:6px; 	}
+.fontSize7	{ font-size:7px; 	}
+.fontSize8	{ font-size:8px; 	}
+.fontSize9	{ font-size:9px; 	}
+.fontSize10	{ font-size:10px; 	}
+.fontSize11	{ font-size:11px; 	}
+.fontSize12	{ font-size:12px; 	}
+.fontSize13	{ font-size:13px; 	}
+.fontSize14	{ font-size:14px; 	}
+.fontSize15	{ font-size:15px; 	}
+.fontSize16	{ font-size:16px; 	}
+.fontSize17	{ font-size:17px; 	}
+.fontSize18	{ font-size:18px; 	}
+.fontSize19	{ font-size:19px; 	}
+.fontSize20	{ font-size:20px; 	}
+
+/* height */
+.height5 	{ height:5px; 	}
+.height10 	{ height:10px; 	}
+.height15 	{ height:15px; 	}
+.height20 	{ height:20px; 	}
+.height25 	{ height:25px; 	}
+.height30 	{ height:30px; 	}
+.height35 	{ height:35px; 	}
+.height40 	{ height:40px; 	}
+.height45 	{ height:45px; 	}
+.height50 	{ height:50px; 	}
+.height55 	{ height:55px; 	}
+.height60 	{ height:60px; 	}
+.height65 	{ height:65px; 	}
+.height70 	{ height:70px; 	}
+.height75 	{ height:75px; 	}
+.height80 	{ height:80px; 	}
+.height85 	{ height:85px; 	}
+.height90 	{ height:90px; 	}
+.height95 	{ height:95px; 	}
+.height100	{ height:100px; }
+.height125	{ height:125px; }
+.height150	{ height:150px; }
+.height175	{ height:175px; }
+.height200	{ height:200px; }
+.height225	{ height:225px; }
+.height250	{ height:250px; }
+.height275	{ height:275px; }
+.height300	{ height:300px; }
+.height425	{ height:425px; }
+.height450	{ height:450px; }
+.height475	{ height:475px; }
+.height500	{ height:500px; }
+.height525	{ height:525px; }
+.height550	{ height:550px; }
+.height575	{ height:575px; }
+.height600	{ height:600px; }
+.height625	{ height:625px; }
+.height650	{ height:650px; }
+.height675	{ height:675px; }
+.height700	{ height:700px; }
+.height725	{ height:725px; }
+.height750	{ height:750px; }
+.height775	{ height:775px; }
+.height800	{ height:800px; }
+.height825	{ height:825px; }
+.height850	{ height:850px; }
+.height875	{ height:875px; }
+.height900	{ height:900px; }
+.height925	{ height:925px; }
+.height950	{ height:950px; }
+.height975	{ height:975px; }
+.height1000	{ height:1000px; }
+
+/* padding */
+.padding1		{ padding:1px; }
+.padding2		{ padding:2px; }
+.padding3		{ padding:3px; }
+.padding4		{ padding:4px; }
+.padding5		{ padding:5px; }
+.padding6		{ padding:6px; }
+.padding7		{ padding:7px; }
+.padding8		{ padding:8px; }
+.padding9		{ padding:9px; }
+.padding10		{ padding:10px; }
+.padding1top		{ padding-top:1px; }
+.padding2top		{ padding-top:2px; }
+.padding3top		{ padding-top:3px; }
+.padding4top		{ padding-top:4px; }
+.padding5top		{ padding-top:5px; }
+.padding6top		{ padding-top:6px; }
+.padding7top		{ padding-top:7px; }
+.padding8top		{ padding-top:8px; }
+.padding9top		{ padding-top:9px; }
+.padding10top		{ padding-top:10px; }
+.padding1right		{ padding-right:1px; }
+.padding2right		{ padding-right:2px; }
+.padding3right		{ padding-right:3px; }
+.padding4right		{ padding-right:4px; }
+.padding5right		{ padding-right:5px; }
+.padding6right		{ padding-right:6px; }
+.padding7right		{ padding-right:7px; }
+.padding8right		{ padding-right:8px; }
+.padding9right		{ padding-right:9px; }
+.padding10right		{ padding-right:10px; }
+.padding1bottom		{ padding-bottom:1px; }
+.padding2bottom		{ padding-bottom:2px; }
+.padding3bottom		{ padding-bottom:3px; }
+.padding4bottom		{ padding-bottom:4px; }
+.padding5bottom		{ padding-bottom:5px; }
+.padding6bottom		{ padding-bottom:6px; }
+.padding7bottom		{ padding-bottom:7px; }
+.padding8bottom		{ padding-bottom:8px; }
+.padding9bottom		{ padding-bottom:9px; }
+.padding10bottom	{ padding-bottom:10px; }
+.padding1left		{ padding-left:1px; }
+.padding2left		{ padding-left:2px; }
+.padding3left		{ padding-left:3px; }
+.padding4left		{ padding-left:4px; }
+.padding5left		{ padding-left:5px; }
+.padding6left		{ padding-left:6px; }
+.padding7left		{ padding-left:7px; }
+.padding8left		{ padding-left:8px; }
+.padding9left		{ padding-left:9px; }
+.padding10left		{ padding-left:10px; }
+
+
+/* margin */
+.margin1		{ padding:1px; }
+.margin2		{ padding:2px; }
+.margin3		{ padding:3px; }
+.margin4		{ padding:4px; }
+.margin5		{ padding:5px; }
+.margin6		{ padding:6px; }
+.margin7		{ padding:7px; }
+.margin8		{ padding:8px; }
+.margin9		{ padding:9px; }
+.margin10		{ padding:10px; }
+.margin1top		{ margin-top:1px; }
+.margin2top		{ margin-top:2px; }
+.margin3top		{ margin-top:3px; }
+.margin4top		{ margin-top:4px; }
+.margin5top		{ margin-top:5px; }
+.margin6top		{ margin-top:6px; }
+.margin7top		{ margin-top:7px; }
+.margin8top		{ margin-top:8px; }
+.margin9top		{ margin-top:9px; }
+.margin10top		{ margin-top:10px; }
+.margin1right		{ margin-right:1px; }
+.margin2right		{ margin-right:2px; }
+.margin3right		{ margin-right:3px; }
+.margin4right		{ margin-right:4px; }
+.margin5right		{ margin-right:5px; }
+.margin6right		{ margin-right:6px; }
+.margin7right		{ margin-right:7px; }
+.margin8right		{ margin-right:8px; }
+.margin9right		{ margin-right:9px; }
+.margin10right		{ margin-right:10px; }
+.margin1bottom		{ margin-bottom:1px; }
+.margin2bottom		{ margin-bottom:2px; }
+.margin3bottom		{ margin-bottom:3px; }
+.margin4bottom		{ margin-bottom:4px; }
+.margin5bottom		{ margin-bottom:5px; }
+.margin6bottom		{ margin-bottom:6px; }
+.margin7bottom		{ margin-bottom:7px; }
+.margin8bottom		{ margin-bottom:8px; }
+.margin9bottom		{ margin-bottom:9px; }
+.margin10bottom		{ margin-bottom:10px; }
+.margin1left		{ margin-left:1px; }
+.margin2left		{ margin-left:2px; }
+.margin3left		{ margin-left:3px; }
+.margin4left		{ margin-left:4px; }
+.margin5left		{ margin-left:5px; }
+.margin6left		{ margin-left:6px; }
+.margin7left		{ margin-left:7px; }
+.margin8left		{ margin-left:8px; }
+.margin9left		{ margin-left:9px; }
+.margin10left		{ margin-left:10px; }
+
+/* background color */
+.bgColorAliceBlue 	{ background-color:AliceBlue;	}
+.bgColorDarkOliveGreen 	{ background-color:DarkOliveGreen;}
+.bgColorIndigo 		{ background-color:Indigo;	}
+.bgColorMediumPurple 	{ background-color:MediumPurple;}
+.bgColorPurple		{ background-color:Purple;	}
+.bgColorAntiqueWhite 	{ background-color:AntiqueWhite;}
+.bgColorDarkOrange 	{ background-color:DarkOrange;	}
+.bgColorIvory 		{ background-color:Ivory;	}
+.bgColorMediumSeaGreen 	{ background-color:MediumSeaGreen;}
+.bgColorRed		{ background-color:Red;		}
+.bgColorAqua 		{ background-color:Aqua;	}
+.bgColorDarkOrchid 	{ background-color:DarkOrchid;	}
+.bgColorKhaki 		{ background-color:Khaki;	}
+.bgColorMediumSlateBlue { background-color:MediumSlateBlue;}
+.bgColorRosyBrown	{ background-color:RosyBrown;	}
+.bgColorAquaMarine 	{ background-color:AquaMarine;	}
+.bgColorDarkRed 	{ background-color:DarkRed;	}
+.bgColorLavender 	{ background-color:Lavender;	}
+.bgColorMediumSpringGreen { background-color:MediumSpringGreen;}
+.bgColorRoyalBlue	{ background-color:RoyalBlue;	}
+.bgColorAzure 		{ background-color:Azure;	}
+.bgColorDarkSalmon 	{ background-color:DarkSalmon;	}
+.bgColorLavenderBlush 	{ background-color:LavenderBlush;}
+.bgColorMediumTurquoise { background-color:MediumTurquoise;}
+.bgColorSaddleBrown	{ background-color:SaddleBrown;	}
+.bgColorBeige 		{ background-color:Beige;	}
+.bgColorDarkSeaGreen 	{ background-color:DarkSeaGreen;}
+.bgColorLawnGreen 	{ background-color:LawnGreen;	}
+.bgColorMediumVioletRed { background-color:MediumVioletRed;}
+.bgColorSalmon		{ background-color:Salmon;	}
+.bgColorBisque 		{ background-color:Bisque;	}
+.bgColorDarkSlateBlue 	{ background-color:DarkSlateBlue;}
+.bgColorLemonChiffon 	{ background-color:LemonChiffon;}
+.bgColorMidnightBlue 	{ background-color:MidnightBlue;}
+.bgColorSandyBrown	{ background-color:SandyBrown;	}
+.bgColorBlack 		{ background-color:Black;	}
+.bgColorDarkSlateGray 	{ background-color:DarkSlateGray;}
+.bgColorLightBlue 	{ background-color:LightBlue;	}
+.bgColorMintCream 	{ background-color:MintCream;	}
+.bgColorSeaGreen	{ background-color:SeaGreen;	}
+.bgColorBlanchedAlmond 	{ background-color:BlanchedAlmond;}
+.bgColorDarkTurquoise 	{ background-color:DarkTurquoise;}
+.bgColorLightCoral 	{ background-color:LightCoral;	}
+.bgColorMistyRose 	{ background-color:MistyRose;	}
+.bgColorSeaShell	{ background-color:SeaShell;	}
+.bgColorBlue 		{ background-color:Blue;	}
+.bgColorDarkViolet 	{ background-color:DarkViolet;	}
+.bgColorLightCyan 	{ background-color:LightCyan;	}
+.bgColorMoccasin 	{ background-color:Moccasin;	}
+.bgColorSienna		{ background-color:Sienna;	}
+.bgColorBlueViolet 	{ background-color:BlueViolet;	}
+.bgColorDeepPink 	{ background-color:DeepPink;	}
+.bgColorLightGoldenrodYellow  { background-color:LightGoldenrodYellow;	}
+.bgColorNavajoWhite 	{ background-color:NavajoWhite;	}
+.bgColorSilver		{ background-color:Silver;	}
+.bgColorBrown 		{ background-color:Brown;	}
+.bgColorDeepSkyBlue 	{ background-color:DeepSkyBlue;	}
+.bgColorLightGray 	{ background-color:LightGray;	}
+.bgColorNavy 		{ background-color:Navy;	}
+.bgColorSkyBlue		{ background-color:SkyBlue;	}
+.bgColorBurlyWood 	{ background-color:BurlyWood;	}
+.bgColorDimGray 	{ background-color:DimGray;	}
+.bgColorLightGreen 	{ background-color:LightGreen;	}
+.bgColorOldLace 	{ background-color:OldLace;	}
+.bgColorSlateBlue	{ background-color:SlateBlue;	}
+.bgColorCadetBlue 	{ background-color:CadetBlue;	}
+.bgColorDodgerBlue 	{ background-color:DodgerBlue;	}
+.bgColorLightPink 	{ background-color:LightPink;	}
+.bgColorOlive 		{ background-color:Olive;	}
+.bgColorSlateGray	{ background-color:SlateGray;	}
+.bgColorChartreuse 	{ background-color:Chartreuse;	}
+.bgColorFireBrick 	{ background-color:FireBrick;	}
+.bgColorLightSalmon 	{ background-color:LightSalmon;	}
+.bgColorOliveDrab 	{ background-color:OliveDrab;	}
+.bgColorSnow		{ background-color:Snow;	}
+.bgColorChocolate 	{ background-color:Chocolate;	}
+.bgColorFloralWhite 	{ background-color:FloralWhite;	}
+.bgColorLightSeaGreen 	{ background-color:LightSeaGreen;}
+.bgColorOrange 		{ background-color:Orange;	}
+.bgColorSpringGreen	{ background-color:SpringGreen;	}
+.bgColorCoral 		{ background-color:Coral;	}
+.bgColorForestGreen 	{ background-color:ForestGreen;	}
+.bgColorLightSkyBlue 	{ background-color:LightSkyBlue;}
+.bgColorOrangeRed 	{ background-color:OrangeRed;	}
+.bgColorSteelBlue	{ background-color:SteelBlue;	}
+.bgColorCornFlowerBlue 	{ background-color:CornFlowerBlue;}
+.bgColorFuchsia 	{ background-color:Fuchsia;	}
+.bgColorLightSlateGray 	{ background-color:LightSlateGray;}
+.bgColorOrchid 		{ background-color:Orchid;	}
+.bgColorTan		{ background-color:Tan;		}
+.bgColorCornsilk 	{ background-color:Cornsilk;	}
+.bgColorGainsboro 	{ background-color:Gainsboro;	}
+.bgColorLightSteelBlue 	{ background-color:LightSteelBlue;}
+.bgColorPaleGoldenRod 	{ background-color:PaleGoldenRod;}
+.bgColorTeal		{ background-color:Teal;	}
+.bgColorCrimson 	{ background-color:Crimson;	}
+.bgColorGhostWhite 	{ background-color:GhostWhite;	}
+.bgColorLightYellow 	{ background-color:LightYellow;	}
+.bgColorPaleGreen 	{ background-color:PaleGreen;	}
+.bgColorThistle		{ background-color:Thistle;	}
+.bgColorCyan 		{ background-color:Cyan;	}
+.bgColorGold 		{ background-color:Gold;	}
+.bgColorLime 		{ background-color:Lime;	}
+.bgColorPaleTurquoise 	{ background-color:PaleTurquoise;}
+.bgColorTomato		{ background-color:Tomato;	}
+.bgColorDarkBlue 	{ background-color:DarkBlue;	}
+.bgColorGoldenRod 	{ background-color:GoldenRod;	}
+.bgColorLimeGreen 	{ background-color:LimeGreen;	}
+.bgColorPaleVioletRed 	{ background-color:PaleVioletRed;}
+.bgColorTurquoise	{ background-color:Turquoise;	}
+.bgColorDarkCyan 	{ background-color:DarkCyan;	}
+.bgColorGray 		{ background-color:Gray;	}
+.bgColorLinen 		{ background-color:Linen;	}
+.bgColorPapayaWhip 	{ background-color:PapayaWhip;	}
+.bgColorViolet		{ background-color:Violet;	}
+.bgColorDarkGoldenRod 	{ background-color:DarkGoldenRod;}
+.bgColorGreen 		{ background-color:Green;	}
+.bgColorMagenta 	{ background-color:Magenta;	}
+.bgColorPeachPuff 	{ background-color:PeachPuff;	}
+.bgColorWheat		{ background-color:Wheat;	}
+.bgColorDarkGray 	{ background-color:DarkGray;	}
+.bgColorGreenYellow 	{ background-color:GreenYellow;	}
+.bgColorMaroon 		{ background-color:Maroon;	}
+.bgColorPeru 		{ background-color:Peru;	}
+.bgColorWhite		{ background-color:White;	}
+.bgColorDarkGreen 	{ background-color:DarkGreen;	}
+.bgColorHoneyDew 	{ background-color:HoneyDew;	}
+.bgColorMediumAquaMarine { background-color:MediumAquaMarine;}
+.bgColorPink 		{ background-color:Pink;	}
+.bgColorWhiteSmoke	{ background-color:WhiteSmoke;	}
+.bgColorDarkKhaki 	{ background-color:DarkKhaki;	}
+.bgColorHotPink 	{ background-color:HotPink;	}
+.bgColorMediumBlue 	{ background-color:MediumBlue;	}
+.bgColorPlum 		{ background-color:Plum;	}
+.bgColorYellow		{ background-color:Yellow;	}
+.bgColorDarkMagenta 	{ background-color:DarkMagenta;	}
+.bgColorIndianRed 	{ background-color:IndianRed;	}
+.bgColorMediumOrchid 	{ background-color:MediumOrchid;}
+.bgColorPowderBlue 	{ background-color:PowderBlue;	}
+.bgColorYellowGreen	{ background-color:YellowGreen;	}
+
+
+/* fontColor */
+.AliceBlue 	{ color:AliceBlue;	}
+.DarkOliveGreen { color:DarkOliveGreen;	}
+.Indigo 	{ color:Indigo;		}
+.MediumPurple 	{ color:MediumPurple;	}
+.Purple		{ color:Purple;		}
+.AntiqueWhite 	{ color:AntiqueWhite;	}
+.DarkOrange 	{ color:DarkOrange;	}
+.Ivory 		{ color:Ivory;		}
+.MediumSeaGreen { color:MediumSeaGreen;	}
+.Red		{ color:Red;		}
+.Aqua 		{ color:Aqua;		}
+.DarkOrchid 	{ color:DarkOrchid;	}
+.Khaki 		{ color:Khaki;		}
+.MediumSlateBlue { color:MediumSlateBlue;}
+.RosyBrown	{ color:RosyBrown;	}
+.AquaMarine 	{ color:AquaMarine;	}
+.DarkRed 	{ color:DarkRed;	}
+.Lavender 	{ color:Lavender;	}
+.MediumSpringGreen { color:MediumSpringGreen;}
+.RoyalBlue	{ color:RoyalBlue;	}
+.Azure 		{ color:Azure;		}
+.DarkSalmon 	{ color:DarkSalmon;	}
+.LavenderBlush 	{ color:LavenderBlush;	}
+.MediumTurquoise { color:MediumTurquoise;}
+.SaddleBrown	{ color:SaddleBrown;	}
+.Beige 		{ color:Beige;		}
+.DarkSeaGreen 	{ color:DarkSeaGreen;	}
+.LawnGreen 	{ color:LawnGreen;	}
+.MediumVioletRed { color:MediumVioletRed;}
+.Salmon		{ color:Salmon;		}
+.Bisque 	{ color:Bisque;		}
+.DarkSlateBlue 	{ color:DarkSlateBlue;	}
+.LemonChiffon 	{ color:LemonChiffon;	}
+.MidnightBlue 	{ color:MidnightBlue;	}
+.SandyBrown	{ color:SandyBrown;	}
+.Black 		{ color:Black;		}
+.DarkSlateGray 	{ color:DarkSlateGray;	}
+.LightBlue 	{ color:LightBlue;	}
+.MintCream 	{ color:MintCream;	}
+.SeaGreen	{ color:SeaGreen;	}
+.BlanchedAlmond { color:BlanchedAlmond;	}
+.DarkTurquoise 	{ color:DarkTurquoise;	}
+.LightCoral 	{ color:LightCoral;	}
+.MistyRose 	{ color:MistyRose;	}
+.SeaShell	{ color:SeaShell;	}
+.Blue 		{ color:Blue;		}
+.DarkViolet 	{ color:DarkViolet;	}
+.LightCyan 	{ color:LightCyan;	}
+.Moccasin 	{ color:Moccasin;	}
+.Sienna		{ color:Sienna;		}
+.BlueViolet 	{ color:BlueViolet;	}
+.DeepPink 	{ color:DeepPink;	}
+.LightGoldenrodYellow  { color:LightGoldenrodYellow;	}
+.NavajoWhite 	{ color:NavajoWhite;	}
+.Silver		{ color:Silver;		}
+.Brown 		{ color:Brown;		}
+.DeepSkyBlue 	{ color:DeepSkyBlue;	}
+.LightGray 	{ color:LightGray;	}
+.Navy 		{ color:Navy;		}
+.SkyBlue	{ color:SkyBlue;	}
+.BurlyWood 	{ color:BurlyWood;	}
+.DimGray 	{ color:DimGray;	}
+.LightGreen 	{ color:LightGreen;	}
+.OldLace 	{ color:OldLace;	}
+.SlateBlue	{ color:SlateBlue;	}
+.CadetBlue 	{ color:CadetBlue;	}
+.DodgerBlue 	{ color:DodgerBlue;	}
+.LightPink 	{ color:LightPink;	}
+.Olive 		{ color:Olive;		}
+.SlateGray	{ color:SlateGray;	}
+.Chartreuse 	{ color:Chartreuse;	}
+.FireBrick 	{ color:FireBrick;	}
+.LightSalmon 	{ color:LightSalmon;	}
+.OliveDrab 	{ color:OliveDrab;	}
+.Snow		{ color:Snow;		}
+.Chocolate 	{ color:Chocolate;	}
+.FloralWhite 	{ color:FloralWhite;	}
+.LightSeaGreen 	{ color:LightSeaGreen;	}
+.Orange 	{ color:Orange;		}
+.SpringGreen	{ color:SpringGreen;	}
+.Coral 		{ color:Coral;		}
+.ForestGreen 	{ color:ForestGreen;	}
+.LightSkyBlue 	{ color:LightSkyBlue;	}
+.OrangeRed 	{ color:OrangeRed;	}
+.SteelBlue	{ color:SteelBlue;	}
+.CornFlowerBlue { color:CornFlowerBlue;	}
+.Fuchsia 	{ color:Fuchsia;	}
+.LightSlateGray { color:LightSlateGray;	}
+.Orchid 	{ color:Orchid;		}
+.Tan		{ color:Tan;		}
+.Cornsilk 	{ color:Cornsilk;	}
+.Gainsboro 	{ color:Gainsboro;	}
+.LightSteelBlue { color:LightSteelBlue;	}
+.PaleGoldenRod 	{ color:PaleGoldenRod;	}
+.Teal		{ color:Teal;		}
+.Crimson 	{ color:Crimson;	}
+.GhostWhite 	{ color:GhostWhite;	}
+.LightYellow 	{ color:LightYellow;	}
+.PaleGreen 	{ color:PaleGreen;	}
+.Thistle	{ color:Thistle;	}
+.Cyan 		{ color:Cyan;		}
+.Gold 		{ color:Gold;		}
+.Lime 		{ color:Lime;		}
+.PaleTurquoise 	{ color:PaleTurquoise;	}
+.Tomato		{ color:Tomato;		}
+.DarkBlue 	{ color:DarkBlue;	}
+.GoldenRod 	{ color:GoldenRod;	}
+.LimeGreen 	{ color:LimeGreen;	}
+.PaleVioletRed 	{ color:PaleVioletRed;	}
+.Turquoise	{ color:Turquoise;	}
+.DarkCyan 	{ color:DarkCyan;	}
+.Gray 		{ color:Gray;		}
+.Linen 		{ color:Linen;		}
+.PapayaWhip 	{ color:PapayaWhip;	}
+.Violet		{ color:Violet;		}
+.DarkGoldenRod 	{ color:DarkGoldenRod;	}
+.Green 		{ color:Green;		}
+.Magenta 	{ color:Magenta;	}
+.PeachPuff 	{ color:PeachPuff;	}
+.Wheat		{ color:Wheat;		}
+.DarkGray 	{ color:DarkGray;	}
+.GreenYellow 	{ color:GreenYellow;	}
+.Maroon 	{ color:Maroon;		}
+.Peru 		{ color:Peru;		}
+.White		{ color:White;		}
+.DarkGreen 	{ color:DarkGreen;	}
+.HoneyDew 	{ color:HoneyDew;	}
+.MediumAquaMarine { color:MediumAquaMarine;}
+.Pink 		{ color:Pink;		}
+.WhiteSmoke	{ color:WhiteSmoke;	}
+.DarkKhaki 	{ color:DarkKhaki;	}
+.HotPink 	{ color:HotPink;	}
+.MediumBlue 	{ color:MediumBlue;	}
+.Plum 		{ color:Plum;		}
+.Yellow		{ color:Yellow;		}
+.DarkMagenta 	{ color:DarkMagenta;	}
+.IndianRed 	{ color:IndianRed;	}
+.MediumOrchid 	{ color:MediumOrchid;	}
+.PowderBlue 	{ color:PowderBlue;	}
+.YellowGreen	{ color:YellowGreen;	}
+
+/* borders */
+
+.border1AliceBlue 	{ border:1px solid AliceBlue;	}
+.border1DarkOliveGreen { border:1px solid DarkOliveGreen;	}
+.border1Indigo 	{ border:1px solid Indigo;		}
+.border1MediumPurple 	{ border:1px solid MediumPurple;	}
+.border1Purple		{ border:1px solid Purple;		}
+.border1AntiqueWhite 	{ border:1px solid AntiqueWhite;	}
+.border1DarkOrange 	{ border:1px solid DarkOrange;	}
+.border1Ivory 		{ border:1px solid Ivory;		}
+.border1MediumSeaGreen { border:1px solid MediumSeaGreen;	}
+.border1Red		{ border:1px solid Red;		}
+.border1Aqua 		{ border:1px solid Aqua;		}
+.border1DarkOrchid 	{ border:1px solid DarkOrchid;	}
+.border1Khaki 		{ border:1px solid Khaki;		}
+.border1MediumSlateBlue { border:1px solid MediumSlateBlue;}
+.border1RosyBrown	{ border:1px solid RosyBrown;	}
+.border1AquaMarine 	{ border:1px solid AquaMarine;	}
+.border1DarkRed 	{ border:1px solid DarkRed;	}
+.border1Lavender 	{ border:1px solid Lavender;	}
+.border1MediumSpringGreen { border:1px solid MediumSpringGreen;}
+.border1RoyalBlue	{ border:1px solid RoyalBlue;	}
+.border1Azure 		{ border:1px solid Azure;		}
+.border1DarkSalmon 	{ border:1px solid DarkSalmon;	}
+.border1LavenderBlush 	{ border:1px solid LavenderBlush;	}
+.border1MediumTurquoise { border:1px solid MediumTurquoise;}
+.border1SaddleBrown	{ border:1px solid SaddleBrown;	}
+.border1Beige 		{ border:1px solid Beige;		}
+.border1DarkSeaGreen 	{ border:1px solid DarkSeaGreen;	}
+.border1LawnGreen 	{ border:1px solid LawnGreen;	}
+.border1MediumVioletRed { border:1px solid MediumVioletRed;}
+.border1Salmon		{ border:1px solid Salmon;		}
+.border1Bisque 	{ border:1px solid Bisque;		}
+.border1DarkSlateBlue 	{ border:1px solid DarkSlateBlue;	}
+.border1LemonChiffon 	{ border:1px solid LemonChiffon;	}
+.border1MidnightBlue 	{ border:1px solid MidnightBlue;	}
+.border1SandyBrown	{ border:1px solid SandyBrown;	}
+.border1Black 		{ border:1px solid Black;		}
+.border1DarkSlateGray 	{ border:1px solid DarkSlateGray;	}
+.border1LightBlue 	{ border:1px solid LightBlue;	}
+.border1MintCream 	{ border:1px solid MintCream;	}
+.border1SeaGreen	{ border:1px solid SeaGreen;	}
+.border1BlanchedAlmond { border:1px solid BlanchedAlmond;	}
+.border1DarkTurquoise 	{ border:1px solid DarkTurquoise;	}
+.border1LightCoral 	{ border:1px solid LightCoral;	}
+.border1MistyRose 	{ border:1px solid MistyRose;	}
+.border1SeaShell	{ border:1px solid SeaShell;	}
+.border1Blue 		{ border:1px solid Blue;		}
+.border1DarkViolet 	{ border:1px solid DarkViolet;	}
+.border1LightCyan 	{ border:1px solid LightCyan;	}
+.border1Moccasin 	{ border:1px solid Moccasin;	}
+.border1Sienna		{ border:1px solid Sienna;		}
+.border1BlueViolet 	{ border:1px solid BlueViolet;	}
+.border1DeepPink 	{ border:1px solid DeepPink;	}
+.border1LightGoldenrodYellow  { border:1px solid LightGoldenrodYellow;	}
+.border1NavajoWhite 	{ border:1px solid NavajoWhite;	}
+.border1Silver		{ border:1px solid Silver;		}
+.border1Brown 		{ border:1px solid Brown;		}
+.border1DeepSkyBlue 	{ border:1px solid DeepSkyBlue;	}
+.border1LightGray 	{ border:1px solid LightGray;	}
+.border1Navy 		{ border:1px solid Navy;		}
+.border1SkyBlue	{ border:1px solid SkyBlue;	}
+.border1BurlyWood 	{ border:1px solid BurlyWood;	}
+.border1DimGray 	{ border:1px solid DimGray;	}
+.border1LightGreen 	{ border:1px solid LightGreen;	}
+.border1OldLace 	{ border:1px solid OldLace;	}
+.border1SlateBlue	{ border:1px solid SlateBlue;	}
+.border1CadetBlue 	{ border:1px solid CadetBlue;	}
+.border1DodgerBlue 	{ border:1px solid DodgerBlue;	}
+.border1LightPink 	{ border:1px solid LightPink;	}
+.border1Olive 		{ border:1px solid Olive;		}
+.border1SlateGray	{ border:1px solid SlateGray;	}
+.border1Chartreuse 	{ border:1px solid Chartreuse;	}
+.border1FireBrick 	{ border:1px solid FireBrick;	}
+.border1LightSalmon 	{ border:1px solid LightSalmon;	}
+.border1OliveDrab 	{ border:1px solid OliveDrab;	}
+.border1Snow		{ border:1px solid Snow;		}
+.border1Chocolate 	{ border:1px solid Chocolate;	}
+.border1FloralWhite 	{ border:1px solid FloralWhite;	}
+.border1LightSeaGreen 	{ border:1px solid LightSeaGreen;	}
+.border1Orange 	{ border:1px solid Orange;		}
+.border1SpringGreen	{ border:1px solid SpringGreen;	}
+.border1Coral 		{ border:1px solid Coral;		}
+.border1ForestGreen 	{ border:1px solid ForestGreen;	}
+.border1LightSkyBlue 	{ border:1px solid LightSkyBlue;	}
+.border1OrangeRed 	{ border:1px solid OrangeRed;	}
+.border1SteelBlue	{ border:1px solid SteelBlue;	}
+.border1CornFlowerBlue { border:1px solid CornFlowerBlue;	}
+.border1Fuchsia 	{ border:1px solid Fuchsia;	}
+.border1LightSlateGray { border:1px solid LightSlateGray;	}
+.border1Orchid 	{ border:1px solid Orchid;		}
+.border1Tan		{ border:1px solid Tan;		}
+.border1Cornsilk 	{ border:1px solid Cornsilk;	}
+.border1Gainsboro 	{ border:1px solid Gainsboro;	}
+.border1LightSteelBlue { border:1px solid LightSteelBlue;	}
+.border1PaleGoldenRod 	{ border:1px solid PaleGoldenRod;	}
+.border1Teal		{ border:1px solid Teal;		}
+.border1Crimson 	{ border:1px solid Crimson;	}
+.border1GhostWhite 	{ border:1px solid GhostWhite;	}
+.border1LightYellow 	{ border:1px solid LightYellow;	}
+.border1PaleGreen 	{ border:1px solid PaleGreen;	}
+.border1Thistle	{ border:1px solid Thistle;	}
+.border1Cyan 		{ border:1px solid Cyan;		}
+.border1Gold 		{ border:1px solid Gold;		}
+.border1Lime 		{ border:1px solid Lime;		}
+.border1PaleTurquoise 	{ border:1px solid PaleTurquoise;	}
+.border1Tomato		{ border:1px solid Tomato;		}
+.border1DarkBlue 	{ border:1px solid DarkBlue;	}
+.border1GoldenRod 	{ border:1px solid GoldenRod;	}
+.border1LimeGreen 	{ border:1px solid LimeGreen;	}
+.border1PaleVioletRed 	{ border:1px solid PaleVioletRed;	}
+.border1Turquoise	{ border:1px solid Turquoise;	}
+.border1DarkCyan 	{ border:1px solid DarkCyan;	}
+.border1Gray 		{ border:1px solid Gray;		}
+.border1Linen 		{ border:1px solid Linen;		}
+.border1PapayaWhip 	{ border:1px solid PapayaWhip;	}
+.border1Violet		{ border:1px solid Violet;		}
+.border1DarkGoldenRod 	{ border:1px solid DarkGoldenRod;	}
+.border1Green 		{ border:1px solid Green;		}
+.border1Magenta 	{ border:1px solid Magenta;	}
+.border1PeachPuff 	{ border:1px solid PeachPuff;	}
+.border1Wheat		{ border:1px solid Wheat;		}
+.border1DarkGray 	{ border:1px solid DarkGray;	}
+.border1GreenYellow 	{ border:1px solid GreenYellow;	}
+.border1Maroon 	{ border:1px solid Maroon;		}
+.border1Peru 		{ border:1px solid Peru;		}
+.border1White		{ border:1px solid White;		}
+.border1DarkGreen 	{ border:1px solid DarkGreen;	}
+.border1HoneyDew 	{ border:1px solid HoneyDew;	}
+.border1MediumAquaMarine { border:1px solid MediumAquaMarine;}
+.border1Pink 		{ border:1px solid Pink;		}
+.border1WhiteSmoke	{ border:1px solid WhiteSmoke;	}
+.border1DarkKhaki 	{ border:1px solid DarkKhaki;	}
+.border1HotPink 	{ border:1px solid HotPink;	}
+.border1MediumBlue 	{ border:1px solid MediumBlue;	}
+.border1Plum 		{ border:1px solid Plum;		}
+.border1Yellow		{ border:1px solid Yellow;		}
+.border1DarkMagenta 	{ border:1px solid DarkMagenta;	}
+.border1IndianRed 	{ border:1px solid IndianRed;	}
+.border1MediumOrchid 	{ border:1px solid MediumOrchid;	}
+.border1PowderBlue 	{ border:1px solid PowderBlue;	}
+.border1YellowGreen	{ border:1px solid YellowGreen;	}
+.border2AliceBlue 	{ border:2px solid AliceBlue;	}
+.border2DarkOliveGreen { border:2px solid DarkOliveGreen;	}
+.border2Indigo 	{ border:2px solid Indigo;		}
+.border2MediumPurple 	{ border:2px solid MediumPurple;	}
+.border2Purple		{ border:2px solid Purple;		}
+.border2AntiqueWhite 	{ border:2px solid AntiqueWhite;	}
+.border2DarkOrange 	{ border:2px solid DarkOrange;	}
+.border2Ivory 		{ border:2px solid Ivory;		}
+.border2MediumSeaGreen { border:2px solid MediumSeaGreen;	}
+.border2Red		{ border:2px solid Red;		}
+.border2Aqua 		{ border:2px solid Aqua;		}
+.border2DarkOrchid 	{ border:2px solid DarkOrchid;	}
+.border2Khaki 		{ border:2px solid Khaki;		}
+.border2MediumSlateBlue { border:2px solid MediumSlateBlue;}
+.border2RosyBrown	{ border:2px solid RosyBrown;	}
+.border2AquaMarine 	{ border:2px solid AquaMarine;	}
+.border2DarkRed 	{ border:2px solid DarkRed;	}
+.border2Lavender 	{ border:2px solid Lavender;	}
+.border2MediumSpringGreen { border:2px solid MediumSpringGreen;}
+.border2RoyalBlue	{ border:2px solid RoyalBlue;	}
+.border2Azure 		{ border:2px solid Azure;		}
+.border2DarkSalmon 	{ border:2px solid DarkSalmon;	}
+.border2LavenderBlush 	{ border:2px solid LavenderBlush;	}
+.border2MediumTurquoise { border:2px solid MediumTurquoise;}
+.border2SaddleBrown	{ border:2px solid SaddleBrown;	}
+.border2Beige 		{ border:2px solid Beige;		}
+.border2DarkSeaGreen 	{ border:2px solid DarkSeaGreen;	}
+.border2LawnGreen 	{ border:2px solid LawnGreen;	}
+.border2MediumVioletRed { border:2px solid MediumVioletRed;}
+.border2Salmon		{ border:2px solid Salmon;		}
+.border2Bisque 	{ border:2px solid Bisque;		}
+.border2DarkSlateBlue 	{ border:2px solid DarkSlateBlue;	}
+.border2LemonChiffon 	{ border:2px solid LemonChiffon;	}
+.border2MidnightBlue 	{ border:2px solid MidnightBlue;	}
+.border2SandyBrown	{ border:2px solid SandyBrown;	}
+.border2Black 		{ border:2px solid Black;		}
+.border2DarkSlateGray 	{ border:2px solid DarkSlateGray;	}
+.border2LightBlue 	{ border:2px solid LightBlue;	}
+.border2MintCream 	{ border:2px solid MintCream;	}
+.border2SeaGreen	{ border:2px solid SeaGreen;	}
+.border2BlanchedAlmond { border:2px solid BlanchedAlmond;	}
+.border2DarkTurquoise 	{ border:2px solid DarkTurquoise;	}
+.border2LightCoral 	{ border:2px solid LightCoral;	}
+.border2MistyRose 	{ border:2px solid MistyRose;	}
+.border2SeaShell	{ border:2px solid SeaShell;	}
+.border2Blue 		{ border:2px solid Blue;		}
+.border2DarkViolet 	{ border:2px solid DarkViolet;	}
+.border2LightCyan 	{ border:2px solid LightCyan;	}
+.border2Moccasin 	{ border:2px solid Moccasin;	}
+.border2Sienna		{ border:2px solid Sienna;		}
+.border2BlueViolet 	{ border:2px solid BlueViolet;	}
+.border2DeepPink 	{ border:2px solid DeepPink;	}
+.border2LightGoldenrodYellow  { border:2px solid LightGoldenrodYellow;	}
+.border2NavajoWhite 	{ border:2px solid NavajoWhite;	}
+.border2Silver		{ border:2px solid Silver;		}
+.border2Brown 		{ border:2px solid Brown;		}
+.border2DeepSkyBlue 	{ border:2px solid DeepSkyBlue;	}
+.border2LightGray 	{ border:2px solid LightGray;	}
+.border2Navy 		{ border:2px solid Navy;		}
+.border2SkyBlue	{ border:2px solid SkyBlue;	}
+.border2BurlyWood 	{ border:2px solid BurlyWood;	}
+.border2DimGray 	{ border:2px solid DimGray;	}
+.border2LightGreen 	{ border:2px solid LightGreen;	}
+.border2OldLace 	{ border:2px solid OldLace;	}
+.border2SlateBlue	{ border:2px solid SlateBlue;	}
+.border2CadetBlue 	{ border:2px solid CadetBlue;	}
+.border2DodgerBlue 	{ border:2px solid DodgerBlue;	}
+.border2LightPink 	{ border:2px solid LightPink;	}
+.border2Olive 		{ border:2px solid Olive;		}
+.border2SlateGray	{ border:2px solid SlateGray;	}
+.border2Chartreuse 	{ border:2px solid Chartreuse;	}
+.border2FireBrick 	{ border:2px solid FireBrick;	}
+.border2LightSalmon 	{ border:2px solid LightSalmon;	}
+.border2OliveDrab 	{ border:2px solid OliveDrab;	}
+.border2Snow		{ border:2px solid Snow;		}
+.border2Chocolate 	{ border:2px solid Chocolate;	}
+.border2FloralWhite 	{ border:2px solid FloralWhite;	}
+.border2LightSeaGreen 	{ border:2px solid LightSeaGreen;	}
+.border2Orange 	{ border:2px solid Orange;		}
+.border2SpringGreen	{ border:2px solid SpringGreen;	}
+.border2Coral 		{ border:2px solid Coral;		}
+.border2ForestGreen 	{ border:2px solid ForestGreen;	}
+.border2LightSkyBlue 	{ border:2px solid LightSkyBlue;	}
+.border2OrangeRed 	{ border:2px solid OrangeRed;	}
+.border2SteelBlue	{ border:2px solid SteelBlue;	}
+.border2CornFlowerBlue { border:2px solid CornFlowerBlue;	}
+.border2Fuchsia 	{ border:2px solid Fuchsia;	}
+.border2LightSlateGray { border:2px solid LightSlateGray;	}
+.border2Orchid 	{ border:2px solid Orchid;		}
+.border2Tan		{ border:2px solid Tan;		}
+.border2Cornsilk 	{ border:2px solid Cornsilk;	}
+.border2Gainsboro 	{ border:2px solid Gainsboro;	}
+.border2LightSteelBlue { border:2px solid LightSteelBlue;	}
+.border2PaleGoldenRod 	{ border:2px solid PaleGoldenRod;	}
+.border2Teal		{ border:2px solid Teal;		}
+.border2Crimson 	{ border:2px solid Crimson;	}
+.border2GhostWhite 	{ border:2px solid GhostWhite;	}
+.border2LightYellow 	{ border:2px solid LightYellow;	}
+.border2PaleGreen 	{ border:2px solid PaleGreen;	}
+.border2Thistle	{ border:2px solid Thistle;	}
+.border2Cyan 		{ border:2px solid Cyan;		}
+.border2Gold 		{ border:2px solid Gold;		}
+.border2Lime 		{ border:2px solid Lime;		}
+.border2PaleTurquoise 	{ border:2px solid PaleTurquoise;	}
+.border2Tomato		{ border:2px solid Tomato;		}
+.border2DarkBlue 	{ border:2px solid DarkBlue;	}
+.border2GoldenRod 	{ border:2px solid GoldenRod;	}
+.border2LimeGreen 	{ border:2px solid LimeGreen;	}
+.border2PaleVioletRed 	{ border:2px solid PaleVioletRed;	}
+.border2Turquoise	{ border:2px solid Turquoise;	}
+.border2DarkCyan 	{ border:2px solid DarkCyan;	}
+.border2Gray 		{ border:2px solid Gray;		}
+.border2Linen 		{ border:2px solid Linen;		}
+.border2PapayaWhip 	{ border:2px solid PapayaWhip;	}
+.border2Violet		{ border:2px solid Violet;		}
+.border2DarkGoldenRod 	{ border:2px solid DarkGoldenRod;	}
+.border2Green 		{ border:2px solid Green;		}
+.border2Magenta 	{ border:2px solid Magenta;	}
+.border2PeachPuff 	{ border:2px solid PeachPuff;	}
+.border2Wheat		{ border:2px solid Wheat;		}
+.border2DarkGray 	{ border:2px solid DarkGray;	}
+.border2GreenYellow 	{ border:2px solid GreenYellow;	}
+.border2Maroon 	{ border:2px solid Maroon;		}
+.border2Peru 		{ border:2px solid Peru;		}
+.border2White		{ border:2px solid White;		}
+.border2DarkGreen 	{ border:2px solid DarkGreen;	}
+.border2HoneyDew 	{ border:2px solid HoneyDew;	}
+.border2MediumAquaMarine { border:2px solid MediumAquaMarine;}
+.border2Pink 		{ border:2px solid Pink;		}
+.border2WhiteSmoke	{ border:2px solid WhiteSmoke;	}
+.border2DarkKhaki 	{ border:2px solid DarkKhaki;	}
+.border2HotPink 	{ border:2px solid HotPink;	}
+.border2MediumBlue 	{ border:2px solid MediumBlue;	}
+.border2Plum 		{ border:2px solid Plum;		}
+.border2Yellow		{ border:2px solid Yellow;		}
+.border2DarkMagenta 	{ border:2px solid DarkMagenta;	}
+.border2IndianRed 	{ border:2px solid IndianRed;	}
+.border2MediumOrchid 	{ border:2px solid MediumOrchid;	}
+.border2PowderBlue 	{ border:2px solid PowderBlue;	}
+.border2YellowGreen	{ border:2px solid YellowGreen;	}
+

@@ -1,0 +1,5 @@
+Git\ExperimentsNico\Firefox.lua
+	Dolphin Script File for Firefox.exe
+	to test interfacing to a DLL and magnification manipulation as a joint SN-NVDA adventure
+	Contains also a LUA custom_dialog() experiment (totally unrelated to DLL's and magnification experiment)
+

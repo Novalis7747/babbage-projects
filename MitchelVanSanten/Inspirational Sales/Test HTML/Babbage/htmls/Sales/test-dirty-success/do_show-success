@@ -1,0 +1,145 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+
+
+# test set task on success
+fn=1100
+cb="callback(dashboardPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp="Account" a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(progressPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp="Account" a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companiesPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactsPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+table:"inPageSelectcrmContactPage":"idCampagne":"0":"value":"-1"			\
+table:"inPageSelectcrmContactPage":"idRep":"0":"value":"0"					\
+table:"inPageSelectcrmContactPage":"success":"0":"value":"1"				\
+table:"inPageSelectcrmContactPage":"idCompanyTag":"0":"value":"-1"			\
+table:"inPageSelectcrmContactPage":"idStartAt":"0":"value":"1"				\
+table:"inPageSelectcrmContactPage":"haveSelect":"0":"value":"1"				\
+																			\
+table:"inPageSelectcrmContactPage":"idCampagne":"0":"type":"select"			\
+table:"inPageSelectcrmContactPage":"idRep":"0":"type":"select"				\
+table:"inPageSelectcrmContactPage":"success":"0":"type":"select"			\
+table:"inPageSelectcrmContactPage":"idCompanyTag":"0":"type":"select"		\
+table:"inPageSelectcrmContactPage":"idStartAt":"0":"type":"select"			\
+table:"inPageSelectcrmContactPage":"haveSelect":"0":"type":"hidden"			\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyCard,10)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyContactList,10)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactCard,1010)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(taskCard,55)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+kaart="set"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 		\
+"callback:updateTask"										\
+"set:table[taskMain][task.idTaskStatus][0][value]:8"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+cb="callback(dashboardPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp="Account" a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(progressPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp="Account" a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companiesPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactsPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+table:"inPageSelectcrmContactPage":"idCampagne":"0":"value":"-1"			\
+table:"inPageSelectcrmContactPage":"idRep":"0":"value":"0"					\
+table:"inPageSelectcrmContactPage":"success":"0":"value":"1"				\
+table:"inPageSelectcrmContactPage":"idCompanyTag":"0":"value":"-1"			\
+table:"inPageSelectcrmContactPage":"idStartAt":"0":"value":"1"				\
+table:"inPageSelectcrmContactPage":"haveSelect":"0":"value":"1"				\
+																			\
+table:"inPageSelectcrmContactPage":"idCampagne":"0":"type":"select"			\
+table:"inPageSelectcrmContactPage":"idRep":"0":"type":"select"				\
+table:"inPageSelectcrmContactPage":"success":"0":"type":"select"			\
+table:"inPageSelectcrmContactPage":"idCompanyTag":"0":"type":"select"		\
+table:"inPageSelectcrmContactPage":"idStartAt":"0":"type":"select"			\
+table:"inPageSelectcrmContactPage":"haveSelect":"0":"type":"hidden"			\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyCard,10)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyContactList,10)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactCard,1010)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+loadSql ${account} ../test.sql

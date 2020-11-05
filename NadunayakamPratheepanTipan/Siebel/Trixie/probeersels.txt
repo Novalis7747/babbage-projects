@@ -1,0 +1,118 @@
+function setRoleLabelForId(id, role, label) {
+    // Stelt een ROLE en LABEL in voor een uniek ELEMENT:
+    try {
+        var element = document.getElementById(id);
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null) {
+            // Controleer de lengte van ARGUMENT ROLE:
+            if (role.length > 0) {
+                // Bestaat de ROLE al en is deze hetzelfde
+                // als wat je gaat toewijzen? Dan overslaan:
+                if (element.getAttribute("role") !== role) {
+                    element.setAttribute("role", role);
+                }
+            }
+            // Controleer de lengte van ARGUMENT LABEL:
+            if (label.length > 0) {
+                // Bestaat het LABEL al en is deze hetzelfde
+                // als wat je gaat toewijzen? Dan overslaan:
+                if (element.getAttribute("aria-label") !== label) {
+                    element.setAttribute("aria-label", label);
+                }
+            }
+        }
+    } catch (err) {
+        debugConsoleMessage(1, "setRoleLabelForId: " + err.message);
+    }
+}
+
+function setTitleForId(id, title) {
+    // Stelt een TITEL in voor een uniek ELEMENT:
+    try {
+        var element = document.getElementById(id);
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null) {
+            // Controleer de lengte van ARGUMENT TITEL:
+            if (title.length > 0) {
+                // Bestaat de TITLE al en is deze hetzelfde
+                // als wat je gaat toewijzen? Dan overslaan:
+                if (element.getAttribute("title") !== title) {
+                    element.setAttribute("title", title);
+                }
+            }
+        }
+    } catch (err) {
+        debugConsoleMessage(1, "setTitleForId: " + err.message);
+    }
+}
+
+function addAttributeForId(id, attribute, value) {
+    // Voeg een ATTRIBUUT inclusief WAARDE toe aan een uniek ELEMENT:
+    try {
+        var element = document.getElementById(id);
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null) {
+            // Controleer de lengte van de ARGUMENTEN, beiden dienen aanwezig
+            // te zijn. Het heeft geen nut om een leeg ATTRIBUUT toe te voegen:
+            if (attribute.length > 0 && value.length > 0) {
+                // Bestaat de ATTRIBUTE al en is deze hetzelfde
+                // als wat je gaat toewijzen? Dan overslaan:
+                if (element.getAttribute(attribute) !== value) {
+                    element.setAttribute(attribute, value);
+                }
+            }
+        }
+    } catch (err) {
+        debugConsoleMessage(1, "addAttributeForId: " + err.message);
+    }
+}
+
+function removeRoleFromClassName(className) {
+    // Verwijder de ARIA-ROL van generieke ELEMENTEN:
+    try {
+        var element = document.getElementsByClassName(className);
+        var i = 0;
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null) {
+            while (element[i]) {
+                // Bestaat de ROLE? Dan verwijderen:
+                if (element[i].hasAttribute("role")) {
+                    element[i].removeAttribute("role");
+                }
+                i += 1;
+            }
+        }
+    } catch (err) {
+        debugConsoleMessage(1, "removeRoleFromClassName: " + err.message);
+    }
+}
+
+function removeAriaHiddenFromElement(className) {
+    // Verwijder de ARIA-HIDDEN attribuut van alle kinderen van een generiek
+    // ELEMENT:
+    try {
+        var element = document.getElementsByClassName(className);
+        var elementen = [];
+        var i = 0;
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null) {
+            // Verkrijg alle KIND ELEMENTEN:
+            elementen = element[0].getElementsByTagName("*");
+            // Controleer of de VARIABELE een ELEMENT kent:
+            if (elementen !== null) {
+                while (elementen[i]) {
+                    // Verwijder het ATTRIBUUT indien aanwezig:
+                    if (elementen[i].hasAttribute("aria-hidden")) {
+                        elementen[i].removeAttribute("aria-hidden");
+                    }
+                    if (elementen[i].getAttribute("role") === "presentation") {
+                        elementen[i].removeAttribute("role");
+                    }
+                    i += 1;
+                }
+            }
+        }
+    } catch (err) {
+        debugConsoleMessage(1, "removeAriaHiddenFromElement: " + err.message);
+    }
+}

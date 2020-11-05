@@ -1,0 +1,32 @@
+SpeechEngine:= ComObjCreate("Dragon.DgnEngineControl")
+try
+{
+	SpeechEngine.Register(0)
+}
+catch, e
+{
+	MsgBox, Can't connect to Dragon
+	ExitApp
+}
+dgnrecmodeNormal := 0x0  ; Commands and Dictation mode
+dgnrecmodeDictation := 0x1  ; Dictation mode
+dgnrecmodeCommand := 0x2  ; Commands mode
+dgnrecmodeNumbers := 0x3  ; Numbers mode
+dgnrecmodeLetters := 0x4  ; Spell mode
+dgnrecmodeMouseMotion := 0x5  ; Mouse Motion mode
+OnExit, ExitSub
+return
+
+
+!F11::
+	SpeechEngine.RecognitionMode:=dgnrecmodeLetters
+return
+
+!F12::
+	SpeechEngine.RecognitionMode:=dgnrecmodeNormal
+return
+
+ExitSub:
+SpeechEngine.UnRegister(False)
+SpeechEngine:=
+ExitApp

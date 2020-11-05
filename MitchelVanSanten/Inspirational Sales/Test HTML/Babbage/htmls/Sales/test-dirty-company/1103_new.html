@@ -1,0 +1,560 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/grid-32vw-1.css"/>
+		<link rel="stylesheet" type="text/css" href="../current/runApp/css/panDefault4.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/inspirational.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/flexselect.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/jquery-ui.css"/>
+		<script type="text/javascript" src="../current/runApp/scripts/jquery.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery-ui.min.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/liquidmetal.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery.flexselect.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/inspirational.js">
+		</script>
+		<script type="text/javascript" src="../current/runApp/scripts/panDefault3.js">
+		</script>
+		<title>
+			Inspirational Sales
+		</title>
+	</head>
+	<body class="proAppNest device-desktop">
+		<div class="WebApp Sales">
+			<div class="warningHome">
+				<div class="warning">
+					<div class="title">
+						Warning messages
+					</div>
+					<div class="messages">
+						<div class="message">
+							workbook setting now is set to 42241
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="block _popOverHome">
+				<div class="popOver medium" id="popOver-editCompanySettings_10001" style="display:none;">
+					<div class="popOver-header">
+						<div class="popOver-headerTitle">
+							Edit bedrijf settings for AAANieuweCompanyName
+						</div>
+						<div class="buttonBox js popOver-headerClose" data-jscall="onClose-saveForm,onClose-unLoadAjax">
+							<div class="buttonText">
+								x
+							</div>
+						</div>
+					</div>
+					<div class="popOver-content">
+						<input type="hidden" value="Inspirational/index.php?webapp=Sales&a=83a69a6e038ef377b1f9bfb2ec239730ZjNlY2VlZGQxYmUyNDM5NyI_aIW2pvI--3Uyqr24RQJczBHvcHo11ilcIy8nDpUiaVPBf887z-SaIOuwmpn3wg~~
+&b=callback(editCompanySettings,10001)" name="ajaxUrl"/>
+						<div class="ajaxTargetArea">
+						</div>
+					</div>
+					<div class="popOver-footer">
+					</div>
+				</div>
+				<div class="popOver small" id="popOver-newSmallTask_10001_0_0" style="display:none;">
+					<div class="popOver-header">
+						<div class="popOver-headerTitle">
+							Nieuwe taak
+						</div>
+						<div class="buttonBox js popOver-headerClose" data-jscall="onClose-saveForm,onClose-unLoadAjax">
+							<div class="buttonText">
+								x
+							</div>
+						</div>
+					</div>
+					<div class="popOver-content">
+						<input type="hidden" value="Inspirational/index.php?webapp=Sales&a=eb5217e4b8528e308590ad39d3df7f08ZjNlY2VlZGQxYmUyNDM5N7x9vFe4kfyXQmH7BejltpGYTbpXNEhlPM8fq9emNBKE
+&b=callback(newSmallTask,10001,0,0)" name="ajaxUrl"/>
+						<div class="ajaxTargetArea">
+						</div>
+					</div>
+					<div class="popOver-footer">
+					</div>
+				</div>
+				<div class="popOver small" id="popOver-newBlogCard_10001_0" style="display:none;">
+					<div class="popOver-header">
+						<div class="popOver-headerTitle">
+							New note
+						</div>
+						<div class="buttonBox js popOver-headerClose" data-jscall="onClose-saveForm,onClose-unLoadAjax">
+							<div class="buttonText">
+								x
+							</div>
+						</div>
+					</div>
+					<div class="popOver-content">
+						<input type="hidden" value="Inspirational/index.php?webapp=Sales&a=5bf3cd03853c6ca3b8682dd2ab0f0be1ZjNlY2VlZGQxYmUyNDM5Nx-4CJoBeXakeKZFjlDamVRGIzjuoEINkTbYRYoOdTJH
+&b=callback(newBlogCard,10001,0)" name="ajaxUrl"/>
+						<div class="ajaxTargetArea">
+						</div>
+					</div>
+					<div class="popOver-footer">
+					</div>
+				</div>
+				<div class="popOver small" id="popOver-editUserCard_1" style="display:none;">
+					<div class="popOver-header">
+						<div class="popOver-headerTitle">
+							User card for Manager
+						</div>
+						<div class="buttonBox js popOver-headerClose" data-jscall="onClose-saveForm,onClose-unLoadAjax">
+							<div class="buttonText">
+								x
+							</div>
+						</div>
+					</div>
+					<div class="popOver-content">
+						<input type="hidden" value="Inspirational/index.php?webapp=Sales&a=37b3b709075a5ed217ad4ad015f354d7ZjNlY2VlZGQxYmUyNDM5N6c8VUuILB_1deQ_ppnCSbYhn30QWPnakFUAuGWFyg65
+&b=callback(editUserCard,1)" name="ajaxUrl"/>
+						<div class="ajaxTargetArea">
+						</div>
+					</div>
+					<div class="popOver-footer">
+					</div>
+				</div>
+			</div>
+			<div>
+				insertCompany(newCompany)
+			</div>
+			<div class="table dump">
+				<div class="tableRow header">
+					<div class="tableItem">
+						company.name
+					</div>
+					<div class="tableItem">
+						company.idCompanyStatus
+					</div>
+					<div class="tableItem">
+						company.idSegment
+					</div>
+					<div class="tableItem">
+						company.idCompanySize
+					</div>
+					<div class="tableItem">
+						company.tel
+					</div>
+					<div class="tableItem">
+						company.email
+					</div>
+					<div class="tableItem">
+						company.webSite
+					</div>
+					<div class="tableItem">
+						company.address
+					</div>
+					<div class="tableItem">
+						company.zipcode
+					</div>
+					<div class="tableItem">
+						company.city
+					</div>
+					<div class="tableItem">
+						company.postAddress
+					</div>
+					<div class="tableItem">
+						company.postZipcode
+					</div>
+					<div class="tableItem">
+						company.postCity
+					</div>
+					<div class="tableItem">
+						company.idRep
+					</div>
+					<div class="tableItem">
+						company.idCampagne
+					</div>
+					<div class="tableItem">
+						company.idCompany
+					</div>
+					<div class="tableItem">
+						company.idAccount
+					</div>
+					<div class="tableItem">
+						company.lastUpdated
+					</div>
+					<div class="tableItem">
+						company.created
+					</div>
+					<div class="tableItem">
+						company.idTag
+					</div>
+				</div>
+				<div class="tableRow">
+					<div class="tableItem">
+						AAANieuweCompanyName
+					</div>
+					<div class="tableItem">
+						8
+					</div>
+					<div class="tableItem">
+						1
+					</div>
+					<div class="tableItem">
+						1
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+					</div>
+					<div class="tableItem">
+						1
+					</div>
+					<div class="tableItem">
+						0
+					</div>
+					<div class="tableItem">
+						10001
+					</div>
+					<div class="tableItem">
+						1
+					</div>
+					<div class="tableItem">
+						42241
+					</div>
+					<div class="tableItem">
+						42241
+					</div>
+					<div class="tableItem">
+						0
+					</div>
+				</div>
+			</div>
+			<div class="cellBox cell_30">
+				<div class="pageHeaderSection sticky">
+					<div class="pageHeaderLine">
+						<div class="cellBox cell_6 title">
+							Inspirational Sales
+						</div>
+						<div class="appLinks right">
+							<a href="Inspirational/index.php?webapp=Sales" class="navButton appLink active">
+								<div class="buttonBox nav">
+									<div class="buttonText">
+										Sales
+									</div>
+								</div>
+							</a>
+							<a href="Inspirational/index.php?webapp=Account" class="navButton appLink">
+								<div class="buttonBox nav">
+									<div class="buttonText">
+										Account
+									</div>
+								</div>
+							</a>
+							<a href="Inspirational/index.php?webapp=Settings" class="navButton appLink">
+								<div class="buttonBox nav">
+									<div class="buttonText">
+										Settings
+									</div>
+								</div>
+							</a>
+							<div class="appLink">
+								25 Aug 2015
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mainMenuSection sticky">
+					<div class="mainMenu">
+						<div class="left bold">
+							<a href="Inspirational/index.php?webapp=Sales&a=d83b208097e5de9d08e3521e361962a5ZjNlY2VlZGQxYmUyNDM5NzSR4fEVMlzF0T4uHFObi9FMk2kRP6Cz7cu6bLUv5enW
+&b=callback(tasksPage)" class="navButton">
+								<div class="buttonBox nav">
+									<div class="buttonText">
+										Taken
+									</div>
+								</div>
+							</a>
+							<a href="Inspirational/index.php?webapp=Sales&a=4b6475ca9a46907aa7a125ae43974c9dZjNlY2VlZGQxYmUyNDM5N_Zy_pfavAWILenUPFjnp5jkXiC8BnCI5NJy_o-nyFJO
+&b=callback(companiesPage)" class="navButton  active">
+								<div class="buttonBox nav">
+									<div class="buttonText">
+										Bedrijven
+									</div>
+								</div>
+							</a>
+							<a href="Inspirational/index.php?webapp=Sales&a=9138372f382c5d8a4c6a7e4040c16114ZjNlY2VlZGQxYmUyNDM5N3AHoxj_hzLcJV49Yv7inpoufhkBOCdee-evvMFrPf5d
+&b=callback(contactsPage)" class="navButton">
+								<div class="buttonBox nav">
+									<div class="buttonText">
+										Contacten
+									</div>
+								</div>
+							</a>
+						</div>
+						<div class="right">
+							<div class="left popOver-open" data-jscall="onOpen-loadAjax" id="popOverOpen-editUserCard_1">
+								<div class="welcomeBox">
+									<div class="title">
+										Welkom,
+									</div>
+									<div class="name bold">
+										Manager
+									</div>
+									<div class="spacer bold">
+										|
+									</div>
+								</div>
+							</div>
+							<a href="Inspirational/index.php?webapp=Sales&a=8fb3e2c86b66ed79a355b1d554bbb6e5ZjNlY2VlZGQxYmUyNDM5N4eYGCVBY1P6mvkwYgZK71Ga4noK30c2P0TgTI8VU1g7
+&b=callback(logoutPage)" class="navButton">
+								<div class="buttonBox nav">
+									<div class="buttonText">
+										Afmelden
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="pageContentContainer">
+					<div class="cellBox cell_25 right mainPageSection">
+						<div class="mainContentSection">
+							<div>
+								<div class="cellBox cell_15 left">
+									<div class="cardHeader">
+										<div id="companyCardMsg_10001" class="component" data-callback="companyCardMsg,10001" data-dependson="company">
+										</div>
+									</div>
+									<div class="cardTabBox">
+										<div class="tabBox">
+											<div class="tabBox-tabLine">
+												<div class="tabBoxCell">
+													<div class="buttonBox js tabLine-tab" data-jscall="onOpen-loadAjax,onClose-unLoadAjax" id="tabBoxTab-uniqid123_0">
+														<div class="buttonText">
+															Bedrijfsgegevens
+														</div>
+													</div>
+												</div>
+												<div class="tabBoxCell">
+													<div class="buttonBox js tabLine-tab" data-jscall="onOpen-loadAjax,onClose-unLoadAjax" id="tabBoxTab-uniqid123_1">
+														<div class="buttonText">
+															Contacten
+														</div>
+													</div>
+												</div>
+												<div class="tabBoxCell">
+													<div class="buttonBox js tabLine-tab" data-jscall="onOpen-loadAjax,onClose-unLoadAjax" id="tabBoxTab-uniqid123_2">
+														<div class="buttonText">
+															Samenvoegen
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tabBox-contentBox">
+												<div class="contentBox-content" id="tabBoxContent-uniqid123_0" style="display:none;">
+													<input type="hidden" value="Inspirational/index.php?webapp=Sales&a=1c51a6876743380034237c091e95fec0ZjNlY2VlZGQxYmUyNDM5N0IZzkQ7Ab0oUjLy_VDapZv7KtSw44uGRyy4R6zVIjqW
+&b=callback(companyDetails,10001)" name="ajaxUrl"/>
+													<div class="ajaxTargetArea">
+														<div id="companyDetails_10001" class="component" data-callback="companyDetails,10001" data-dependson="company">
+															<div>
+																<div class="headerCardHeader headerCardTitle">
+																	<div class="buttonBox js popOver-open" data-jscall="onOpen-loadAjax" id="popOverOpen-editCompanySettings_10001">
+																		<div class="buttonText">
+																			Bedrijf aanpassen
+																		</div>
+																	</div>
+																</div>
+																<div class="cellBox cell_7">
+																	<div class="formatTable headerCardTable">
+																		<div class="tableBody">
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Naam
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					AAANieuweCompanyName
+																				</div>
+																			</div>
+																			<div class="tableRow  even">
+																				<div class="tableItem key cell cell_2">
+																					Tel.
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					
+																				</div>
+																			</div>
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Website
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					
+																				</div>
+																			</div>
+																			<div class="tableRow  even">
+																				<div class="tableItem key cell cell_2">
+																					Adress
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					
+																				</div>
+																			</div>
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Plaats
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					
+																				</div>
+																			</div>
+																			<div class="tableRow  even">
+																				<div class="tableItem key cell cell_2">
+																					Post adress
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					
+																				</div>
+																			</div>
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Post plaats
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+																<div class="cellBox cell_7">
+																	<div class="formatTable headerCardTable">
+																		<div class="tableBody">
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Afspraak
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					Geen afspraak
+																				</div>
+																			</div>
+																			<div class="tableRow  even">
+																				<div class="tableItem key cell cell_2">
+																					Status
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					Nog niet benaderd
+																				</div>
+																			</div>
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Segment
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					Sales diensten
+																				</div>
+																			</div>
+																			<div class="tableRow  even">
+																				<div class="tableItem key cell cell_2">
+																					Grootte
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					Onbekend
+																				</div>
+																			</div>
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Account
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					Inspirational Sales
+																				</div>
+																			</div>
+																			<div class="tableRow  even">
+																				<div class="tableItem key cell cell_2">
+																					Campagne
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																				</div>
+																			</div>
+																			<div class="tableRow  odd">
+																				<div class="tableItem key cell cell_2">
+																					Tag
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																				</div>
+																			</div>
+																			<div class="tableRow  even">
+																				<div class="tableItem key cell cell_2">
+																					Agent
+																				</div>
+																				<div class="tableItem value cell cell_5">
+																					Manager
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="contentBox-content" id="tabBoxContent-uniqid123_1" style="display:none;">
+													<input type="hidden" value="Inspirational/index.php?webapp=Sales&a=fedf34ad54780b57c5efc4c8c091303dZjNlY2VlZGQxYmUyNDM5N0IZzkQ7Ab0oUjLy_VDapZvjeOcu1E5kVUdgAAC9qqfWY79JJbljcgGXLJar3GalDg~~
+&b=callback(companyContactList,10001)" name="ajaxUrl"/>
+													<div class="ajaxTargetArea">
+													</div>
+												</div>
+												<div class="contentBox-content" id="tabBoxContent-uniqid123_2" style="display:none;">
+													<input type="hidden" value="Inspirational/index.php?webapp=Sales&a=c35f4995516e18b285ef2ca295b15ae8ZjNlY2VlZGQxYmUyNDM5NzjjesVcIFKsr9XTgoFZPx63rNEeGWGD1geLop1hsGoI
+&b=callback(mergeCompanyForm,10001)" name="ajaxUrl"/>
+													<div class="ajaxTargetArea">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="cellBox cell_8 right">
+									<div id="companyBlogList_10001_0" class="component" data-callback="companyBlogList,10001,0" data-dependson="company,contact,blog,task,sendMail">
+										<div class="blogUtilContainer">
+											<div class="cell cell_2">
+												<div class="addItemCard popOver-open" data-jscall="onOpen-loadAjax" id="popOverOpen-newSmallTask_10001_0_0">
+													<div class="addItemSymbol">
+													</div>
+													<div class="addItemText">
+														Taak
+													</div>
+												</div>
+											</div>
+											<div class="cell cell_2">
+												<div class="addItemCard popOver-open" data-jscall="onOpen-loadAjax" id="popOverOpen-newBlogCard_10001_0">
+													<div class="addItemSymbol">
+													</div>
+													<div class="addItemText">
+														PostIt
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="blogContainer">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

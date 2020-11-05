@@ -1,0 +1,130 @@
+iRead GUIless Interface
+
+1. Purpose and definitions
+
+The iRead GUIless Interface (IGI) allows third party applications to expose scanning and text recognition functionality through their own user interface. In this specification, a third party application exposing iRead functionality through the IGI is referred to as an integrator.
+
+The integrator invokes the iRead application with special command line arguments. iRead reports back to the integrator via the standard output stream as well as the exit status of the iRead process. Using these operating system facilities for communication allows the integrator to be as simple as a batch file which redirects iRead's standard output and checks the errorlevel value to determine the result of an operation.
+
+2. Commands
+
+2.1 Getting a list of available scanning devices
+
+Command:
+iRead.exe /listofscanningdevices
+
+This writes a list of available scanning devices to standard output. A scanning device is any local or network device capable of providing an image. Scanners, cameras, and some mass storage media containing image files would come under this heading. Technically this is a list of all devices for which a TWAIN or WIA driver is found in the system. Additionally, if a Silver Creations sceyeX device is connected, it will be contained in the list to enable the iRead Now functionality (please consult the iRead User Manual for details).
+
+The output contains one line of text per device found. Every line has the form:
+id;name
+where id is an integer greater than zero which identifies the device in a subsequent /selectscanningdevice operation, and name is the device name for displaying to the user in the integrator's interface.
+
+If no scanning device was found, iRead produces no output.
+
+2.2 Selecting a scanning device
+
+Command:
+iRead.exe /selectscanningdevice id
+where id is the corresponding id in the list of scanning devices returned by a previous /listofscanningdevices operation, or zero meaning any scanning device.
+
+This selects the scanning device which should be preferred by subsequent scanning operations. Default behavior is not to prefer any scanning device. When no scanning device is preferred, iRead will use the first scanning device it can find for acquiring an image. If a scanning device is preferred, iRead will first check if the preferred scanning device is present, and, if so, use the preferred scanning device to acquire an image. If the preferred scanning device is not present, iRead will fall back to default behavior.
+
+This command should be used immediately after using /listofscanningdevices. If, in between the two calls, scanners are connected to or disconnected from the machine or scanning device drivers are modified, an unexpected device or no device at all may be selected.
+
+The special value of zero (0) for the id parameter means that no scanning device will be preferred.
+
+This command produces no output.
+
+2.3 Scanning and recognition
+
+Command:
+iRead.exe /scanandrecognize
+
+This acquires an image from the preferred scanning device, or an arbitrary scanning device if none is preferred. The image then undergoes text recognition and the resulting text is written to standard output.
+
+2.4 Setting the list of recognition languages
+
+Command:
+iRead.exe /setlistofrecognitionlanguages language_list
+where language_list is a comma-separated list of language identifiers. A language identifier is a two-letter string such as en for English, fr for French, de for German, it for Italian, or sp for Spanish.
+
+Text recognition must make some assumption about which languages to expect in the document. This command sets the list of languages the recognition process should look for. Generally, a smaller list will lead to a faster recognition process. However, if the document contains text in a language not included in the list, the recognition process may be much slower, and precision will deteriorate.
+
+An empty list of languages is not allowed.
+
+2.5 Licensing iRead
+
+Command:
+iRead.exe /registerlicense serial_number
+where serial_number is an iRead license number.
+
+This command turns a demo version of iRead into a fully licensed version. Note that the other commands in this interface only work for a fully licensed version. The demo version does not expose this interface (except, of course, for this command).
+
+3. Error codes
+
+iRead reports errors by returning a non-zero exit status. The following codes may be returned:
+
+1: No text found. This is returned when a /scanandrecognize operation has determined that the document is apparently empty. Usually this means no page is present, the page is facing away from the scanner or camera lens, or the page is empty or contains only graphics.
+
+2: Scanner not found. This is returned when the id provided to the /selectscanningdevice command does not correspond to any scanning device in the system. In this case, the setting is not modified. This is also returned when a /scanandrecognize command fails because no scanner was found, in which case no output is produced.
+
+3: Invalid argument. This is returned when a parameter to one of the commands was invalid, such as an invalid language identifier.
+
+4: License error. This is returned when the given command cannot be performed because iRead is not fully licensed for the current user. This is also returned when trying to license iRead with an invalid serial number.
+
+4. Language identifiers
+
+The following language identifiers are recognized:
+
+en: English
+de: German
+fr: French
+nl: Dutch
+no: Norwegian
+sv: Swedish
+fi: Finnish
+da: Danish
+is: Icelandic
+pt: Portuguese
+sp: Spanish
+ca: Catalan
+gl: Galician
+it: Italian
+mt: Maltese
+el: Greek
+pl: Polish
+cs: Czech
+sk: Slovak
+hu: Hungarian
+sl: Slovenian
+hr: Croatian
+ro: Romanian
+sq: Albanian
+tr: Turkish
+et: Estonian
+lv: Latvian
+lt: Lithuanian
+eo: Esperanto
+sr: Serbian
+mk: Macedonian
+mo: Moldavian
+bg: Bulgarian
+be: Byelorussian
+uk: Ukrainian
+ru: Russian
+ce: Chechen
+af: Afrikaans
+eu: Basque
+br: Breton
+id: Indonesian
+ku: Kurdish
+la: Latin
+lb: Luxembourgian
+sc: Sardinian
+sw: Swahili
+cy: Welsh
+ja: Japanese
+zh: Chinese
+ko: Korean
+
+This list is incomplete as some unlikely candidates have been omitted. Note that these identifiers correspond to the ISO 639-1 standard.

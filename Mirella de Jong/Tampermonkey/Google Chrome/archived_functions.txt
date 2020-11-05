@@ -1,0 +1,173 @@
+function changeAttrForId(id, attr, newValue) {
+    "use strict";
+    // Verander een ATTRIBUUT van generieke ELEMENTEN:
+    try {
+        let element = document.getElementById(id);
+        let i = 0;
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null && element !== undefined) {
+            // Controleer de lengte van beiden ARGUMENTEN:
+            if (attr.length > 0 && newValue.length > 0) {
+                // Bestaat het ATTRIBUUT al en is deze hetzelfde als wat je
+                // wenst te verwijderen? Dan pas veranderen:
+                if (element[i].getAttribute(attr) !== newValue) {
+                    element[i].setAttribute(attr, newValue);
+                }
+            }
+        }
+    } catch (err) {
+        // Functienaam en foutmelding naar de CONSOLE sturen:
+        debugConsoleMessage(1, 1, "changeAttrForId: " + err.message);
+    }
+}
+
+function setAccessKeyForId(id, key) {
+    "use strict";
+    // Stel een ACCESS KEY in voor een specifiek ELEMENT:
+    try {
+        let element = document.getElementById(id);
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null && element !== undefined) {
+            // Controleer de lengte van ARGUMENT KEY en het ATTRIBUTE zelf:
+            if (key.length > 0 && element.getAttribute("accesskey") !== key) {
+                element.setAttribute("accesskey", key);
+            }
+        }
+    } catch (err) {
+        // Functienaam en foutmelding naar de CONSOLE sturen:
+        debugConsoleMessage(1, 1, "setAccessKeyForId: " + err.message);
+    }
+}
+
+function setTitleForId(id, title) {
+    // Stelt een TITEL in voor een uniek ELEMENT:
+    try {
+        let element = document.getElementById(id);
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null) {
+            // Controleer de lengte van ARGUMENT TITEL:
+            if (title.length > 0) {
+                // Bestaat de TITLE al en is deze hetzelfde als wat je gaat
+                // toewijzen? Dan overslaan:
+                if (element.getAttribute("title") !== title) {
+                    element.setAttribute("title", title);
+                }
+            }
+        }
+    } catch (err) {
+        debugConsoleMessage(1, "setTitleForId: " + err.message);
+    }
+}
+
+function removeRoleFromClassName(className, role) {
+    "use strict";
+    // Verwijder een ARIA-ROL van een generiek ELEMENT:
+    try {
+        let elementen = document.getElementsByClassName(className);
+        let i = 0;
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (elementen !== null && elementen !== undefined) {
+            while (elementen[i]) {
+                // Controleer de lengte van ARGUMENT ROLE:
+                if (role.length > 0) {
+                    // Bestaat de ROLE en is deze hetzelfde als wat je wenst te
+                    // verwijderen? Dan pas verwijderen:
+                    if (elementen[i].getAttribute("role") === role) {
+                        elementen[i].removeAttribute("role");
+                    }
+                }
+                i += 1;
+            }
+        }
+    } catch (err) {
+        // Functienaam en foutmelding naar de CONSOLE sturen:
+        debugConsoleMessage(1, 1, "removeRoleFromClassName: " + err.message);
+    }
+}
+
+function changeAttrForClassName(className, attr, newValue) {
+    "use strict";
+    // Verander een ATTRIBUUT van generieke ELEMENTEN:
+    try {
+        let elementen = document.getElementsByClassName(className);
+        let i = 0;
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (elementen !== null && elementen !== undefined) {
+            while (elementen[i]) {
+                // Controleer de lengte van beiden ARGUMENTEN:
+                if (attr.length > 0 && newValue.length > 0) {
+                    // Bestaat het ATTRIBUUT al en is deze hetzelfde als wat je
+                    // wenst te verwijderen? Dan pas veranderen:
+                    if (elementen[i].getAttribute(attr) !== newValue) {
+                        elementen[i].setAttribute(attr, newValue);
+                    }
+                }
+                i += 1;
+            }
+        }
+    } catch (err) {
+        // Functienaam en foutmelding naar de CONSOLE sturen:
+        debugConsoleMessage(1, 1, "changeAttrForClassName: " + err.message);
+    }
+}
+
+function changeAttrForId(id, attr, newValue) {
+    "use strict";
+    // Verander een ATTRIBUUT van generieke ELEMENTEN:
+    try {
+        let element = document.getElementById(id);
+        let i = 0;
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null && element !== undefined) {
+            // Controleer de lengte van beiden ARGUMENTEN:
+            if (attr.length > 0 && newValue.length > 0) {
+                // Bestaat het ATTRIBUUT al en is deze hetzelfde als wat je
+                // wenst te verwijderen? Dan pas veranderen:
+                if (element[i].getAttribute(attr) !== newValue) {
+                    element[i].setAttribute(attr, newValue);
+                }
+            }
+        }
+    } catch (err) {
+        // Functienaam en foutmelding naar de CONSOLE sturen:
+        debugConsoleMessage(1, 1, "changeAttrForId: " + err.message);
+    }
+}
+
+function setAccessKeyForId(id, key) {
+    "use strict";
+    // Stel een ACCESS KEY in voor een specifiek ELEMENT:
+    try {
+        let element = document.getElementById(id);
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null && element !== undefined) {
+            // Controleer de lengte van ARGUMENT KEY en het ATTRIBUTE zelf:
+            if (key.length > 0 && element.getAttribute("accesskey") !== key) {
+                element.setAttribute("accesskey", key);
+            }
+        }
+    } catch (err) {
+        // Functienaam en foutmelding naar de CONSOLE sturen:
+        debugConsoleMessage(1, 1, "setAccessKeyForId: " + err.message);
+    }
+}
+
+function setTitleForId(id, title) {
+    // Stelt een TITEL in voor een uniek ELEMENT:
+    try {
+        let element = document.getElementById(id);
+        // Controleer of de VARIABELE een ELEMENT kent:
+        if (element !== null) {
+            // Controleer de lengte van ARGUMENT TITEL:
+            if (title.length > 0) {
+                // Bestaat de TITLE al en is deze hetzelfde als wat je gaat
+                // toewijzen? Dan overslaan:
+                if (element.getAttribute("title") !== title) {
+                    element.setAttribute("title", title);
+                }
+            }
+        }
+    } catch (err) {
+        debugConsoleMessage(1, "setTitleForId: " + err.message);
+    }
+}

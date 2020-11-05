@@ -1,0 +1,320 @@
+/* symply business.css */
+
+	div.cell {min-height:2px;}
+	.deadlineDate.red 		{ color:#dd0011;}	
+	.deadlineDate.yellow 	{ color:#dd9900;}
+
+/* page */
+	.pageHeaderLine	.appLink		{ color:#999; font-size:11px; margin-left:20px; float:left; clear:none;}
+	.pageHeaderLine	.appLink.active	{ color:#444; }
+
+/* funnel page */
+	/* header card */
+	/* appearance */
+	.funnelColumnHeader 			{ 	font-weight:bold;color:#444444; background-color:#dddddd; }
+
+	.funnelColumnHeader.closedFunnelArrow {	border-radius:4px; }
+	.funnelColumnHeader.rightFunnelArrow {	border-top-right-radius:4px; border-bottom-right-radius:4px; background-image:url('faseStartPunt.png'); 	background-repeat:no-repeat; background-position:center left; }
+	.funnelColumnHeader.midFunnelArrow  {	background-image:url('faseArrow.png'); 	background-repeat:no-repeat; background-position:center center; background-size:100% 40px; }
+	.funnelColumnHeader.leftFunnelArrow {	border-top-left-radius:4px; border-bottom-left-radius:4px; background-image:url('faseEindPunt.png'); 	background-repeat:no-repeat; background-position:center right; }
+
+	/* positioning */
+	.funnelColumnHeader	{ text-align:center; }
+	/* layout */
+	.funnelColumnHeader { padding-top:10px;height:30px;	margin-bottom:10px;				}
+
+	/* funnel card */
+	/* appearance */	
+	.funnelCard				{ border-top-right-radius:4px; border-bottom-right-radius:4px; }
+	.funnelCard				{ border-left:5px solid #dddddd;	border-top:1px solid #dddddd;border-bottom:1px solid #dddddd; border-right:1px solid #dddddd;		}
+
+	.funnelCard.yellow		{ border-left:5px solid #dd9900; 		}
+	.funnelCard.red			{ border-left:5px solid #dd0011; 		}
+
+/*	.funnelCard.green		{ border-left:8px solid #339933; 	border-top:1px solid #339933;border-bottom:1px solid #339933; border-right:1px solid #339933;	} */
+
+	.funnelCard.red .deadline 		{ color:#dd0011;}
+	.funnelCard.yellow .deadline	{ color:#dd9900;}
+/*	.funnelCard.green .deadline		{ color:#339933;} */
+	
+	.funnelCard .companyName	{ font-weight:bold; }
+	.funnelCard .quoteTitle,
+	.funnelCard .contactName,
+	.funnelCard .companyCity,
+	.funnelCard .deadline		{ margin-bottom:3px;font-size:90%; }
+
+	/* positioning */
+
+	/* layout */
+	.funnelCard					{ min-height:30px; width:calc(100% - 30px);  padding:5px 10px; margin-top:15px; }
+	.funnelCard .companyName 	{ margin-bottom:5px;}
+	.funnel						{ margin-top:20px; }	
+
+/* HEADER CARD */
+	.cardHeader				{ margin-bottom:30px; }
+	.headerCardTitle		{ font-weight:bold; }
+	.headerCardTable .key	{ color:#999; } 
+	.headerCardBody .popOver-open:hover { text-decoration:underline; }
+	.headerCardTable .tableBody .tableItem { padding-bottom:0px; padding-top:3px;}
+
+	.cardWarning			{ background-color:#efef77; padding:5px; }
+
+/* BLOG */
+	/* appearance */
+	.blogFooter,
+	.blogHeader				{ color:#999; }
+	.blogHeader .dark		{ color:#444; line-height:20px; padding-bottom:3px;}
+	textarea.blogContent	{ border:none; background:#fff; color:#000; resize:none;  cursor:pointer;font-family: Tahoma,Geneva,sans-serif; font-size: 13px;}
+
+	.blogCard.even textarea.blogContent,
+	.blogCard.even .blogBody,
+	.blogCard.even .blogHeader		{ background-color:#fafafc; }
+
+	.blogCard .blogHeader		{ border-top-right-radius:4px; border-top-left-radius:4px; }
+	textarea.blogContent,
+	.blogCard.even .blogBody	{ border-bottom-right-radius:4px; border-bottom-left-radius:4px; }
+	
+	/* positioning */
+	textarea.blogContent	{position:absolute; overflow:hidden;box-sizing: border-box;}
+	.hiddenBlogContent		{visibility: hidden;box-sizing: border-box;}
+	.blogBody				{overflow:hidden; position:relative;}
+
+	/* layout */
+	.cardBlog				{ width:300px; }
+	.blogCard				{ margin-bottom:5px; width:90%; border:6px solid transparent; border-radius:10px;}
+	.blogCard.active		{ border:6px solid #e0e0eb; }
+	.blogCard.active .blogHeader,
+	.blogCard.active .blogBody,
+	.blogCard.even textarea.blogContent	{ background-color:white; opacity:0.5 }
+	
+	
+	.blogContainer			{ height:540px; overflow-y:scroll; }
+	textarea.blogContent	{ width:100%; height:100%; margin:0px; padding:0px;}
+	.hiddenBlogContent		{ width:85%; padding:6px;}
+
+	.blogHeader, .blogBody	{ padding:5px; }
+	.cardBlog .addItemCard	{ padding-top:0px; }	
+
+	.blogForm textarea		{ height:215px; }
+
+/* TASK CARD */
+	.h_8 textarea				{ height:444px; }
+	.h_4 textarea				{ height:222px; }
+	.h_2 textarea				{ height:100px; }
+
+	
+/* SCORE CARD */
+
+	/* appearance */
+	.scoreCardTitle			{font-weight:bold; border-bottom:1px solid #000; }
+	
+	/* layout */
+	.scoreCardTitle			{ padding:10px 0px; }
+	
+/* DASHBOARD */
+	/* appearance */
+										
+	.dashboardCardTitle					{ font-weight:bold; border-bottom:1px solid #000;}
+	.trend-up							{ background-image:url('trend-up.png'); 		background-repeat:no-repeat; background-position:center center; }
+	.trend-down							{ background-image:url('trend-down.png'); 		background-repeat:no-repeat; background-position:center center; }
+	.trend-stable						{ background-image:url('trend-stable.png'); 	background-repeat:no-repeat; background-position:center center; }
+	/* positioning */	
+	
+	/* layout */
+	.dashboardCardTitle					{ padding:10px 0px; }
+	
+	.formatTable.scrollBox	.tableBody	{ height:260px; overflow-y:scroll; }
+	.dashboardCard						{ margin-bottom:75px; }
+	.trend-up,
+	.trend-down,
+	.trend-stable						{ width:20px; height:20px; }
+
+
+/* homePageDashBoard */
+	/* appearance */
+	.userGoalList .underlineRows .tableBody	{ border-top:1px solid #ddd; }
+
+	.gaugeBox .targetBox .title 			{ color:#999;			}
+	.gaugeBox .targetBox .target 			{ color:#999;			}
+	.gaugeBox .targetBox .current 		{ font-size:120%; 		}
+	.gaugeBox .targetBox .current.red 	{ color:#dd0011; 		}
+	.gaugeBox .targetBox .current.green 	{ color:#339933; 		}
+	.gaugeBox .targetBox .current.yellow 	{ color:#dd9900; 		}
+
+	.goalValue.red 		{ color:#dd0011; 		}
+	.goalValue.green 	{ color:#339933; 		}
+	.goalValue.yellow 	{ color:#dd9900; 		}
+	
+	/* positioning */	
+	.gaugeBox				{ position:relative; }
+	.gaugeBox .targetBox	{ position:absolute; top:45px; text-align:center;}
+	/* layout */
+	.gaugeBox				{ margin:0px auto; width:200px; height:100px;}
+	.gaugeBox .targetBox	{ width:inherit; }
+	.userGoalList 			{ padding-top:10px; }
+
+
+/* Page Util Section */
+	/* appearance */
+		
+	.quoteSearchBox input,
+	.contactSearchBox input,
+	.companySearchBox input				{font-size: 13px; 	font-family:Tahoma, Geneva, sans-serif; color: #444; }
+
+
+	.quoteSearchBox input,
+	.contactSearchBox input,
+	.companySearchBox input				{ border:1px solid #000; }
+	/* positioning */
+	.mainPageUtilSection .addItemCard 	{ float:left; clear:none;}
+
+	.quoteSearchBox,
+	.contactSearchBox,
+	.companySearchBox					{ float:right; clear:none;}
+	/* layout */
+
+	.quoteSearchBox,
+	.contactSearchBox,
+	.companySearchBox					{ width:172px; height:40px;}
+
+	.quoteSearchBox input,
+	.contactSearchBox input,
+	.companySearchBox input				{ height:30px; width:calc(100% - 22px);padding:0px 10px;}
+	
+	.disabled.companySearchBox			{ padding:5px 0px 5px 5px;float:right; clear:none; border: 1px solid #999; color:#999; width:167px; height:20px;}
+
+	
+/* extended table */
+	.tableAsHeader						{color:#999;}
+	
+/* ad hoc */
+	.assignForm							{ margin-top:20px; }
+	
+/* dashBoard */
+	.dashboardSection					{ margin-bottom:20px; }
+	.dashboardSectionChart				{ overflow:hidden; }
+	.dashboardSectionHeader				{ border-bottom:1px solid black; margin-bottom:10px; }
+	.dashboardSectionTitle				{ font-weight:bold; padding-bottom:10px;}
+	.dashboardSectionBody				{ padding-bottom:10px;}
+
+/* fix */
+	.blogBody							{ z-index:-1; }
+	.addItemCard						{ padding:0px; }
+	.blogUtilContainer					{ height:30px; }
+
+
+/*  excelExample */
+	.excelExample									{ margin:30px 0px; }
+	.excelExampleRow .cell							{ padding-top:5px;height:25px; border:1px solid #999;margin-left:0px; text-align:center; }
+	.excelExampleTitle								{ font-size:120%; margin-bottom:20px;}
+	.excelExampleRow.header + .excelExampleRow 		{ font-size:90%; font-weight:bold; }
+
+	.generalMessage									{ font-size:120%; margin:20px 0px;}
+
+/* email links */
+	.headerCardTable a:hover				{ text-decoration:underline; }
+	.formatTable.indicateLinks a:hover		{ text-decoration:underline; }
+	
+/* Gant Chart */
+	.gantChart.deliverableRow:hover				{ background-color:#eee; }
+	
+	.gantChartHeader							{ color:#999;border-bottom:1px solid #ddd; }
+	.gantChart.project							{ margin-bottom:20px; margin-top:20px; }
+	
+	.gantChart.projectRow						{ height:20px; padding-top:5px; border-bottom:1px solid #ddd;}
+	.gantChart.deliverableRow					{ height:20px; padding-top:5px; }
+	.gantChart .deliverableData					{ height:20px; overflow:hidden; text-overflow:clip;	white-space:nowrap;}
+	.gantChart .popOver-open:hover				{ text-decoration:underline;}
+	.gantChart.deliverableRow .deliverable		{ margin-top:5px;height:10px; float:left; clear:none;}
+	.deliverable.done							{ background-color:green; 	}
+	.deliverable.todo							{ background-color:yellow; 	}
+	.deliverable.ongoing						{ background-color:blue; 	}
+	.deliverable.wait							{ background-color:#ddd; 	}
+
+/* gender images */
+	.genderImage								{ width:95%; }
+
+/* symbol */
+	.prioritySymbol			{ background-size:16px 16px; background-image:url('prioritySymbol.png'); background-repeat:no-repeat; background-position:center center; }
+	.prioritySymbol			{float:left; clear:none; }
+	.prioritySymbol			{ width:20px; height:20px; }
+
+	.uploadSymbol			{ background-size:20px 20px; background-image:url('uploadSymbol.png'); background-repeat:no-repeat; background-position:center center; }
+	.uploadSymbol			{float:left; clear:none; }
+	.uploadSymbol			{ width:20px; height:20px; }
+	.transferSymbol			{ background-size:20px 20px; background-image:url('transferSymbol.png'); background-repeat:no-repeat; background-position:center center; }
+	.transferSymbol			{float:left; clear:none; }
+	.transferSymbol			{ width:20px; height:20px; }
+
+	.downloadSymbol			{ background-size:20px 20px; background-image:url('downloadSymbol.png'); background-repeat:no-repeat; background-position:center center; }
+	.downloadSymbol			{float:left; clear:none; }
+	.downloadSymbol			{ width:20px; height:20px; }
+
+	
+	.disabled .addItemSymbol	{ background-size:20px 20px; background-image:url('addItemSymbolGray.png'); background-repeat:no-repeat; background-position:center center; }
+	.disabled.addItemCard		{ opacity:0.5;  }
+	.disabled.addItemCard:hover { text-decoration:none;}
+	
+		
+	.stickyReplacer			{ background-color:#fff; }
+	.mainPageUtilSection	{ height:40px; }
+	
+	.downloadButton .buttonBox.nav 
+	{
+		float:left;
+		color:#fff; 
+		background-color:#000; border-radius:4px; cursor:pointer; font-size:15px;padding:5px 10px;
+	}
+	
+/* reminders */
+	.reminderBox				{ min-height:55px; }
+	.reminderCard				{  }
+	.reminderSymbol				{ background-size:16px 16px; background-image:url('reminderSymbol.png'); 	background-repeat:no-repeat; background-position:center center; }
+
+	.reminderSymbol				{ width:20px; height:20px; }
+	.reminderCard .reminderSymbol { margin:0 auto; opacity:0.5; }
+	.reminderCard .reminderTime { text-align:center;font-size:80%; clolor:#ddd; }
+
+	.reminderSymbol.active		{ background-size:16px 16px; background-image:url('reminderSymbolActive.png'); 	background-repeat:no-repeat; background-position:center center; }
+	.reminderSymbol.active 		{ opacity:1.0; }
+	
+/* postIt */
+	.postIt					{ background-color:yellow; margin-bottom:15px; width:95%; }
+	.postItHeader			{ color:#999; padding:5px;}
+	.postItBody				{ padding:5px 5px 10px 5px; }
+	
+	.blogCard.postIt.even	.blogHeader	{ background-color:yellow; }
+	
+/* email word list */
+	.emailWordList	{line-height:25px; }
+	
+/* top select */
+	.pageHeaderSection					{ height:50px; }
+	.pageHeaderLine .colFormat .tableRow { margin-bottom:0px; }
+	.pageHeaderLine .colFormat .tableItem { padding:0px; }
+	
+	a.navButton.asButton { float:left; }
+	a.navButton.asButton .buttonBox	{background-color:#000; border-radius:4px;}
+	a.navButton.asButton .buttonText { color:#fefefe; font-size:15px;padding:5px 10px; }
+
+/* header card underline title */
+	.headerCardHeader.headerCardTitle .popOver-open:hover { text-decoration:underline;}
+	.headerCardHeader .headerCardTitle .popOver-open:hover { text-decoration:underline;}
+	
+/* last seen */
+	.lastSeen .tableItem.bare .buttonText { padding:4px 0px !important; }
+
+	.sendMailHeaderLine	{ height:25px; }
+	.sendMailBody .textAsDiv { border:1px solid gray; padding:10px; min-height:50px; line-height:17px;}
+	.sendMailBody .textAsDivLine { margin-bottom:5px; }
+
+/* callTo */
+	.bare a.callTo {padding:15px 0px;}
+	.headerCardTable span.callTo  { float:left; clear:none; padding:0px 5px; }
+	.headerCardTable a.callTo { float:left; clear:none; }
+	
+/* header TOP MSG */
+	.headerCardMsgSpace		{ margin:5px 0px;}
+	.headerCardMsg			{ font-weight:bold; font-size:120%; padding:5px 0px; text-align:center;}
+	.headerCardMsg.success	{ background-color:#55ff55;}
+	.headerCardMsg.stop		{ background-color:#ff5555;}

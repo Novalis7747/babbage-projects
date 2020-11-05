@@ -1,0 +1,13 @@
+
+javascript:OpenECMLink('514C5F522B4F252E49350506002B7975720E6E07084D373B29', 'PDF', '280928984', '53445E232D442C5E49205C304558212221542B435742343129663E4B4136365B3C5258545F5C5049353B313236156C7A4373727D0302196F3140462449');
+
+<div align="center" style="z-index: 10;">
+
+	<iframe name="iframe" width="1220" height="854" src="toonBetalingsoverzicht.do?button=voorbeeldPdf&amp;_conv=4151&amp;controleNummerRelatieDc=900086148&amp;controleLabelKey=001">
+		<object width="100%" height="100%" classid="clsid:8856F961-340A-11D0-A96B-00C04FD705A2"><PARAM NAME="ExtentX" VALUE="32279"><PARAM NAME="ExtentY" VALUE="22595"><PARAM NAME="ViewMode" VALUE="0"><PARAM NAME="Offline" VALUE="0"><PARAM NAME="Silent" VALUE="0"><PARAM NAME="RegisterAsBrowser" VALUE="0"><PARAM NAME="RegisterAsDropTarget" VALUE="1"><PARAM NAME="AutoArrange" VALUE="0"><PARAM NAME="NoClientEdge" VALUE="0"><PARAM NAME="AlignLeft" VALUE="0"><PARAM NAME="NoWebView" VALUE="0"><PARAM NAME="HideFileNames" VALUE="0"><PARAM NAME="SingleClick" VALUE="0"><PARAM NAME="SingleSelection" VALUE="0"><PARAM NAME="NoFolders" VALUE="0"><PARAM NAME="Transparent" VALUE="0"><PARAM NAME="ViewID" VALUE="{0057D0E0-3573-11CF-AE69-08002B2E1262}"><PARAM NAME="Location" VALUE="http://flits/TDcRmWeb/uc086/toonBetalingsoverzicht.do?button=voorbeeldPdf&amp;_conv=4151&amp;controleNummerRelatieDc=900086148&amp;controleLabelKey=001"></object>
+		<html style="display: none;">
+			<head></head>
+			<body></body>
+		</html>
+	</iframe>
+</div>

@@ -1,0 +1,20 @@
+<UserScriptConfig>
+	<Script basedir="Decos_Klantcontact" checkRemoteUpdates="1" dependhash="4466afd4105ef59795e06a030038e7b197a68742" description="" enabled="true" filename="Decos_Klantcontact.user.js" installTime="1465479211103" modified="1465479211103" name="Decos_Klantcontact" namespace="http://www.babbage.com/" noframes="false" runAt="document-end" updateMetaStatus="unknown" uuid="c474e1ea-17da-4829-8cbe-c0f1da7772ad" version="1.1" installurl="file:///D:/Decos_Klantcontact.user.js" updateurl="file:///D:/Decos_Klantcontact.user.js">
+		<Grant>SetAttributeForClassname</Grant>
+		<Grant>RemoveAttributeFromClassname</Grant>
+		<Grant>ChangeAttributeForClassname</Grant>
+		<Grant>SetRoleForClassname</Grant>
+		<Grant>SetLabelForIDForID</Grant>
+		<Grant>SetRoleAndLabelForID</Grant>
+		<Grant>SetAttributeForID</Grant>
+		<Grant>SetRoleForID</Grant>
+		<Grant>addGlobalStyle</Grant>
+		<Grant>SetRoleForInvisibleIcon</Grant>
+		<Grant>SetAttributeForTagName</Grant>
+		<Grant>SetRoleForTagName</Grant>
+		<Grant>SetLabelForIDForID</Grant>
+		<Include>http://klantcontact.joinsuite.nl/*</Include>
+		<Require filename="Babbage_Javascript_Library.js"/>
+		<Require filename="jquery.min.js"/>
+	</Script>
+</UserScriptConfig>

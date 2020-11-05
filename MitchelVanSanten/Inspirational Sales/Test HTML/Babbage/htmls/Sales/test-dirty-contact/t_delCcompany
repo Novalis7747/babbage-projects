@@ -1,0 +1,50 @@
+#!/bin/bash
+
+
+
+
+cb="callback(updateCompany,company)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"company":"company.name":"0":"value":"Acer"	\
+table:"company":"company.name":"0":"type":"text"	\
+table:"company":"company.idCompanyStatus":"0":"type":"select"	\
+table:"company":"company.idSegment":"0":"type":"select"	\
+table:"company":"company.idCompanySize":"0":"type":"select"	\
+table:"company":"company.tel":"0":"value":"0123 - 987654"	\
+table:"company":"company.tel":"0":"type":"text"	\
+table:"company":"company.email":"0":"value":"Acer@Acer.com"	\
+table:"company":"company.email":"0":"type":"text"	\
+table:"company":"company.webSite":"0":"value":"Acer.com"	\
+table:"company":"company.webSite":"0":"type":"text"	\
+table:"company":"company.address":"0":"value":"Foster Avenue 893"	\
+table:"company":"company.address":"0":"type":"text"	\
+table:"company":"company.zipcode":"0":"value":"2230"	\
+table:"company":"company.zipcode":"0":"type":"text"	\
+table:"company":"company.city":"0":"value":"Kostinbrod"	\
+table:"company":"company.city":"0":"type":"text"	\
+table:"company":"company.postAddress":"0":"value":"postFoster Avenue 893"	\
+table:"company":"company.postAddress":"0":"type":"text"	\
+table:"company":"company.postZipcode":"0":"value":"post2230"	\
+table:"company":"company.postZipcode":"0":"type":"text"	\
+table:"company":"company.postCity":"0":"value":"postKostinbrod"	\
+table:"company":"company.postCity":"0":"type":"text"	\
+table:"company":"company.idRep":"0":"type":"select"	\
+table:"company":"company.idCampagne":"0":"type":"select"	\
+table:"company":"company.idCompany":"0":"value":"1"	\
+table:"company":"company.idCompany":"0":"type":"hidden"	\
+table:"company":"company.idAccount":"0":"value":"1"	\
+table:"company":"company.idAccount":"0":"type":"hidden"	\
+table:"company":"company.lastUpdated":"0":"value":"41271"	\
+table:"company":"company.lastUpdated":"0":"type":"hidden"	\
+table:"company":"company.created":"0":"value":"41876"	\
+table:"company":"company.created":"0":"type":"hidden"	\
+table:"company":"company.idTag":"0":"value":"1"	\
+table:"company":"company.idTag":"0":"type":"hidden"	\
+table:"company":"company.idCompanyStatus":"0":"value":"7"	\
+table:"company":"company.idSegment":"0":"value":"1"	\
+table:"company":"company.idCompanySize":"0":"value":"4"	\
+table:"company":"company.idRep":"0":"value":"1"	\
+table:"company":"company.idCampagne":"0":"value":"1"	\
+> ${dir}/${fn}_new.html 2>&1

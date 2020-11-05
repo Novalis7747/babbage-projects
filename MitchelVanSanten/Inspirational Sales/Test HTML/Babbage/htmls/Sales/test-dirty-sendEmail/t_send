@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+
+
+cb="callback(setMailAsSend,emailTemplate)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"emailTemplate":"emailTemplate.idEmailTemplate":"0":"type":"select"	\
+table:"emailTemplate":"contact.email":"0":"value":"Jack@Jack.com"	\
+table:"emailTemplate":"contact.email":"0":"type":"text"	\
+table:"emailTemplate":"emailTemplate.subject":"0":"value":"Mijn email onderwerp 2"	\
+table:"emailTemplate":"emailTemplate.subject":"0":"type":"text"	\
+table:"emailTemplate":"emailContent":"0":"type":"textarea"	\
+table:"emailTemplate":"emailTemplate.idAccount":"0":"value":"1"	\
+table:"emailTemplate":"emailTemplate.idAccount":"0":"type":"hidden"	\
+table:"emailTemplate":"contact.idContact":"0":"value":"1002"	\
+table:"emailTemplate":"contact.idContact":"0":"type":"hidden"	\
+table:"emailTemplate":"emailTemplate.idEmailTemplate":"0":"value":"100"	\
+table:"emailTemplate":"emailContent":"0":"value":"Geachte Manager onderhoud & reparatie  Jack  Nicholson  mevrouw, naar aanleiding van ons gesprek van 25 augustus 2015 mail ik u lekker niet. Groet Manager."	\
+> ${dir}/${fn}_new.html 2>&1

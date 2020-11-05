@@ -1,0 +1,6 @@
+inspirational.js gebruiken om je code in te testen.
+JavaScript code kan in function pan_UserInit(base) geplaatst worden.
+
+AC staat voor Cards,
+AP staat voor Pages,
+Dirty staat voor testen, deze niet gebruiken, mogen wel ingezien worden.

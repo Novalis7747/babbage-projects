@@ -1,0 +1,121 @@
+Situatie momenteel. 20170907.
+
+Er is nog wel een probleem met de focus dat bekeken wordt samen met Dolphin.
+Binnen Windows Verkenner worden bestanden en mappen niet gemarkeerd.
+Ook als je ALT-TAB gebruikt, worden individuele items niet gemarkeerd.
+
+* Eigen versie van VF Zoeker geinstalleerd. Die van Nico lijkt niet compleet in Git?
+  - Aanpassing gemaakt dat er op een gedeelte van het WINDOW_TITLE gezocht wordt.
+  - Oude foutmelding als je geen zoekterm opgeeft is opgelost.
+  - Code opgeruimd.
+
+IBM Notes start en het wachtwoord veld wordt voorgelezen.
+Als IBM Notes is gestart, gebruik je SHIFT + F om te zoeken.
+Selecteer CZ Applicatie Portal en druk ENTER.
+
+Notitie: soms lijkt het alsof SuperNova niets doet en dat IBM Notes niet reageert.
+Dit komt door de Citrix omgeving, deze reageert soms even niet en dan komen zoekodprachten
+niet goed door. Dit ligt buiten mijn kunnen. De melding die je krijgt van IBM Notes staat
+in de taakbalk: Notes configuration settings refreshed.
+-- Soms reageert IBM Notes zelf niet, dan wordt het scherm voorzien van een witte waas.
+   Dan duurt het enkele seconden alvorens IBM Notes weer reageert. Geen foutmeldingen.
+-- Lijkt ook met de algemene snelheid binnen Citrix samen te hangen, misschien vanwege WiFi?
+
+In de CZ Applicatie Portal heb je een hele lijst met items.
+Ilse gebruikt er twee, namelijk:
+
+* Workflow Debiteurenbeheer CZ. (Ook wel DAS genoemd).
+* Workflow E-mail Bewakings Systeem. (Ook wel EBS genoemd).
+
+Deze lijst is inmiddels toegankelijk, alleen soms dien je nog CTRL + ; te gebruiken om het beeld
+te verversen en de focus goed te zetten. (Volgens Dolphin komt dit door de vele MSAA events).
+Er zijn wel buttons, maar die kun je negeren. Sluiten knop == ESCAPE toets en Openen == ENTER toets.
+De knop Alle details werkt sowieso niet, genereert een error vanuit Notes zelf.
+Knoppen zijn ook te benaderen met SHIFT + F.
+
+[ Workflow Debiteurenbeheer CZ ]
+
+Na het openen van deze applicatie moet je een keuze maken.
+Je kiest voor Overzicht (SHIFT + F), en dan Hoofd- / subproces. Hoofd- / subproces is standaard actief.
+De ESCAPE toets werkt hier niet, de sneltoets CTRL + W sluit dit tabblad wel.
+Je navigeert van Overzicht, Hoofd- / subproces naar de lijst met de F6 toets.
+
+Dan in de lijst moet je voor CZ kiezen. Standaard is alles open geklapt. Gebruik de HOME toets.
+Dat alles uitgeklap is kun je verhelpen met de knop Details minimaliseren, te benaderen met de
+ALT + 2 toets combinatie. ALT + 1 klapt alles weer uit. Je kunt ook SHIFT + F gebruiken.
+
+Nadat je een keus hebt gemaakt open je een brief. Je krijgt dan een voorbeeld te zien door het
+programma Client for Windows. Dit is niet toegankelijk. Oplossing: CTRL + P en het document
+printen naar een PDF bestand en dan automatisch M.B.V. iRead lezen. Dit is getest onder mijn
+account en werkt met de standaard door CZ gebruikte PDF printer, maar er zijn nog problemen.
+(Standaard printer wel op de eDoc PDF Printer instellen, wellicht een keer afmelden / aanmelden
+ alvorens Client for Windwos het overneemt).
+
+* Notitie: probleem met iRead, zeer instabiel. Foutmelding doorgestuurd naar Handy-Tech.
+* Client for Windows print de pagina, maar met een layer er bovenop. Alleen deze layer wordt
+  door iRead gelezen. Dit vereist aandacht.
+  - Mogelijke oplossing, naar afbeelding printen: http://www.pdfforge.org/pdfcreator .
+    - eDoc ondersteunt dit niet.
+  - Of snel de layers kunnen mergen van een PDF en er een image van maken?
+
+Als je de details van de brief wilt lezen nadat je deze hebt geopend, geen TAB toets gebruiken!
+Dan sluit je de brief weer! Gebruik de pijltoetsen om door de informatie te navigeren nadat
+je naar de virtuele focus bent geschakeld.
+De knoppen om een brief / document in behandeling te nemen zijn te benaderen met de sneltoetsen.
+ALT + 2, ALT + 3 of door SHIFT + F te gebruiken.
+
+-- Als je een document hebt geopend, dan kun je oudere / eerdere documenten raadplegen.
+   Deze actie (en anderen) openen het venster met de titel DASCM_HTA. Dit is te sluiten
+   met ALT + SPATIE en dan te kiezen voor SLUITEN. ESC en ALT + F4 werken niet altijd!
+
+Brief aanmaken gaat inmiddels goed, tekst staat niet meer door elkaar.
+Er moet wel geschakeld worden tussen de PC focus en de virtuele focus.
+Zorg altijd dat IBM Notes gemaximaliseerd staat! WIN-KEY + PIJL OMHOOG.
+Dit omdat anders de informatie van het scherm valt. Ook zonder SuperNova.
+Er kunnen selecties gemaakt worden, er kan een brief opgesteld worden. Alleen het
+voorbeeld dat getoond wordt in Word, is alles behalve toegankelijk?
+
+Het openen van het voorbeeld in Word duurt erg lang, zeker 7+ seconden.
+In de tussentijd spreekt SuperNova niets uit.
+
+Word wordt geopend met een CZ Sjabloon. Er is maar 1 tabblad aanwezig: CZ - Standaard Correspondentie.
+Dit tabblad en alle opties in het lint zijn prima toegankelijk. Je komt in het tabblad met de ALT toets.
+Het is zaak om daar de knop Beveiliging te vinden en de beveiliging uit te schakelen.
+Het beeld verversen helpt niet met CTRL + ;. Een ALT-TAB naar een andere applicatie en terug werkt.
+Als je dat hebt gedaan wordt de informatie ineens wel uit Word voorgelezen.
+
+[ Workflow E-mail Bewakings Systeem ]
+
+Na het openen van de CZ Applicatie Portal kies je voor E-mail Bewakings Systeem.
+Daar kies voor Details en dan Geen details. Details is te benaderen met SHIFT + F.
+
+Dan krijg je de details te zien van de mail en is er de keus om de mail in behandeling
+te nemen, door te sturen of af te handelen als SPAM. Alle knoppen zijn toegankelijk met
+SHIFT + F.
+Met ALT + TAB kun je naar het voorbeeld venster. Dit is een HTA document en wordt prima
+voorgelezen en de scroll loopt netjes mee.
+
+Als je een mail hebt geopend, en kiest voor Behandelen, Doorsturen naar Workflow, dan
+opent een nieuw venster.
+
+
+
+De e-mail in behandeling nemen werkt. Ook een antwoord bericht schrijven werkt.
+Wel leest SuperNova steeds je hele antwoord terug.
+Alle knoppen zijn te bedienen met SHIFT + F.
+Sommige tekstvakken zijn al ingevuld, dit zijn vooraf gedefinieerde teksten.
+Deze kun je veranderen door op de tekst te gaan staan en dan ALT + PIJL OMLAAG te
+gebruiken, dit opent een keuze menu met alternatieven.
+Attachment toevoegen opent een Verkenner achtig venster van IBM Notes. Toevoegen
+van een bijlage gaat ook.
+
+
+
+To do:
+* iRead. Mike heeft de update geinstalleerd. Moet nog uitgerold worden.
+* Brief voorbeeld in Word. Nagevraagd bij Jeroen Hartog. (Standaard Word werkt wel).
+* EBS e-mail in behandeling nemen en testen.
+* Functie van toetsaanslag middels "user32.dll" testen binnen Citrix.
+
+* Windows Verkenner. Wederom aan Dolphin gevraagd. Geen antwoord.
+* Cursor routing toetsen. Wederom aan Dolphin gevraagd. Geen antwoord.

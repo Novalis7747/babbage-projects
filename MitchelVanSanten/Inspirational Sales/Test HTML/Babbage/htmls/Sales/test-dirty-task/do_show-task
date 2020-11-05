@@ -1,0 +1,323 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+
+fn=1100
+
+cb="callback(companyCard,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from company card also at contact" >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newSmallTask,11,0,0)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from company card also at contact" >> ${dir}/${fn}_new.html 2>&1
+
+kaart="company"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 			\
+"callback:insertTask"											\
+"set:table[newTask][task.subject][0][value]:newCompanyTask ook bij contact"		\
+"set:table[newTask][task.idContact][0][value]:1011"				\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new task from company card also at contact" >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyCard,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from company card also at contact" >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(contactCard,1011)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from company card also at contact" >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(taskCard,103)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from company card also at contact" >> ${dir}/${fn}_new.html 2>&1
+
+
+fn=1110
+
+cb="callback(contactCard,1012)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from contact card" >> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(newSmallTask,0,1012,0)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from contact card" >> ${dir}/${fn}_new.html 2>&1
+
+kaart="contact"
+php ${tools}/extract.php ${dir}/${fn}_new.html form \
+"callback:insertTask"											\
+"set:table[newTask][task.subject][0][value]:newContactTask"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new task from contact card" >> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(contactCard,1012)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from contact card" >> ${dir}/${fn}_new.html 2>&1
+
+
+
+fn=1120
+cb="callback(companyCard,41)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from task" >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(taskCard,100)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from task" >> ${dir}/${fn}_new.html 2>&1
+
+kaart="tft"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 			\
+"callback:updateAndNewTask"										\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new task from task" >> ${dir}/${fn}_new.html 2>&1
+
+kaart="tftNew"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 			\
+"set:table[newTask][task.subject][0][value]:newCompanyTaskFormTask"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new task from task" >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyCard,41)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new task from task" >> ${dir}/${fn}_new.html 2>&1
+
+
+# set task done
+fn=1130
+cb="callback(companyCard,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "set task done" >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(taskCard,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "set task done" >> ${dir}/${fn}_new.html 2>&1
+
+kaart="setDone"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 		\
+"set:table[taskMain][task.idTaskStatus][0][value]:4"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "set task done" >> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(companyCard,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "set task done" >> ${dir}/${fn}_new.html 2>&1
+
+
+# new contact task card
+fn=1140
+
+cb="callback(tasksPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newContactTaskCard,38,1038,1,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newTaskCard,38,1038,1,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+
+kaart="nconttask"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 			\
+"set:table[taskMain][task.deadline][0][value]:24 Aug 2015"		\
+"set:table[taskMain][task.subject][0][value]:new contact task"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(tasksPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newCompanyTaskCard,38,1,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new company task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newTaskCard,38,0,1,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+kaart="ncomptask"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 			\
+"set:table[taskMain][task.deadline][0][value]:24 Aug 2015"		\
+"set:table[taskMain][task.subject][0][value]:new company task"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new company task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyCard,38)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new company task card " >> ${dir}/${fn}_new.html 2>&1
+
+# new task from task
+fn=1150
+cb="callback(newSmallTask,0,0,5)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+kaart='tft_kaal'
+php ${tools}/extract.php ${dir}/${fn}_new.html form 			\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+
+fn=1160
+
+cb="callback(tasksPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newContactTaskCard,47,1047,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newTaskCard,47,1047,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+
+kaart="nconttask"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 				\
+"callback:insertAndNewTask"											\
+"set:table[taskMain][task.deadline][0][value]:24 Aug 2015"			\
+"set:table[taskMain][task.subject][0][value]:new contact task"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(tasksPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newCompanyTaskCard,47,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new company task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newTaskCard,47,0,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new contact task card " >> ${dir}/${fn}_new.html 2>&1
+
+kaart="ncomptask"
+php ${tools}/extract.php ${dir}/${fn}_new.html form 				\
+"callback:insertAndNewTask"											\
+"set:table[taskMain][task.deadline][0][value]:24 Aug 2015"			\
+"set:table[taskMain][task.subject][0][value]:new company task"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+echo "new company task card " >> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyCard,47)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "new company task card " >> ${dir}/${fn}_new.html 2>&1
+
+loadSql ${account} ../test.sql

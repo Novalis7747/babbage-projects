@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="content-type" content="application/xhtml+xml; charset=iso-8859-1" />
+        <meta name="language" content="nl" />
+        <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+        <title>Babbage</title>
+    </head>
+    <body>
+        <div class="main">
+            <div class="content">
+                <button onclick="accFunction()">Aanpassing</button>
+                <div class="spacer"></div>
+                <div class="logo">
+                    <img src="logo_babbage.jpg" alt="" />
+                </div>
+                <div class="mainheader">
+                    Babbage werkplek aanpassingen
+                    Demonstratie pagina
+                </div>
+                <div class="spacer"></div>
+                <div class="item">
+                    <div class="header">
+                        Informatie toegankelijkheid
+                    </div>
+                    <div class="paragraph">
+                        Babbage is het enige bedrijf in Nederland met jaren ervaring met de implementatie van alle beschikbare schermleesprogramma's in thuissituaties en zakelijke werkplekken. Organisaties maken naast de standaardpakketten voor kantoorautomatisering vaak gebruik van bedrijfsspecifieke software. Deze software is meestal niet in staat om goed samen te werken met schermleessoftware. De komst van virtueel gebruik van programma's in virtuele omgevingen maakt het er ook niet gemakkelijker op. Om tegemoet te komen aan alle mogelijke situaties die wij tegenkomen in zakelijke omgevingen is het belangrijk om deze met een open blik te benaderen. Samen met beheerders en eindgebruiker komen we tot de best mogelijke werkplekaanpassing.
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="item">
+                    <div class="header">
+                        Software analyse
+                    </div>
+                    <div class="paragraph">
+                        Werkplekaanpassingen beginnen met een gedegen analyse. Babbage is gespecialiseerd om de werkzaamheden en werkplek te analyseren om tot een wel-overwogen advies te komen. We bestuderen de workflow en bepalen welke applicaties een aanpassing moeten ondergaan en welke hulpmiddelen en trainingen daarvoor ingezet moeten worden.
+                    </div>
+                    <div class="paragraph">
+                        Het is belangrijk dat de werkgever en uiteraard systeembeheer goed meewerken aan het software onderzoek. Het onderzoeks rapport dient als basis voor de totale inrichting van de werkplek. We begeleiden u, indien nodig, met de UWV aanvraag.
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="item">
+                    <div class="header">
+                        Scripting en netwerk installaties
+                    </div>
+                    <div class="paragraph">
+                        Programma's zijn lang niet altijd toegankelijk voor schermleessoftware en dat kan worden opgelost met behulp van scripting. Op deze manier kan de schermleessoftware worden aangepast aan de specifieke situatie. Met scripting alleen is het probleem meestal echter nog niet opgelost. Babbage heeft veel kennis en ervaring met allerlei systemen zoals Citrix en andere virtualisaties om ook in die gevallen een systeem werkend te krijgen. Indien onze kennis niet toereikend is kunnen we terug vallen op onze samenwerking met specialisten en beheerders van grote Citrix server parken. De combinatie van technische kennis op verschillende vlakken zoals ICT, ergonomie en andere technische onderwerpen maakt Babbage de best mogelijke partner om uw werkplekaanpassing te realiseren. Wij leveren alleen oplossingen die echt werken.
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="item">
+                    <div class="header">
+                        Nazorg en service
+                    </div>
+                    <div class="paragraph">
+                        De wereld rondom uw werkplek is continue in beweging. Babbage blijft voor u zorgen nadat de werkplekaanpassing is uitgevoerd en de trainingen zijn gegeven. Voor vragen staat de vakkundige helpdesk van Babbage altijd voor u klaar. De meeste vragen lossen we aan de telefoon of via internet meteen op, maar soms is het nodig om snel ter plekke ondersteuning te bieden. Het team dat de werkplekaanpassing realiseert is altijd bereikbaar en kan indien nodig bij u langs komen.
+                    </div>
+                </div>
+                <div class="spacer"></div>
+                <div class="item">
+                    <div class="header">
+                        Aanvraagformulier
+                    </div>
+                    <div class="paragraph">
+                        Vraag een werkplek onderzoek aan door onderstaand formulier in te vullen:
+                    </div>
+                    <div class="form">
+                        <span>Voornaam:</span><br /><input id="ao12" class="lineup"></input><br />
+                        <span>Achternaam:</span><br /><input id="ao34" class="lineup"></input><br />
+                        <span>Woonplaats:</span><br /><input id="ao51" class="lineup"></input><br />
+                        <span>Postcode:</span><br /><input id="ao77" class="lineup"></input><br />
+                        <br />
+                        <a>
+                            <img src="knop_verzenden.jpg" alt="" id="send" />
+                        </a>
+                        <a>
+                            <img src="knop_wissen.jpg" alt="" id="clear" />
+                        </a>
+                    </div>
+                </div>
+                <div class="footer">
+                    <p>
+                        <a href="http://validator.w3.org/check?uri=https://www.babbage.com/public/acctest/"><img src="http://www.w3.org/Icons/valid-xhtml11" alt="Valid XHTML 1.1" height="31" width="88" /></a>
+                    </p>
+                </div>
+            </div>
+            <script type="text/javascript">
+                function accFunction() {
+                    var headers = document.getElementsByClassName("header");
+                    var mainhead = document.getElementsByClassName("mainheader");
+                    var logoalt = document.getElementsByClassName("logo");
+                    var hi = 0;
+                    var mhi = 0;
+                    var la = 0;
+                    while (headers[hi]) {
+                        headers[hi].setAttribute("role", "heading");
+                        hi += 1;
+                    }
+                    while (mainhead[mhi]) {
+                        mainhead[mhi].setAttribute("role", "heading");
+                        mainhead[mhi].setAttribute("aria-level", "1");
+                        mhi += 1;
+                    }
+                    while (logoalt[la]) {
+                        logoalt[la].setAttribute("aria-label", "Afbeelding met het logo van Babbage, een rode achtergrond met een witte letter B");
+                        la += 1;
+                    }
+                    document.getElementById("ao12").setAttribute("aria-label", "Voornaam");
+                    document.getElementById("ao34").setAttribute("aria-label", "Achternaam");
+                    document.getElementById("ao51").setAttribute("aria-label", "Woonplaats");
+                    document.getElementById("ao77").setAttribute("aria-label", "Postcode");
+                    document.getElementById("send").parentNode.setAttribute("role", "button");
+                    document.getElementById("send").parentNode.setAttribute("aria-label", "Verzenden");
+                    document.getElementById("clear").parentNode.setAttribute("role", "button");
+                    document.getElementById("clear").parentNode.setAttribute("aria-label", "Wissen");
+                }
+            </script>
+        </div>
+    </body>
+</html>

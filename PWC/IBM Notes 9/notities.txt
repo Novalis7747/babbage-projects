@@ -1,0 +1,4 @@
+Script en mapping voor IBM Notes 9.
+
+* Agenda dient op lijstweergave te staan.
+* Homepage werkt in sommige gevallen niet goed, daar dit gebaseerd is op een MozillaWindows class. SuperNova 14.x en Mozilla werken niet samen.

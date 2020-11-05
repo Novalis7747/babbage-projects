@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+
+
+cb="callback(updateContactSettings,contact)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"contact":"contact.idSalutation":"0":"type":"select"	\
+table:"contact":"contact.firstName":"0":"value":"Hattie"	\
+table:"contact":"contact.firstName":"0":"type":"text"	\
+table:"contact":"contact.lastName":"0":"value":"McDaniel"	\
+table:"contact":"contact.lastName":"0":"type":"text"	\
+table:"contact":"contact.tel":"0":"value":"0482 618676"	\
+table:"contact":"contact.tel":"0":"type":"text"	\
+table:"contact":"contact.email":"0":"value":"Hattie@Hattie.com"	\
+table:"contact":"contact.email":"0":"type":"text"	\
+table:"contact":"contact.webSite":"0":"value":"www.linedin.com/McDaniel"	\
+table:"contact":"contact.webSite":"0":"type":"text"	\
+table:"contact":"contact.idCompany":"0":"type":"select"	\
+table:"contact":"contact.idContactStatus":"0":"type":"select"	\
+table:"contact":"contact.contactRole":"0":"value":"Marketing & Sales manager"	\
+table:"contact":"contact.contactRole":"0":"type":"text"	\
+table:"contact":"contact.idContact":"0":"value":"2001"	\
+table:"contact":"contact.idContact":"0":"type":"hidden"	\
+table:"contact":"contact.lastUpdated":"0":"value":"41271"	\
+table:"contact":"contact.lastUpdated":"0":"type":"hidden"	\
+table:"contact":"contact.created":"0":"value":"41271"	\
+table:"contact":"contact.created":"0":"type":"hidden"	\
+table:"contact":"contact.roleDescription":"0":"value":"Maintenance"	\
+table:"contact":"contact.roleDescription":"0":"type":"hidden"	\
+table:"contact":"contact.idSalutation":"0":"value":"1"	\
+table:"contact":"contact.idCompany":"0":"value":"1"	\
+table:"contact":"contact.idContactStatus":"0":"value":"3"	\
+> ${dir}/${fn}_new.html 2>&1

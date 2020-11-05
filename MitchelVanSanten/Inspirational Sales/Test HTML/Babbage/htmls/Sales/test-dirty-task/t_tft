@@ -1,0 +1,44 @@
+#!/bin/bash
+
+
+
+
+cb="callback(updateAndNewTask,taskMain,taskMaincompanySet)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"taskMaincompanySet":"company.idCompanyStatus":"0":"type":"select"	\
+table:"taskMain":"task.deadline":"0":"value":"12 Oct 2015"	\
+table:"taskMain":"task.deadline":"0":"type":"date"	\
+table:"taskMain":"task.deadlineTime":"0":"value":""	\
+table:"taskMain":"task.deadlineTime":"0":"type":"text"	\
+table:"taskMain":"task.idTaskPriority":"0":"type":"select"	\
+table:"taskMain":"task.idTaskStatus":"0":"type":"select"	\
+table:"taskMain":"task.subject":"0":"value":"No more pending tasks"	\
+table:"taskMain":"task.subject":"0":"type":"text"	\
+table:"taskMain":"task.task":"0":"type":"textarea"	\
+table:"taskMain":"task.idTask":"0":"value":"100"	\
+table:"taskMain":"task.idTask":"0":"type":"hidden"	\
+table:"taskMain":"task.idAccount":"0":"value":"1"	\
+table:"taskMain":"task.idAccount":"0":"type":"hidden"	\
+table:"taskMain":"task.idContact":"0":"value":"1041"	\
+table:"taskMain":"task.idContact":"0":"type":"hidden"	\
+table:"taskMain":"task.idCompany":"0":"value":"41"	\
+table:"taskMain":"task.idCompany":"0":"type":"hidden"	\
+table:"taskMain":"task.idCampagne":"0":"value":"1"	\
+table:"taskMain":"task.idCampagne":"0":"type":"hidden"	\
+table:"taskMain":"task.created":"0":"value":"42285"	\
+table:"taskMain":"task.created":"0":"type":"hidden"	\
+table:"taskMain":"task.idRep":"0":"value":"1"	\
+table:"taskMain":"task.idRep":"0":"type":"hidden"	\
+table:"taskMain":"task.idRepDone":"0":"value":"1"	\
+table:"taskMain":"task.idRepDone":"0":"type":"hidden"	\
+table:"taskMain":"task.doneDate":"0":"value":"42295"	\
+table:"taskMain":"task.doneDate":"0":"type":"hidden"	\
+table:"taskMaincompanySet":"company.idCompany":"0":"value":"41"	\
+table:"taskMaincompanySet":"company.idCompany":"0":"type":"hidden"	\
+table:"taskMaincompanySet":"company.idCompanyStatus":"0":"value":"2"	\
+table:"taskMain":"task.idTaskPriority":"0":"value":"1"	\
+table:"taskMain":"task.idTaskStatus":"0":"value":"4"	\
+table:"taskMain":"task.task":"0":"value":"But must have task"	\
+> ${dir}/${fn}_new.html 2>&1

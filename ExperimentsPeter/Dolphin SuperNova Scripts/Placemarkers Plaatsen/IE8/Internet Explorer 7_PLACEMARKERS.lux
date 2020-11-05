@@ -1,0 +1,134 @@
+require "strict"
+require "dolphin"
+require "addPlacemarker"
+
+
+-- Global constants
+ADDPL_SCRIPT = "placemarkersExtension"
+DEBUGLEVEL = 9
+
+
+-- At close down force a cleanup
+addplacemarkers_function_eventscriptclosedown = System.GetFunction("EventScriptCloseDown")
+function EventScriptCloseDown()
+	OutputDebugInfo({ADDPL_SCRIPT, "EventScriptCloseDown"}, 1)
+	collectgarbage("collect")
+	if addplacemarkers_function_eventscriptclosedown then addplacemarkers_function_eventscriptclosedown() end
+end
+
+
+-- Returns the active HTML document
+function GetHtmlDoc(doc_name)
+	OutputDebugInfo({ADDPL_SCRIPT, "GetHtmlDoc"}, 1)
+	local hWndFocus = System.GetFocus()
+	if not hWndFocus then return nil end
+	if not System.GetClassName(hWndFocus) == L"Internet Explorer_Server" then return nil end
+	
+	local oInterface2Dom = System.GetDOMObjectFromWindow(hWndFocus)
+	if not oInterface2Dom then return nil end
+	
+	local oDom = luacom.GetObject("",oInterface2Dom)
+	System.DeleteDOMObject(oInterface2Dom)		
+	if not oDom then return nil end 	
+
+	local oDoc = oDom
+	local typeinfo = luacom.GetTypeInfo(oDom)
+	local documentation = typeinfo:GetDocumentation()
+	if documentation.name == "IWebBrowser2" then 
+		oDoc = oDom.Document
+		if not oDoc then return nil	end
+	end
+
+	typeinfo = luacom.GetTypeInfo(oDoc)
+	documentation = typeinfo:GetDocumentation()
+	if documentation.name ~= "DispHTMLDocument" then return nil end
+	
+	OutputDebugInfo({ADDPL_SCRIPT, "GetHtmlDoc", tostring(doc_name), tostring(oDoc.domain), tostring(oDoc.URL)}, 9)	
+	if doc_name ~= oDoc.domain 
+		and doc_name ~= oDoc.URL 
+		and not (wstring.match(oDoc.URL, doc_name)) then 
+			return nil
+	end	
+	OutputDebugInfo({ADDPL_SCRIPT, "GetHtmlDoc", "htmldoc found", tostring(doc_name), tostring(oDoc.domain), tostring(oDoc.URL)}, 9)	
+	return oDoc
+end
+
+
+-- Adds an ALT text to an element with a specified ID
+function AddAltText(ie_doc, element_id, alt_text)
+	OutputDebugInfo({ADDPL_SCRIPT, "ReformatInputImg"}, 1)
+	local eIdElement = ie_doc:GetElementById(element_id)
+	if not eIdElement then return nil end
+	if not eIdElement.alt then
+			OutputDebugInfo({ADDPL_SCRIPT, "ReformatInputImg",": alt text added ", alt_text}, 9)
+			eIdElement.alt = alt_text
+	end
+	return true
+end
+
+
+-- Functions which add landmarks on a webpage, based on different criteria
+function AddLandmarkId(ie_doc, element_id, marker_role)
+	OutputDebugInfo({ADDPL_SCRIPT, "AddLandMarkId"}, 1)
+	local eElement = ie_doc:GetElementById(element_id)
+	if not eElement then return nil end
+
+	if not eElement.role then
+		OutputDebugInfo({ADDPL_SCRIPT, "AddLandMarkId", ": landmark set", element_id, marker_role}, 9)
+		eElement.role = marker_role
+	end		
+end
+
+function AddLandmarkExtClass(ie_doc, element_id, tag_name, class_name, marker_role)
+	OutputDebugInfo({ADDPL_SCRIPT, "AddLandMarkExtClass"}, 1)
+	local eIdElement = ie_doc:GetElementById(element_id)
+	if not eIdElement then return nil end
+
+	local eTagElements = eIdElement:GetElementsByTagName(tag_name)
+	if eTagElements.length <= 0 then return nil end
+
+	local eTagElement = nil
+	for var = 0, eTagElements.length -1 do
+		eTagElement = eTagElements(var)
+		if eTagElement and eTagElement.className and eTagElement.className == class_name then 
+			if not eTagElement.role then
+				OutputDebugInfo({ADDPL_SCRIPT, "AddLandMarkExtClass", ": landmark set", element_id, tag_name, tostring(class_name), marker_role}, 9)
+				eTagElement.role = marker_role
+				break
+			end
+		end
+	end
+	return true
+end
+
+function AddLandmarkExtTitle(ie_doc, element_id, tag_name, title_att, marker_role)
+	OutputDebugInfo({ADDPL_SCRIPT, "AddLandMarkExtTitle"}, 1)
+	local eIdElement = ie_doc:GetElementById(element_id)
+	if not eIdElement then return nil end
+
+	local eTagElements = eIdElement:GetElementsByTagName(tag_name)
+	if eTagElements.length <= 0 then return nil end
+
+	local eTagElement = nil
+	for var = 0, eTagElements.length -1 do
+		eTagElement = eTagElements(var)
+		if eTagElement and eTagElement.title and eTagElement.title == title_att then 
+			if  not eTagElement.role then
+				OutputDebugInfo({ADDPL_SCRIPT, "AddLandMarkExtClass", ": landmark set", element_id, tag_name, title_att, marker_role}, 9)
+				eTagElement.role = marker_role
+				break
+			end
+		end
+	end
+	return true
+end
+
+
+-- Debug function
+function OutputDebugInfo(string_table, debug_level)
+	if DEBUGLEVEL >= 99 then return end
+	if debug_level <= DEBUGLEVEL then
+		local aString = table.concat(string_table," ") 
+		System.OutputDebugString("<"..os.time()..">".. aString)
+	end
+end

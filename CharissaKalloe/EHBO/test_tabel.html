@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test tabel</title>
+</head>
+<body>
+	<!-- https://juicystudio.com/displayarticle.php/accessible_data_tables_static_headers.php?page=accessible_data_tables_static_headers.php -->
+	<div role="grid">
+		<div role="presentation">
+			<table role="presentation">
+				<tr role="row">
+					<th role="columnheader" id="1">Header 1</th>
+					<th role="columnheader" id="2">Header 2</th>
+					<th role="columnheader" id="3">Header 3</th>
+				</tr>
+				<!-- louter als test -->
+				<tr role="row">
+					<th role="columnheader" id="4" aria-hidden="true">Header 4</th>
+					<th role="columnheader" id="5" aria-hidden="true">Header 5</th>
+					<th role="columnheader" id="6" aria-hidden="true">Header 6</th>
+				</tr>
+			</table>
+		</div>
+		<div role="presentation">
+			<table role="presentation">
+				<tr role="row">
+					<td role="gridcell" aria-describedby="1">Cel 4</td>
+					<td role="gridcell" aria-describedby="2">Cel 4</td>
+					<td role="gridcell" aria-describedby="3">Cel 4</td>
+				</tr>
+				<tr role="row">
+					<td role="gridcell" aria-describedby="1">Cel 5</td>
+					<td role="gridcell" aria-describedby="2">Cel 5</td>
+					<td role="gridcell" aria-describedby="3">Cel 5</td>
+				</tr>
+				<tr role="row">
+					<td role="gridcell" aria-describedby="1">Cel 6</td>
+					<td role="gridcell" aria-describedby="2">Cel 6</td>
+					<td role="gridcell" aria-describedby="3">Cel 6</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

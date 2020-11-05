@@ -1,0 +1,118 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/grid-32vw-1.css"/>
+		<link rel="stylesheet" type="text/css" href="../current/runApp/css/panDefault4.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/inspirational.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/flexselect.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/jquery-ui.css"/>
+		<script type="text/javascript" src="../current/runApp/scripts/jquery.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery-ui.min.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/liquidmetal.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery.flexselect.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/inspirational.js">
+		</script>
+		<script type="text/javascript" src="../current/runApp/scripts/panDefault3.js">
+		</script>
+	</head>
+	<body class="proAppNest device-desktop">
+		<div class="WebApp Sales">
+			<div class="warningHome">
+				<div class="warning">
+					<div class="title">
+						Warning messages
+					</div>
+					<div class="messages">
+						<div class="message">
+							workbook setting now is set to 42241
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="block _popOverHome">
+			</div>
+			<div id="emailTemplateCard_1002" class="component" data-callback="emailTemplateCard,1002" data-dependson="contact,emailTemplate">
+				<form class="inputForm defaultForm" name="defaultForm" method="post" enctype="multipart/form-data" action="Inspirational/index.php?webapp=Sales">
+					<div style="display:none;">
+						<input type="submit" value="save" name="submit" data-callback="emailTemplateCard,1002"/>
+					</div>
+					<div>
+						<div class="cell_6">
+							<div class="formatTable colFormat">
+								<div class="tableBody">
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Template
+										</div>
+										<div class="tableItem value">
+											<select name="table[emailTemplate][emailTemplate.idEmailTemplate][0][value]" class="autoSubmit">
+												<option value="100" selected>
+													testEditEmailTemplate2
+												</option>
+												<option value="1">
+													testEmailTemplate1
+												</option>
+											</select>
+											<input type="hidden" value="select" name="table[emailTemplate][emailTemplate.idEmailTemplate][0][type]"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cell_17">
+							<div class="formatTable colFormat">
+								<div class="tableBody">
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Email
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="Jack@Jack.com" name="table[emailTemplate][contact.email][0][value]"/>
+											<input type="hidden" value="text" name="table[emailTemplate][contact.email][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Onderwerp
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="Mijn email onderwerp 2" name="table[emailTemplate][emailTemplate.subject][0][value]"/>
+											<input type="hidden" value="text" name="table[emailTemplate][emailTemplate.subject][0][type]"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cell_17 h_4">
+							<div class="textAreaHome">
+								<div class="title">
+									testEditEmailTemplate2
+								</div>
+								<div class="content">
+<textarea name="table[emailTemplate][emailContent][0][value]">Geachte Manager onderhoud & reparatie  Jack  Nicholson  mevrouw, naar aanleiding van ons gesprek van 25 augustus 2015 mail ik u lekker niet. Groet Manager.</textarea>
+									<input type="hidden" value="textarea" name="table[emailTemplate][emailContent][0][type]"/>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" value="1" name="table[emailTemplate][emailTemplate.idAccount][0][value]"/>
+						<input type="hidden" value="hidden" name="table[emailTemplate][emailTemplate.idAccount][0][type]"/>
+						<input type="hidden" value="1002" name="table[emailTemplate][contact.idContact][0][value]"/>
+						<input type="hidden" value="hidden" name="table[emailTemplate][contact.idContact][0][type]"/>
+					</div>
+					<div class="buttonHome">
+						<button type="submit" name="submit" value="submit" data-callback="setMailAsSend,emailTemplate">
+							<div class="buttonText">
+								Mail is verzonden
+							</div>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

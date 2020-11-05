@@ -1,0 +1,1 @@
+||www.npstool.nl/themes/_base/js/libs/jquery.chosen.js$script,first-party,important

@@ -1,0 +1,381 @@
+// ==UserScript==
+// @name        Realworks CRM
+// @namespace   http://www.babbage.com/
+// @description Toegankelijkheid van Realworks CRM verbeteren
+// @include     *://crm.realworks.nl/*
+// @require     http://www.babbage.com/library/Babbage_Javascript_Library.js
+// @version     0.8
+// @grant       none
+// ==/UserScript==
+
+/*
+  [ Notities ]
+  Return is een NodeList bij classes, deze op inhoud controleren met length > 0.
+  Anders is het per definitie altijd TRUE en wordt de IF-statement altijd uitgevoerd.
+  
+  Mocht het script onverhoopt meerdere malen uitgevoerd worden, is er niets aan de hand.
+  Behalve een aantal console.log meldingen. Knoppen of dergelijke worden niet gereproduceerd.
+*/
+
+function zoekOpdracht() {
+  /*
+    Elementen met de volgende classes worden later op de DOM geplaatst,
+    bijvoorbeeld: na het voltooien van een zoekopdracht binnen "Eigen Woningen".
+  */
+  if (document.getElementsByClassName("fa fa-bars hoverIcon").length > 0) {
+    SetRoleAndLabelForClass("fa fa-bars hoverIcon","button","Menu: acties");
+  }
+  if (document.getElementsByClassName("fa fa-print printerIcon").length > 0) {
+    SetRoleAndLabelForClass("fa fa-print printerIcon","button","Printen");
+  }
+  /*
+    De volgende regel uitgezet. Deze is niet meer nodig na het implementeren bij de klant.
+    console.log("****** Realworks CRM: eind van script (onchange event) ******");
+  */
+}
+
+/*
+  Als de inhoud van de pagina veranderd, dan de volgende functie uitvoeren na 5 seconden.
+  5 seconden is ruim genomen. Een zoekopdracht duurt meestal niet zo lang.
+*/
+window.onchange = function() {
+  setTimeout(zoekOpdracht, 5000);
+};
+
+window.onload = function() {
+  if (document.getElementById("helpIcon")) {
+    SetRoleAndLabelForID("helpIcon","button","Bekijk de verbeteringen");
+  }
+  if (document.getElementById("quicklaunch_fullscreen")) {
+    SetRoleAndLabelForID("quicklaunch_fullscreen","button","Open dit scherm in een nieuw venster");
+  }
+  if (document.getElementById("quicklaunch_add")) {
+    SetRoleAndLabelForID("quicklaunch_add","button","voeg nieuwe widget toe");
+  }
+  if (document.getElementById("helpMenu_container")) {
+    SetRoleAndLabelForID("helpMenu_container","button","Menu: help onderwerpen");
+  }
+  if (document.getElementById("quickMenu_container")) {
+    SetRoleAndLabelForID("quickMenu_container","button","Menu: snelmenu");
+  }
+  if (document.getElementById("reportMenu_container")) {
+    SetRoleAndLabelForID("reportMenu_container","button","Menu: exporteren");
+  }
+  if (document.getElementById("notificationIcon")) {
+    SetRoleAndLabelForID("notificationIcon","button","Berichten");
+  }
+  if (document.getElementById("logo")) {
+    SetRoleAndLabelForID("logo","button","Hoofdpagina");
+  }
+  if (document.getElementById("searchbar_button")) {
+    SetRoleAndLabelForID("searchbar_button","button","Zoeken");
+  }
+  if (document.getElementById("buttonmenu_buttonmodify")) {
+    SetRoleAndLabelForID("buttonmenu_buttonmodify","button","Wijzigen");
+  }
+  if (document.getElementById("toplevelActionmenu")) {
+    SetRoleAndLabelForID("toplevelActionmenu","button","Hoofdmenu: acties");
+  }
+  if (document.getElementById("generated2_7")) {
+    SetRoleAndLabelForID("generated2_7","button","Menu: weergave instellingen");
+  }
+  if (document.getElementById("generated2_9")) {
+    SetRoleAndLabelForID("generated2_9","button","Voeg bestanden toe vanuit correspondentie");
+  }
+  if (document.getElementById("lercode_image_new")) {
+    SetRoleAndLabelForID("lercode_image_new","button","Nieuwe relatie");
+  }
+  if (document.getElementById("lepcode_image_new")) {
+    SetRoleAndLabelForID("lepcode_image_new","button","Nieuw project");
+  }
+  if (document.getElementById("lepcode_image1")) {
+    SetRoleAndLabelForID("lepcode_image1","button","Project zoeken");
+  }
+  if (document.getElementById("lercode_image1")) {
+    SetRoleAndLabelForID("lercode_image1","button","Relatie zoeken");
+  }
+  if (document.getElementById("lepcode_image2")) {
+    SetRoleAndLabelForID("lepcode_image2","button","Pop-up: waarschuwing");
+  }
+  if (document.getElementById("lercode_image2")) {
+    SetRoleAndLabelForID("lercode_image2","button","Pop-up: waarschuwing");
+  }
+  if (document.getElementById("lepcode_image_delete")) {
+    SetRoleAndLabelForID("lepcode_image_delete","button","Verwijderen");
+  }
+  if (document.getElementById("lepcode_image_options")) {
+    SetRoleAndLabelForID("lepcode_image_options","button","Menu: opties");
+  }
+  if (document.getElementById("lepcode_img_tooltip")) {
+    SetRoleAndLabelForID("lepcode_img_tooltip","button","Pop-up: informatie");
+  }
+  if (document.getElementById("lercode_image_delete")) {
+    SetRoleAndLabelForID("lercode_image_delete","button","Verwijderen");
+  }
+  if (document.getElementById("lercode_image_options")) {
+    SetRoleAndLabelForID("lercode_image_options","button","Menu: opties");
+  }
+  if (document.getElementById("lercode_img_tooltip")) {
+    SetRoleAndLabelForID("lercode_img_tooltip","button","Pop-up: informatie");
+  }
+  if (document.getElementById("pmcode_image_delete")) {
+    SetRoleAndLabelForID("pmcode_image_delete","button","Verwijderen");
+  }
+  if (document.getElementById("pmcode_image_options")) {
+    SetRoleAndLabelForID("pmcode_image_options","button","Menu: opties");
+  }
+  if (document.getElementById("lismcode_image1")) {
+    SetRoleAndLabelForID("lismcode_image1","button","Accountmanager zoeken");
+  }
+  if (document.getElementById("lismcode_image_options")) {
+    SetRoleAndLabelForID("lismcode_image_options","button","Menu: opties");
+  }
+  if (document.getElementById("lismcode_image_delete")) {
+    SetRoleAndLabelForID("lismcode_image_delete","button","Verwijderen");
+  }
+  if (document.getElementById("tpcode_image_delete")) {
+    SetRoleAndLabelForID("tpcode_image_delete","button","Verwijderen");
+  }
+  if (document.getElementById("tpcode_image_options")) {
+    SetRoleAndLabelForID("tpcode_image_options","button","Menu: opties");
+  }
+  if (document.getElementById("trcode_image_delete")) {
+    SetRoleAndLabelForID("trcode_image_delete","button","Verwijderen");
+  }
+  if (document.getElementById("trcode_image_options")) {
+    SetRoleAndLabelForID("trcode_image_options","button","Menu: opties");
+  }
+  if (document.getElementsByClassName("fa fa-print printerIcon").length > 0) {
+    SetAttributeForClassname("aria-label","fa fa-print printerIcon","Printen");
+  }
+  if (document.getElementsByClassName("fa fa-bars hoverIcon").length > 0) {
+    SetRoleAndLabelForClass("fa fa-bars hoverIcon","button","Acties");
+  }
+  if (document.getElementsByClassName("modify fa fa-pencil help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("modify fa fa-pencil help tooltipstered gridMenuButton","button","Wijzigen");
+  }
+  if (document.getElementsByClassName("fa fa-pencil help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-pencil help tooltipstered gridMenuButton","button","Wijzigen");
+  }
+  if (document.getElementsByClassName("new fa fa-plus help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("new fa fa-plus help tooltipstered gridMenuButton","button","Nieuw");
+  }
+  if (document.getElementsByClassName("fa fa-plus help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-plus help tooltipstered gridMenuButton","button","Nieuw");
+  }
+  if (document.getElementsByClassName("markInactive fa fa-eye-slash help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("markInactive fa fa-eye-slash help tooltipstered gridMenuButton","button","Op actief of inactief zetten");
+  }
+  if (document.getElementsByClassName("fa fa-eye-slash help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-eye-slash help tooltipstered gridMenuButton","button","Op actief of inactief zetten");
+  }
+  if (document.getElementsByClassName("inactive_1 inactiveButton help fa fa-eye tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("inactive_1 inactiveButton help fa fa-eye tooltipstered gridMenuButton","button","Menu: alles, actief of inactief");
+  }
+  if (document.getElementsByClassName("base base-nwwi-versturen help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("base base-nwwi-versturen help tooltipstered gridMenuButton","button","NWWI opdrachten");
+  }
+  if (document.getElementsByClassName("component actionMenu gridMenuButton help fa fa-bars tooltipstered").length > 0) {
+    SetRoleAndLabelForClass("component actionMenu gridMenuButton help fa fa-bars tooltipstered","button","Menu: diversen");
+  }
+  if (document.getElementsByClassName("searchbutton search expectedAction searchbutton fa fa-search gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("searchbutton search expectedAction searchbutton fa fa-search gridMenuButton","button","Zoeken");
+  }
+  if (document.getElementsByClassName("labelsearch-icon fa fa-search gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("labelsearch-icon fa fa-search gridMenuButton","button","Menu: zoeken");
+  }
+  if (document.getElementsByClassName("delete fa fa-trash-o help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("delete fa fa-trash-o help tooltipstered gridMenuButton","button","Verwijder");
+  }
+  if (document.getElementsByClassName("fa fa-times labelsearch gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-times labelsearch gridMenuButton","button","Verwijder");
+  }
+  if (document.getElementsByClassName("fa fa-calendar gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-calendar gridMenuButton","button","Kalender: Datum kiezen");
+  }
+  if (document.getElementsByClassName("labelSearchPopUpImg fa fa-info-circle tooltipstered").length > 0) {
+    SetRoleAndLabelForClass("labelSearchPopUpImg fa fa-info-circle tooltipstered","button","Pop-up: informatie");
+  }
+  if (document.getElementsByClassName("gridMenuButton alert fa fa-exclamation-triangle tooltipstered").length > 0) {
+    SetRoleAndLabelForClass("gridMenuButton alert fa fa-exclamation-triangle tooltipstered","button","Melding: waarschuwing");
+  }
+  if (document.getElementsByClassName("fa fa-square-o help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-square-o help tooltipstered gridMenuButton","button","Bekijk");
+  }
+  if (document.getElementsByClassName("singlesearchbutton standalone searchbutton fa fa-search gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("singlesearchbutton standalone searchbutton fa fa-search gridMenuButton","button","Zoeken");
+  }
+  if (document.getElementsByClassName("standalone searchbutton fa fa-search tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("standalone searchbutton fa fa-search tooltipstered gridMenuButton","button","Zoeken");
+  }
+  if (document.getElementsByClassName("labelsearch-icon fa fa-bars tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("labelsearch-icon fa fa-bars tooltipstered gridMenuButton","button","Menu: diversen");
+  }
+  if (document.getElementsByClassName("fa fa-download help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-download help tooltipstered gridMenuButton","button","Open");
+  }
+  if (document.getElementsByClassName("fa fa-close help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-close help tooltipstered gridMenuButton","button","Sluit venster");
+  }
+  if (document.getElementsByClassName("fa fa-check help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-check help tooltipstered gridMenuButton","button","Voeg toe / selecteer");
+  }
+  if (document.getElementsByClassName("fa fa-edit help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-edit help tooltipstered gridMenuButton","button","Wijzigen");
+  }
+  if (document.getElementsByClassName("fa fa-heart help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-heart help tooltipstered gridMenuButton","button","Matchmaker");
+  }
+  if (document.getElementsByClassName("component actionMenu gridMenuButton help base base-funda tooltipstered").length > 0) {
+    SetRoleAndLabelForClass("component actionMenu gridMenuButton help base base-funda tooltipstered","button","Menu: funda");
+  }
+  if (document.getElementsByClassName("base base-tiara help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("base base-tiara help tooltipstered gridMenuButton","button","Doorsturen naar Tiara");
+  }
+  if (document.getElementsByClassName("component actionMenu gridMenuButton help fa fa-plus tooltipstered").length > 0) {
+    SetRoleAndLabelForClass("component actionMenu gridMenuButton help fa fa-plus tooltipstered","button","Menu: nieuw");
+  }
+  if (document.getElementsByClassName("icon fa fa-arrow-down").length > 0) {
+    SetRoleAndLabelForClass("icon fa fa-arrow-down","button","Menu: keuze");
+  }
+  if (document.getElementsByClassName("selecticon fa fa-sort").length > 0) {
+    SetRoleAndLabelForClass("selecticon fa fa-sort","button","Menu: opties");
+  }
+  if (document.getElementsByClassName("select formelement").length > 0) {
+    SetRoleAndLabelForClass("select formelement","button","Menu: opties");
+  }
+  if (document.getElementsByClassName("save fa fa-floppy-o help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("save fa fa-floppy-o help tooltipstered gridMenuButton","button","Bewaar");
+  }
+  if (document.getElementsByClassName("save close base base-bewaar-sluit help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("save close base base-bewaar-sluit help tooltipstered gridMenuButton","button","Bewaar en sluit");
+  }
+  if (document.getElementsByClassName("fa fa-print help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("fa fa-print help tooltipstered gridMenuButton","button","Printen");
+  }
+  if (document.getElementsByClassName("close fa fa-times help tooltipstered gridMenuButton").length > 0) {
+    SetRoleAndLabelForClass("close fa fa-times help tooltipstered gridMenuButton","button","Sluiten");
+  }
+  /*
+    [ Specifiek voor: agenda ]
+  */
+  if (document.getElementsByClassName("newAppointmentLink fa fa-plus-circle").length > 0) {
+    SetLabelForClassname("newAppointmentLink fa fa-plus-circle","Nieuwe afspraak");
+  }
+  if (document.getElementById("generated2_6")) {
+    SetRoleAndLabelForID("generated2_6","button","Menu: agenda instellingen");
+  }
+  if (document.getElementById("doorzoekAgenda")) {
+    SetRoleAndLabelForID("doorzoekAgenda","button","Doorzoek agenda");
+  }
+  if (document.getElementById("weergaveSelection")) {
+    SetRoleAndLabelForID("weergaveSelection","button","Weergave overzicht");
+  }
+  if (document.getElementById("deleteAgenda")) {
+    SetRoleAndLabelForID("deleteAgenda","button","Verwijder");
+  }
+  if (document.getElementById("inactive___button")) {
+    SetRoleAndLabelForID("inactive___button","button","Weer te geven afspraken");
+  }
+  if (document.getElementById("vernieuwAgenda")) {
+    SetRoleAndLabelForID("vernieuwAgenda","button","Vernieuwen");
+  }
+  /*
+    [ Specifiek voor: agenda - nieuwe afspraak ]
+  */
+  if (document.getElementById("agobjcode_image_new")) {
+    SetRoleAndLabelForID("agobjcode_image_new","button","Nieuw project");
+  }
+  if (document.getElementById("agrcode_image_new")) {
+    SetRoleAndLabelForID("agrcode_image_new","button","Nieuwe relatie");
+  }
+  if (document.getElementById("agobjcode_image1")) {
+    SetRoleAndLabelForID("agobjcode_image1","button","Project zoeken");
+  }
+  if (document.getElementById("agrcode_image1")) {
+    SetRoleAndLabelForID("agrcode_image1","button","Relatie zoeken");
+  }
+  if (document.getElementById("genodigden_image_new")) {
+    SetRoleAndLabelForID("genodigden_image_new","button","Genodigden toevoegen");
+  }
+  if (document.getElementById("genodigden_image1")) {
+    SetRoleAndLabelForID("genodigden_image1","button","Genodigden zoeken");
+  }
+  if (document.getElementById("agendabuttonmenu_buttonsave")) {
+    SetRoleAndLabelForID("agendabuttonmenu_buttonsave","button","Bewaar");
+  }
+  if (document.getElementById("agendabuttonmenu_buttonsaveclose")) {
+    SetRoleAndLabelForID("agendabuttonmenu_buttonsaveclose","button","Bewaar en sluit venster");
+  }
+  if (document.getElementById("generated2_14")) {
+    SetRoleAndLabelForID("generated2_14","button","Workflow");
+  }
+  /*
+    [ Specifiek voor: nieuwe e-mail ]
+  */
+  if (document.getElementById("sendButton")) {
+    SetRoleAndLabelForID("sendButton","button","Versturen");
+  }
+  if (document.getElementById("bijlagen_button")) {
+    SetRoleAndLabelForID("bijlagen_button","button","Bijlagen");
+  }
+  if (document.getElementById("source_button")) {
+    SetRoleAndLabelForID("source_button","button","Download");
+  }
+  if (document.getElementById("templateCombo")) {
+    SetRoleAndLabelForID("templateCombo","button","Menu: e-mail templates");
+  }
+  // Standaard actie, kunt ook de ENTER toets gebruiken bij de volgende knop:
+  if (document.getElementById("generated2_58")) {
+    SetRoleAndLabelForID("generated2_58","button","Versturen");
+  }
+  if (document.getElementById("cancelButton")) {
+    SetRoleAndLabelForID("cancelButton","button","Annuleren");
+  }
+  if (document.getElementById("newmail_button")) {
+    SetLabelForIDForID("newmail_button","Nieuwe e-mail opstellen");
+  }
+  if (document.getElementById("corres_button")) {
+    SetLabelForIDForID("corres_button","Bewaren");
+  }
+  if (document.getElementById("reply_button")) {
+    SetLabelForIDForID("reply_button","Beantwoorden");
+  }
+  if (document.getElementById("replytoall_button")) {
+    SetLabelForIDForID("replytoall_button","Allen beantwoorden");
+  }
+  if (document.getElementById("forward_button")) {
+    SetLabelForIDForID("forward_button","Doorsturen");
+  }
+  if (document.getElementById("move_button")) {
+    SetLabelForIDForID("move_button","Menu: verplaatsen naar...");
+  }
+  if (document.getElementById("print_button")) {
+    SetLabelForIDForID("print_button","Afdrukken");
+  }
+  if (document.getElementById("trash_button")) {
+    SetLabelForIDForID("trash_button","Verwijderen");
+  }
+  /*
+    [ Specifiek voor: eigen woningen ]
+  */
+  if (document.getElementsByClassName("hitarea expandable-hitarea lastExpandable-hitarea").length > 0) {
+    SetLabelForClassname("hitarea expandable-hitarea lastExpandable-hitarea","Uitklappen");
+  }
+  if (document.getElementById("lisrcode_image1")) {
+    SetRoleAndLabelForID("lisrcode_image1","button","Relatie zoeken");
+  }
+  if (document.getElementById("lisrcode_image_options")) {
+    SetRoleAndLabelForID("lisrcode_image_options","button","Menu: opties");
+  }
+  if (document.getElementById("lisrcode_image_delete")) {
+    SetRoleAndLabelForID("lisrcode_image_delete","button","Verwijderen");
+  }
+  if (document.getElementById("generated2_76")) {
+    SetRoleAndLabelForID("generated2_76","button","Ga door");
+  }
+  /*
+    De volgende regel uitgezet. Deze is niet meer nodig na het implementeren bij de klant.
+    console.log("****** Realworks CRM: eind van script (onload event) ******");
+  */
+};

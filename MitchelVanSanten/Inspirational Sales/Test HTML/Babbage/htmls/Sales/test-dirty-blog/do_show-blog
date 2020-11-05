@@ -1,0 +1,61 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+fn=1100
+cb="callback(companyCard,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newBlogCard,2,0)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+kaart="companyBlog"
+php ${tools}/extract.php ${dir}/${fn}_new.html form \
+"set:table[newblog][blog.blog][0][value]:NieuweCompanyBlogContent"		\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+cb="callback(companyCard,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(editBlogCard,10001)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+kaart="deleteCompanyBlog"
+php ${tools}/extract.php ${dir}/${fn}_new.html form \
+"callback:deleteBlog"								\
+ > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+cb="callback(companyCard,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+loadSql ${account} ../test.sql

@@ -1,0 +1,10 @@
+met 
+"C:\Program Files (x86)\Handy Tech\iRead\iRead.exe" /convert input.pdf Imagefile.rtf
+start Imagefile.rtf
+en dan opent word met deze rtf.
+
+"C:\Program Files (x86)\Handy Tech\iRead\iRead.exe" Imagefile.pdf
+Dan opent iRead met de PDF omgezet naar leesbare tekst.
+
+Integratie in MSWord is nu ook mogelijk; vandaar de vraag kan jij je macro's van de laatste keer zodanig maken
+dat je de Sceye automatisch laat scannen en dat de geinterpreteerde tekst in Word tevoorschijn floept.

@@ -1,0 +1,49 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+
+fn=1100
+
+cb="callback(companiesPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(companiesPage)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+table:"inPageSelectcrmCompanyPage":"idRep":"0":"value":"0"					\
+table:"inPageSelectcrmCompanyPage":"haveContact":"0":"value":"0"			\
+table:"inPageSelectcrmCompanyPage":"idCompanyStatus":"0":"value":"1"		\
+table:"inPageSelectcrmCompanyPage":"idStartAt":"0":"value":"1"				\
+table:"inPageSelectcrmCompanyPage":"haveSelect":"0":"value":"1"				\
+table:"inPageSelectcrmCompanyPage":"idCompanyTag":"0":"value":"-1"			\
+table:"inPageSelectcrmCompanyPage":"idCampagne":"0":"value":"-1"			\
+table:"inPageSelectcrmCompanyPage":"success":"0":"value":"-1"				\
+																			\
+table:"inPageSelectcrmCompanyPage":"idRep":"0":"type":"select"				\
+table:"inPageSelectcrmCompanyPage":"haveContact":"0":"type":"select"		\
+table:"inPageSelectcrmCompanyPage":"idCompanyStatus":"0":"type":"select"	\
+table:"inPageSelectcrmCompanyPage":"idStartAt":"0":"type":"select"			\
+table:"inPageSelectcrmCompanyPage":"idCompanyTag":"0":"type":"select"		\
+table:"inPageSelectcrmCompanyPage":"idCampagne":"0":"type":"select"			\
+table:"inPageSelectcrmCompanyPage":"success":"0":"type":"select"			\
+table:"inPageSelectcrmCompanyPage":"haveSelect":"0":"type":"hidden"			\
+> ${dir}/${fn}_new.html 2>&1
+

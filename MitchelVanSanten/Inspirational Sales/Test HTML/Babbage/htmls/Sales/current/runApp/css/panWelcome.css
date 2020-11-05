@@ -1,0 +1,65 @@
+/* panWelcome */
+
+/* repaire float issues */
+	div			{ clear:both;}
+	div::after		{ visibility: hidden;	display: block;	font-size: 0;	content: ".";	clear: both;	height: 0;	}
+
+/* Page */
+	/* appearance */
+	body			{ font-size: 13px; 	font-family:arial,sans-serif; 	color: #444444; }
+	.page 			{ background-color:#ffffff;}
+	/* positioning */
+	body 			{ margin:10px auto; }
+	/* layout */
+	body 			{ width:980px; 	}
+
+
+/* nav Buttons */
+	.linkTextBox 							{ border:1px solid gray; background-color:#D0D0D0; border-radius:3px;	}
+	.linkTextBox 							{ float:left; clear:none;												}
+	.linkTextBox 							{ padding:1px 8px; margin:0px 2px;										}
+	.linkTextText 							{ font-size:105%; 														}
+	a:link	.linkTextBox					{ color:#444444; text-decoration:none;									}
+	a:visited	.linkTextBox				{ color:#444444; text-decoration:none;									}
+	a:hover	.linkTextBox					{ color:#444444; text-decoration:none; background-color:#FDFDFD;		}
+	a:active	.linkTextBox				{ color:#444444; text-decoration:none;									}
+
+
+
+/* header */
+
+	/* appearance */
+	.header .title		{ font-size:110%; background-color:#078080; color:#ded7ae;	}
+
+	/* positioning */
+	.header .title		{ text-align:center; }
+	.welcomeLine		{ text-align:center; }
+	.buttonLine			{ float:right; clear:none; 	}
+	
+	/* layout */
+	.header 			{ min-height:100px; }
+	.header .title		{ padding:3px; }
+
+
+
+
+/* main */
+	
+	
+	/* positioning */
+	.main .linkTextBox		{ overflow:hidden; text-overflow:clip;	white-space:nowrap;}
+	/* layout */
+	.main					{ min-height:500px; }
+	.main .linkButton		{ margin-top:5px;	}
+	.main .linkTextBox		{ width:100px;		}
+
+
+/* footer */
+	/* appearance */
+	.footer				{ font-size:90%; background-color:#078080; color:#ded7ae;	}
+
+	/* positioning */
+	.footer				{ text-align:center; 	}
+	
+	/* layout */
+	.footer				{ padding:3px; 			}

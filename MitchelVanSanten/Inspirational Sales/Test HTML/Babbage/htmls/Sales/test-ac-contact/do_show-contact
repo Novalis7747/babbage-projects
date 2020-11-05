@@ -1,0 +1,97 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+fn=1100
+
+cb="callback(contactCard,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+
+cb="callback(editContactSettings,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(newContactCard,2,0,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "New contact from company" >> ${dir}/${fn}_new.html
+
+cb="callback(newContactCard,0,1,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "New contact without company" >> ${dir}/${fn}_new.html
+
+
+cb="callback(contactColleagueList,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Collega list" >> ${dir}/${fn}_new.html
+
+
+cb="callback(mergeContactForm,1002)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Merge form" >> ${dir}/${fn}_new.html
+
+
+
+fn=1200
+testVal="table[contact][contact.firstName][0][value]:AAAAAAA"
+kaart="settings"
+cbOrg="callback(editContactSettings,1002)"
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	\
+> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_org.html
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form "set:${testVal}" > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form  > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_new.html
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+
+
+cb="callback(mergeCompany,merge)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"merge":"import.idCompany":"0":"type":"select"	\
+table:"merge":"this.idCompany":"0":"value":"3"	\
+table:"merge":"this.idCompany":"0":"type":"hidden"	\
+table:"merge":"import.idCompany":"0":"value":"4"	\
+> ${dir}/${fn}_new.html 2>&1

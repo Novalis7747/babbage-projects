@@ -1,0 +1,6 @@
+<UserScriptConfig>
+	<Script basedir="VANAD" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Toegankelijkheid van VANAD Aloha verbeteren." enabled="true" filename="VANAD.user.js" installTime="1486468380761" modified="1486645033109" name="BPL - VANAD Aloha." namespace="http://www.babbage.com/" noframes="false" runAt="document-end" updateMetaStatus="unknown" uuid="307db6db-d968-4592-a790-93ce70c677fb" version="Beta." installurl="file:///C:/Users/Peter%20Dackers/Desktop/firefox_portable_aloha/Data/profile/gm_scripts/VANAD/VANAD.user.js" updateurl="file:///C:/Users/Peter%20Dackers/Desktop/firefox_portable_aloha/Data/profile/gm_scripts/VANAD/VANAD.user.js">
+		<Grant>none</Grant>
+		<Include>*://desktop.eu2.vanadcimplicity.net/*</Include>
+	</Script>
+</UserScriptConfig>

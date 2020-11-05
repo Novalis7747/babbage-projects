@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/grid-32vw-1.css"/>
+		<link rel="stylesheet" type="text/css" href="../current/runApp/css/panDefault4.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/inspirational.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/flexselect.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/jquery-ui.css"/>
+		<script type="text/javascript" src="../current/runApp/scripts/jquery.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery-ui.min.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/liquidmetal.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery.flexselect.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/inspirational.js">
+		</script>
+		<script type="text/javascript" src="../current/runApp/scripts/panDefault3.js">
+		</script>
+	</head>
+	<body class="proAppNest device-desktop">
+		<div class="WebApp Sales">
+			<div class="warningHome">
+				<div class="warning">
+					<div class="title">
+						Warning messages
+					</div>
+					<div class="messages">
+						<div class="message">
+							workbook setting now is set to 42241
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="block _popOverHome">
+			</div>
+			<form class="inputForm defaultForm" name="defaultForm" method="post" enctype="multipart/form-data" action="Inspirational/index.php?webapp=Sales">
+				<div style="display:none;">
+					<input type="submit" value="save" name="submit" data-callback="insertTask,newTask,newTaskcompanySet" data-jscall="onSubmit-saveAndClose"/>
+				</div>
+				<div>
+					<div class="cellBox cell_6">
+						<div class="formatTable colFormat">
+							<div class="tableBody">
+								<div class="tableRow  odd">
+									<div class="tableItem key">
+										Taak
+									</div>
+									<div class="tableItem value">
+										<input type="text" value="" name="table[newTask][task.subject][0][value]"/>
+										<input type="hidden" value="text" name="table[newTask][task.subject][0][type]"/>
+									</div>
+								</div>
+								<div class="tableRow  even">
+									<div class="tableItem key">
+										Contact
+									</div>
+									<div class="tableItem value">
+										<select name="table[newTask][task.idContact][0][value]">
+											<option value="0" selected>
+												Geen contact
+											</option>
+											<option value="1011">
+												Daniel Day-Lewis
+											</option>
+											<option value="2011">
+												Dianne Wiest
+											</option>
+										</select>
+										<input type="hidden" value="select" name="table[newTask][task.idContact][0][type]"/>
+									</div>
+								</div>
+								<div class="tableRow  odd">
+									<div class="tableItem key">
+										Vervaldatum
+									</div>
+									<div class="tableItem value">
+										<input type="text" value="01 Sep 2015" name="table[newTask][task.deadline][0][value]" class="date"/>
+										<input type="hidden" value="date" name="table[newTask][task.deadline][0][type]"/>
+									</div>
+								</div>
+								<div class="tableRow  even">
+									<div class="tableItem key">
+										Tijd (hh:mm)
+									</div>
+									<div class="tableItem value">
+										<input type="text" value="" name="table[newTask][task.deadlineTime][0][value]"/>
+										<input type="hidden" value="text" name="table[newTask][task.deadlineTime][0][type]"/>
+									</div>
+								</div>
+								<div class="tableRow  odd">
+									<div class="tableItem key">
+										Prioriteit
+									</div>
+									<div class="tableItem value">
+										<select name="table[newTask][task.idTaskPriority][0][value]">
+											<option value="1">
+												Hoog
+											</option>
+											<option value="2" selected>
+												Normaal
+											</option>
+										</select>
+										<input type="hidden" value="select" name="table[newTask][task.idTaskPriority][0][type]"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<input type="hidden" value="0" name="table[newTask][task.idTask][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.idTask][0][type]"/>
+					<input type="hidden" value="1" name="table[newTask][task.idAccount][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.idAccount][0][type]"/>
+					<input type="hidden" value="11" name="table[newTask][task.idCompany][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.idCompany][0][type]"/>
+					<input type="hidden" value="2" name="table[newTask][task.idCampagne][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.idCampagne][0][type]"/>
+					<input type="hidden" value="42241" name="table[newTask][task.created][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.created][0][type]"/>
+					<input type="hidden" value="1" name="table[newTask][task.idTaskStatus][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.idTaskStatus][0][type]"/>
+					<input type="hidden" value="" name="table[newTask][task.task][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.task][0][type]"/>
+					<input type="hidden" value="1" name="table[newTask][task.idRep][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.idRep][0][type]"/>
+					<input type="hidden" value="0" name="table[newTask][task.idRepDone][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.idRepDone][0][type]"/>
+					<input type="hidden" value="0" name="table[newTask][task.doneDate][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTask][task.doneDate][0][type]"/>
+					<input type="hidden" value="11" name="table[newTaskcompanySet][company.idCompany][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTaskcompanySet][company.idCompany][0][type]"/>
+					<input type="hidden" value="3" name="table[newTaskcompanySet][company.idCompanyStatus][0][value]"/>
+					<input type="hidden" value="hidden" name="table[newTaskcompanySet][company.idCompanyStatus][0][type]"/>
+				</div>
+				<div class="buttonHome">
+					<button type="submit" name="submit" value="submit" data-callback="insertTask,newTask,newTaskcompanySet" data-jscall="onSubmit-saveAndClose">
+						<div class="buttonText">
+							Opslaan &amp; Sluiten
+						</div>
+					</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
+new task from company card also at contact

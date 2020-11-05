@@ -1,0 +1,195 @@
+/* appDefault.css */
+
+
+/* repaire float issues */
+	div			{ clear:both;}
+	div::after		{ visibility: hidden;	display: block;	font-size: 0;	content: ".";	clear: both;	height: 0;	}
+
+
+
+/* Page */
+	/* appearance */
+	body			{ font-size: 13px; 	font-family:arial,sans-serif; 	color: #444444; }
+	.page 			{ background-color:#ffffff;}
+	/* positioning */
+	body { margin:10px auto; }
+	/* layout */
+	body { width:1200px; 	}
+
+
+
+/* nav Buttons */
+	.buttonBox 				{ border:1px solid gray; background-color:#D0D0D0; border-radius:3px;	}
+	.buttonBox 				{ float:left; clear:none;						}
+	.buttonBox 				{ padding:1px 8px; margin:0px 2px;							}
+	.navButton .buttonBox .buttonText 	{ font-size:105%; 							}
+	a.navButton:link	.buttonBox	{ color:#444444; text-decoration:none;					}
+	a.navButton:visited	.buttonBox	{ color:#444444; text-decoration:none;					}
+	a.navButton:hover	.buttonBox	{ color:#444444; text-decoration:none; background-color:#FDFDFD;	}
+	a.navButton:active	.buttonBox	{ color:#444444; text-decoration:none;					}
+
+/* general input items */
+	/* appearance */
+	input,			
+	select,			
+	textarea				{ border:1px solid gray; font-size: 13px; font-family: arial, sans-serif; color: #444444; border-radius:3px;}
+	input[type="file"]			{ border:1px solid gray; font-size: 11px; font-family: arial, sans-serif; color: #444444; border-radius:3px;}
+	input[type="submit"]			{ border:1px solid gray; font-size: 13px; font-family: arial, sans-serif; color: #444444; border-radius:3px;}
+
+
+/* warning messages */
+	/* appearance */
+	.warning		{ background-color:#efef77;	border:1px solid gray;		}
+	.warning .title		{ 				border-bottom:1px solid gray; font-size:14px;	}
+
+	/* positioning */
+	.warning .title		{ text-align:center; 	}
+
+	/* layout */
+	.warning .title		{ padding:3px; }
+	.warning .messages	{ padding:3px; }
+
+/* submitOnEnter */
+	input.submitOnEnter	{display:none; }
+
+
+/* popOver */
+	/* appearance */
+	.popOver			{ background:#ffffff; border:1px solid gray; box-shadow: 0px 0px 10px 1px #888888; cursor:default;}
+	.popOver-close		{ font-size:125%; font-weight:bold; color:#777777;cursor:pointer;}
+	.popOver-open		{ cursor:pointer; }
+	
+	/* positioning */
+	.popOver			{ position:absolute; }
+	.popOver-close		{ float:right;	clear:both;}
+	/* layout */
+	.popOver			{ width:900px; min-height:150px; padding:10px;	}
+	.popOver-close		{ height:20px;					}
+
+
+/* tab boxes */
+
+	/* appearance */
+	.tabBox .tabBoxContent		{ border:1px solid gray; }
+	.tabBox ul.tabBoxTab 		{ list-style-type:none; }
+	.tabBox ul.tabBoxTab li 	{ background-color:gray; cursor:pointer; color:#eeeeee; }
+	.tabBox ul.tabBoxTab li:hover	{ background-color:lightgray; }
+	
+	/* positioning */
+	.tabBox ul.tabBoxTab li 	{ float:left; overflow:hidden; text-overflow:clip;	white-space:nowrap;	}
+		
+	/* layout */
+	.tabBox .tabBoxContent		{ width:700px; height:250px;					padding:10px;	}
+	.tabBox ul.tabBoxTab 		{ 				margin:0px; 			padding:0px;	}
+	.tabBox ul.tabBoxTab li 	{ width:125px;	height:18px;	margin:10px 2px 0px 2px; 	padding:3px;	}
+	.tabBox ul.tabBoxTab li.active 	{ 		height:23px;	margin:5px 2px 0px 2px;				}
+
+
+/* page content */
+
+	/* positioning */
+	.form			{ clear:none; float:left; }
+	.output			{ clear:none; float:left; }
+	
+	/* layout */
+	.output			{ width:500px; }
+	.form			{ width:500px; }
+
+
+
+/* FORM BLOCK */
+	/* appearance */
+	.page .form				{ background-color:#f4f4f4; border:1px solid #dddddd; border-radius:20px; color: #444466; }
+	
+	.page .form .errMsg			{ border:1px solid red; font-size: 13px; font-family: arial, sans-serif; color: #444444; border-radius:2px;background-color:yellow;}
+
+	/* positioning */
+	.page .form .formLine			{ }
+	.page .form .dim			{ clear:none; float:right; 	overflow:hidden; 	text-overflow:clip;	white-space:nowrap; }
+	.page .form .title,
+	.page .form .preFix,
+	.page .form input,
+	.page .form select,
+	.page .form .inputRadioOptionBox,	
+	.page .form .inputRadioOptionText	{ clear:none; float:left;	overflow:hidden; 	text-overflow:clip;	white-space:nowrap; }
+	.page .form .numeric			{ text-align:right; }
+	.page .form textarea			{ display:block;float:right;}
+
+
+	/* layout */
+	.page .form				{ padding:10px;								}
+	.page .form .formLine			{ 		height:23px; 						}
+
+	.page .form .title			{ width:225px; 								}
+	.page .form .preFix			{ width:30px; 			margin-left:20px;			}
+	.page .form .dim			{ width:30px; 			margin-left:5px;			}
+
+	.page .form input[type="text"]		{ width:130px;								}
+	.page .form input[type="checkbox"]	{  									}
+	.page .form input[type="file"]		{ width:130px;	height:90%;						}
+	.page .form select			{ width:132px;								}
+	.page .form .inputRadioOptionBox	{ width:150px; 								}	
+	.page .form .inputRadioOptionLine	{ 		height:23px; 						}
+	.page .form .inputRadioOptionText	{ width:110px;	height:20px; 						}
+	.page .form input[type="radio"]	{ 					margin-top:2px; 			}
+	.page .form textarea			{ width:215px; 	height:75px; 						}
+	.page .form .comment			{ 				margin-top:5px; margin-bottom:3px;	}
+	.page .form .errMsg			{ padding:3px;}
+
+/* OUTPUT BLOCK */
+	/* appearance */
+
+	/* positioning */
+	.output input,
+	.output select,			
+	.output .inputRadioOptionBox,	
+	.output .inputRadioOptionText		{ clear:none; float:left;	overflow:hidden; 	text-overflow:clip;	white-space:nowrap; }
+	
+
+	/* layout */
+	.output input[type="text"]	{ width:100px;						}
+	.output input[type="checkbox"]	{ 				margin-right:100px; 	}
+	.output select			{ width:100px;						}
+	.output .inputRadioOptionBox	{ width:150px; 						}	
+	.output .inputRadioOptionLine	{ 		height:23px; 				}
+	.output .inputRadioOptionText	{ width:90px;	height:23px; 				}
+	.output input[type="radio"]	{ 				margin-top:2px; 	}
+	.output textarea		{ width:150px; 	height:80px; 				}
+
+/* BUTTON BLOCK */
+	/* appearance */
+	
+	/* layout */
+	.button				{ padding:20px;}
+
+
+/* EAN_EXCEL */
+	/* appearance */
+	table.excelSheetTable 		{ border-collapse:collapse;}
+	.excelSheetTable td		{ border:1px solid gray; }
+	.excelSheetTableLegenda td,
+	td.excelSheetTableRowLegenda 	{background-color: #dddddd; }
+	
+	/* positioning */
+	.excelSheet			{clear:both; overflow-x:scroll;}
+	.excelSheetTableCellValue	{ overflow:hidden; 	text-overflow:clip;	white-space:nowrap; }
+	
+	
+	/* layout */
+	.excelSheet						{ width:90%; margin-top:30px; }
+	.excel .header						{ margin:5px 0px; }
+	.excelSheetTableCellValue 				{ width:100px; padding:2px; }
+	.excelSheetTableRowLegenda .excelSheetTableCellValue 	{ width:30px; }
+
+
+/* TABLE */
+	/* positioning */
+	table span.numeric	{ display:block; }
+	table .numeric 		{text-align:right; }
+
+	/*layout */
+	table span.numeric	{ width:100%; }
+
+
+
+

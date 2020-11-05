@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+
+
+cb="callback(inPageSelectGo)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"inPageSelectaccountSelect":"idAccount":"0":"type":"select"	\
+table:"inPageSelectaccountSelect":"haveSelect":"0":"value":"1"	\
+table:"inPageSelectaccountSelect":"haveSelect":"0":"type":"hidden"	\
+table:"inPageSelectaccountSelect":"idAccount":"0":"value":"1"	\
+> ${dir}/${fn}_new.html 2>&1

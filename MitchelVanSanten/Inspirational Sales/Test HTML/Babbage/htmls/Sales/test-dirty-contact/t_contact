@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+
+
+cb="callback(insertContact,newContact,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"newContact":"contact.idSalutation":"0":"type":"select"	\
+table:"newContact":"contact.firstName":"0":"value":"AAANieuweContactName"	\
+table:"newContact":"contact.firstName":"0":"type":"text"	\
+table:"newContact":"contact.lastName":"0":"value":""	\
+table:"newContact":"contact.lastName":"0":"type":"text"	\
+table:"newContact":"contact.tel":"0":"value":""	\
+table:"newContact":"contact.tel":"0":"type":"text"	\
+table:"newContact":"contact.email":"0":"value":""	\
+table:"newContact":"contact.email":"0":"type":"text"	\
+table:"newContact":"contact.webSite":"0":"value":""	\
+table:"newContact":"contact.webSite":"0":"type":"text"	\
+table:"newContact":"contact.idCompany":"0":"type":"select"	\
+table:"newContact":"contact.idContactStatus":"0":"type":"select"	\
+table:"newContact":"contact.contactRole":"0":"value":""	\
+table:"newContact":"contact.contactRole":"0":"type":"text"	\
+table:"newContact":"contact.idContact":"0":"value":"0"	\
+table:"newContact":"contact.idContact":"0":"type":"hidden"	\
+table:"newContact":"contact.lastUpdated":"0":"value":"42241"	\
+table:"newContact":"contact.lastUpdated":"0":"type":"hidden"	\
+table:"newContact":"contact.created":"0":"value":"42241"	\
+table:"newContact":"contact.created":"0":"type":"hidden"	\
+table:"newContact":"contact.roleDescription":"0":"value":""	\
+table:"newContact":"contact.roleDescription":"0":"type":"hidden"	\
+table:"newContact":"contact.idSalutation":"0":"value":"1"	\
+table:"newContact":"contact.idCompany":"0":"value":"6"	\
+table:"newContact":"contact.idContactStatus":"0":"value":"1"	\
+> ${dir}/${fn}_new.html 2>&1

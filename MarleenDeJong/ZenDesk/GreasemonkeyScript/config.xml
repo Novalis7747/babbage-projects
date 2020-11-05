@@ -1,0 +1,6 @@
+<UserScriptConfig>
+	<Script basedir="Zendesk_Algemeen" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="Toegankelijkheid van Zendesk verbeteren." enabled="true" filename="Zendesk.user.js" installTime="1467789911183" modified="1473426625350" name="Ditzo - Zendesk." namespace="http://www.babbage.com/" noframes="false" runAt="document-end" updateMetaStatus="unknown" uuid="af4c04fe-0582-44b5-8839-9d72179879a9" version="Beta." installurl="file:///C:/Users/Peter%20Dackers/Desktop/Marleen%20de%20Jong/Data/profile/gm_scripts/Zendesk_Algemeen/Zendesk.user.js" updateurl="file:///C:/Users/Peter%20Dackers/Desktop/Marleen%20de%20Jong/Data/profile/gm_scripts/Zendesk_Algemeen/Zendesk.user.js">
+		<Grant>none</Grant>
+		<Include>*://*.zendesk.com/*</Include>
+	</Script>
+</UserScriptConfig>

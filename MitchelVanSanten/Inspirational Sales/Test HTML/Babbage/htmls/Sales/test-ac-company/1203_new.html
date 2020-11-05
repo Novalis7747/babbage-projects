@@ -1,0 +1,300 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/grid-32vw-1.css"/>
+		<link rel="stylesheet" type="text/css" href="../current/runApp/css/panDefault4.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/inspirational.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/flexselect.css"/>
+		<link rel="stylesheet" type="text/css" href="../Inspirational/accountResources/css/jquery-ui.css"/>
+		<script type="text/javascript" src="../current/runApp/scripts/jquery.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery-ui.min.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/liquidmetal.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/jquery.flexselect.js">
+		</script>
+		<script type="text/javascript" src="../Inspirational/accountResources/js/inspirational.js">
+		</script>
+		<script type="text/javascript" src="../current/runApp/scripts/panDefault3.js">
+		</script>
+	</head>
+	<body class="proAppNest device-desktop">
+		<div class="WebApp Sales">
+			<div class="warningHome">
+				<div class="warning">
+					<div class="title">
+						Warning messages
+					</div>
+					<div class="messages">
+						<div class="message">
+							workbook setting now is set to 42241
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="block _popOverHome">
+			</div>
+			<div id="editCompanySettings_2" class="component" data-callback="editCompanySettings,2" data-dependson="company">
+				<form class="inputForm defaultForm" name="defaultForm" method="post" enctype="multipart/form-data" action="Inspirational/index.php?webapp=Sales">
+					<div style="display:none;">
+						<input type="submit" value="save" name="submit" data-callback="updateCompany,company"/>
+					</div>
+					<div>
+						<div class="cellBox cell_6">
+							<div class="formatTable colFormat">
+								<div class="tableBody">
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Naam
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="AAAAAAA" name="table[company][company.name][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.name][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Oordeel
+										</div>
+										<div class="tableItem value">
+											<select name="table[company][company.idCompanyStatus][0][value]">
+												<option value="8">
+													Nog niet benaderd
+												</option>
+												<option value="1">
+													Onkekend
+												</option>
+												<option value="2" selected>
+													Lauw
+												</option>
+												<option value="3">
+													Warm
+												</option>
+												<option value="5">
+													Niet geinteresseerd
+												</option>
+												<option value="6">
+													Niet benaderen
+												</option>
+												<option value="7">
+													Verwijder
+												</option>
+												<option value="9">
+													Opnieuw benaderen
+												</option>
+											</select>
+											<input type="hidden" value="select" name="table[company][company.idCompanyStatus][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Segment
+										</div>
+										<div class="tableItem value">
+											<select name="table[company][company.idSegment][0][value]">
+												<option value="2">
+													Industrie
+												</option>
+												<option value="1" selected>
+													Sales diensten
+												</option>
+												<option value="3">
+													Anders
+												</option>
+												<option value="10000">
+													EmptySegment
+												</option>
+											</select>
+											<input type="hidden" value="select" name="table[company][company.idSegment][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Grootte
+										</div>
+										<div class="tableItem value">
+											<select name="table[company][company.idCompanySize][0][value]">
+												<option value="1">
+													Onbekend
+												</option>
+												<option value="2" selected>
+													1-10
+												</option>
+												<option value="3">
+													11-100
+												</option>
+												<option value="4">
+													101-300
+												</option>
+												<option value="5">
+													&gt; 301
+												</option>
+											</select>
+											<input type="hidden" value="select" name="table[company][company.idCompanySize][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Tel.
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="0123 - 987654" name="table[company][company.tel][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.tel][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Email
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="Adams@Adams-Farwell.com" name="table[company][company.email][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.email][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Website
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="Adams-Farwell.com" name="table[company][company.webSite][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.webSite][0][type]"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cellBox cell_6">
+							<div class="formatTable colFormat">
+								<div class="tableBody">
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Adres
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="Fullerton Avenue 99" name="table[company][company.address][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.address][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Postcode
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="2240" name="table[company][company.zipcode][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.zipcode][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Plaats
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="Godech" name="table[company][company.city][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.city][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Post adres
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="postFullerton Avenue 99" name="table[company][company.postAddress][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.postAddress][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Post postcode
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="post2240" name="table[company][company.postZipcode][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.postZipcode][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Post plaats
+										</div>
+										<div class="tableItem value">
+											<input type="text" value="postGodech" name="table[company][company.postCity][0][value]"/>
+											<input type="hidden" value="text" name="table[company][company.postCity][0][type]"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cellBox cell_6">
+							<div class="formatTable colFormat">
+								<div class="tableBody">
+									<div class="tableRow  odd">
+										<div class="tableItem key">
+											Agent
+										</div>
+										<div class="tableItem value">
+											<select name="table[company][company.idRep][0][value]">
+												<option value="3">
+													Agent
+												</option>
+												<option value="4">
+													EmptyAgent
+												</option>
+												<option value="1" selected>
+													Manager
+												</option>
+												<option value="2">
+													Team leider
+												</option>
+											</select>
+											<input type="hidden" value="select" name="table[company][company.idRep][0][type]"/>
+										</div>
+									</div>
+									<div class="tableRow  even">
+										<div class="tableItem key">
+											Campagne
+										</div>
+										<div class="tableItem value">
+											<select name="table[company][company.idCampagne][0][value]">
+												<option value="1" selected>
+													Campagne 1
+												</option>
+												<option value="2">
+													Campagne 2
+												</option>
+												<option value="7">
+													Empty campagne
+												</option>
+												<option value="0">
+													Zonder campagne
+												</option>
+											</select>
+											<input type="hidden" value="select" name="table[company][company.idCampagne][0][type]"/>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" value="2" name="table[company][company.idCompany][0][value]"/>
+						<input type="hidden" value="hidden" name="table[company][company.idCompany][0][type]"/>
+						<input type="hidden" value="1" name="table[company][company.idAccount][0][value]"/>
+						<input type="hidden" value="hidden" name="table[company][company.idAccount][0][type]"/>
+						<input type="hidden" value="41271" name="table[company][company.lastUpdated][0][value]"/>
+						<input type="hidden" value="hidden" name="table[company][company.lastUpdated][0][type]"/>
+						<input type="hidden" value="41877" name="table[company][company.created][0][value]"/>
+						<input type="hidden" value="hidden" name="table[company][company.created][0][type]"/>
+						<input type="hidden" value="1" name="table[company][company.idTag][0][value]"/>
+						<input type="hidden" value="hidden" name="table[company][company.idTag][0][type]"/>
+					</div>
+					<div class="buttonHome">
+						<button type="submit" name="submit" value="submit" data-callback="updateCompany,company">
+							<div class="buttonText">
+								Opslaan
+							</div>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

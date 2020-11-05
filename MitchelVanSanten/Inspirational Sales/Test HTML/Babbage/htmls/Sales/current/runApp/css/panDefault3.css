@@ -1,0 +1,126 @@
+/* appDefault.css */
+
+
+/* repaire float issues */
+	div				{ clear:both;}
+	div::after		{ visibility: hidden;	display: block;	font-size: 0;	content: ".";	clear: both;	height: 0;	}
+
+/* general */
+	.right	{ float:right; }
+	.left	{ float:left; }
+
+
+/* default font */
+	body { font-size: 13px; 	font-family:Lucida Grande, sans-serif; background-color:#ffffff; color: #444444; }
+
+
+/* nav Buttons */
+	.buttonBox 							{ border:1px solid gray; background-color:#D0D0D0; border-radius:3px;	}
+	.buttonBox 							{ float:left; clear:none;												}
+	.buttonBox 							{ padding:1px 8px; margin:0px 2px;										}
+	.navButton .buttonBox .buttonText 	{ font-size:105%; 														}
+	a.navButton:link	.buttonBox		{ color:#444444; text-decoration:none;									}
+	a.navButton:visited	.buttonBox		{ color:#444444; text-decoration:none;									}
+	a.navButton:hover	.buttonBox		{ color:#444444; text-decoration:none; background-color:#FDFDFD;		}
+	a.navButton:active	.buttonBox		{ color:#444444; text-decoration:none;									}
+
+/* general input items */
+	/* appearance */
+	input,			
+	select,			
+	textarea						{ border:1px solid gray; font-size: 13px; font-family: arial, sans-serif; color: #444444; border-radius:3px;}
+	input[type="file"]				{ border:1px solid gray; font-size: 11px; font-family: arial, sans-serif; color: #444444; border-radius:3px;}
+	input[type="submit"]			{ border:1px solid gray; font-size: 13px; font-family: arial, sans-serif; color: #444444; border-radius:3px;}
+
+
+/* warning messages */
+	/* appearance */
+	.warning			{ background-color:#efef77;	border:1px solid gray;		}
+	.warning .title		{ 							border-bottom:1px solid gray; font-size:14px;	}
+
+	/* positioning */
+	.warning .title		{ text-align:center; 	}
+
+	/* layout */
+	.warning .title		{ padding:3px; }
+	.warning .messages	{ padding:3px; }
+
+
+
+/* popOver */
+	/* appearance */
+	.popOver				{ background:#ffffff; border:1px solid #cccccc; box-shadow: 0px 0px 10px 1px #888888; cursor:default;}
+	.popOver-headerClose	{ cursor:pointer; 	}
+	.popOver-open			{ cursor:pointer; 	}
+	.popOver-headerTitle	{ cursor:move;		}
+	
+	/* positioning */
+	.popOver				{ position:absolute; }
+	.popOver-headerTitle 	{ float:left;	clear:none; text-align:center;}
+	.popOver-headerClose	{ float:right;	clear:none; overflow:hidden; text-overflow:clip;	white-space:nowrap;}
+	/* layout see gird */
+
+/* appMenu */
+	.appMenuOpen					{ width:16px; height:16px; background-image:url("appMenu.png");}
+	
+	
+/* tab boxes */
+
+	/* appearance */
+	.tabBox-tabLine				{ border-bottom:2px solid #d0d0d0; }
+	.tabLine-tab 				{ background-color:#d0d0d0; cursor:pointer; color:#444444; border-top:1px solid gray; }
+	.tabLine-tab:hover			{ background-color:#f0f0f0; }
+	
+	/* positioning */
+	.tabLine-tab			 	{ overflow:hidden; text-overflow:clip;	white-space:nowrap;	}
+					
+	/* layout */
+	.tabBox-contentBox			{ min-height:250px; padding:10px 0px;	}
+	.tabLine-tab 				{ width:calc(100% - 10px); height:18px;		margin:10px 2px 0px 2px; 	padding:3px;	}
+	.tabLine-tab.active 		{ height:23px;		margin:5px 2px 0px 2px;						}
+
+
+	/* positioning */
+	.tabLine-tab .tabBoxCell 			 			{ float:left; clear:none; 	}
+	.tabLine-tab .tabBoxCell .buttonBox				{ overflow:hidden; text-overflow:clip;	white-space:nowrap;						}
+
+	.tabBox-tabLine									{ height:36px; }
+	.tabBox-tabLine .tabBoxCell	.buttonText			{ padding-left:3px; }
+	.tabBox-tabLine .tabBoxCell						{ height:inherit;  }
+	.tabBox-tabLine .tabBoxCell	.buttonBox			{ height:20px; margin-top:10px;}
+	.tabBox-tabLine .tabBoxCell	.buttonBox.active	{ height:30px; margin-top:0px;}
+
+
+/* genric table	
+	/* appearance */
+	.tableItem.empty				{ display:none; }
+	/* positioning */
+	.tableItem:not(.cell)			{ float:left; clear:none; overflow:hidden; text-overflow:clip;	white-space:nowrap;}
+	/* layout */
+	.tableRow.not(.cell)			{ margin-bottom:3px; }
+	.tableItem:not(.cell)			{ width:100px; padding:0px 2px; margin:0px 2px; height:15px;}
+
+
+
+/* formatTable */
+	.formatTable .tableRow.tableHeader 		{ font-weight:bold; 							}
+	.tableItem								{ background-color:#ffffff;						}
+
+
+	/* positioning */
+	.formatTable .tableRow.tableHeader		{ text-align:center;							}
+
+	/* layout */
+	.tableRow								{ height:25px; padding-top:6px;						}
+
+	.cell input								{ width: calc(100% - 4px); 						}
+	.cell select							{ width: calc(100% - 2px); 						}
+
+.loader {
+	border-color: transparent;
+	display:none;
+}
+
+
+
+	

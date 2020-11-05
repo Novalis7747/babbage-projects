@@ -1,0 +1,22 @@
+#!/bin/bash
+
+
+
+
+cb="callback(insertBlogCard,newblog)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"newblog":"blog.blog":"0":"type":"textarea"	\
+table:"newblog":"blog.idContact":"0":"value":"0"	\
+table:"newblog":"blog.idContact":"0":"type":"hidden"	\
+table:"newblog":"blog.created":"0":"value":"42241"	\
+table:"newblog":"blog.created":"0":"type":"hidden"	\
+table:"newblog":"blog.idCompany":"0":"value":"2"	\
+table:"newblog":"blog.idCompany":"0":"type":"hidden"	\
+table:"newblog":"blog.idBlog":"0":"value":"0"	\
+table:"newblog":"blog.idBlog":"0":"type":"hidden"	\
+table:"newblog":"blog.idRep":"0":"value":"1"	\
+table:"newblog":"blog.idRep":"0":"type":"hidden"	\
+table:"newblog":"blog.blog":"0":"value":"NieuweCompanyBlogContent"	\
+> ${dir}/${fn}_new.html 2>&1

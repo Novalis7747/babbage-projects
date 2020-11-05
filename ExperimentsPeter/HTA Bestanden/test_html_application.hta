@@ -1,0 +1,109 @@
+<!--
+	[ BRONVERMELDINGEN ]
+	Bron Microsoft: https://technet.microsoft.com/en-us/library/ee692926.aspx
+	Bron HTMLGoodies: http://www.htmlgoodies.com/beyond/reference/article.php/3472841/HTML-Applications.htm
+	Bron Microsoft 'Scripting Guy!': https://blogs.technet.microsoft.com/heyscriptingguy/
+-->
+
+<!--
+	[ HTA APPLICATIE - OPTIES ]
+	'border' sets the border format, thick is resizeable, thin is not
+		Options: thin, dialog, none, thick
+	'borderStyle' further defines the border
+		Options: complex, normal, raised, static, sunken
+	'caption' denotes a title bar or not
+		Options: yes, no
+	'icon' is the path to an icon that will display in the title bar, not on the hard drive
+		Options The icon must be 32X32 'ico' format
+	'maximizeButton' is the max button in the title bar
+		Options: yes, no
+	'minimizeButton' is the min button in the title bar
+		Options: yes, no
+	'showInTaskbar' tells if the application will display in the taskbar
+		Options: yes, no
+	'windowState' is how the window will display
+		Options: normal, minimize, maximize
+	'innerBorder' denotes if you'll have one or not
+		Options: yes, no
+	'navigable' suggests if linked pages will display in the HTA window or not
+		Options: yes, no
+	'scroll' denotes a scroll bar
+		Options: yes, no, auto
+	'scrollFlat' will the scrollbar be 3D or not
+		Options: yes, no
+-->
+
+<html>
+
+<head>
+	<hta:application id="Test" applicationName="Test" innerBorder="no" singleInstance="yes"/>
+	<title>HTA - Test HTML application</title>
+</head>
+
+<script language="VBScript">
+	Sub Window_onLoad
+		window.resizeTo 640,480
+	End Sub
+
+	Sub ResizeWindowLarge
+		window.resizeTo 1366,768
+	End Sub
+
+	Sub ResizeWindowSmall
+		window.resizeTo 640,480
+	End Sub
+
+	Sub MsgTestVB
+		Msgbox "Testing VBScript"
+	End Sub
+
+	sub ReadExternalFile
+		set oFSO = CreateObject("Scripting.FileSystemObject")
+		set oFile = oFSO.OpenTextFile("test_html_application_external.txt",1)
+		text = oFile.ReadAll
+		document.all.text_area.value = text
+		oFile.Close
+	end sub
+
+	Sub GetProcesses
+		strComputer = "."
+		Set objWMIService = GetObject("winmgmts:\\" & strComputer & "\root\cimv2")
+		Set colProcesses = objWMIService.ExecQuery("Select * from Win32_Process")
+		For Each objProcess in colProcesses
+			strHTML = strHTML & objProcess.ProcessID & " -- " & objProcess.Name & "<br>"
+		Next
+		display_processes.InnerHTML = strHTML
+	End Sub
+</script>
+
+<script type="text/javascript">
+	function CloseWin() {
+		self.close();
+	}
+
+	function MsgTestJS() {
+		alert("Testing JavaScript");
+	}
+
+	function ResizeWithInput() {
+		var getWidth = prompt("Geef de breedte op in pixels:","640");
+		var getHeight = prompt("Geef de hoogte op in pixels:","480");
+		window.resizeTo(getWidth,getHeight);
+	}
+</script>
+
+<body>
+	<h2>HTA - Test HTML application</h2>
+	<input type="button" value="Test VB" name="message_button" onClick="MsgTestVB">
+	<input type="button" value="Test JS" name="message_button" onClick="MsgTestJS">
+	<input type="button" value="1366 * 768 VB" name="resize_button" onClick="ResizeWindowLarge">
+	<input type="button" value="640 * 480 VB" name="resize_button" onClick="ResizeWindowSmall">
+	<input type="button" value="Resize JS" name="resize_button" onClick="ResizeWithInput">
+	<input type="button" value="Close" name="close_button" onClick="CloseWin"><p>
+	<input type="button" value="Read External Text" name="read_text_file_button" onClick="ReadExternalFile">
+	<input type="button" value="Processes" name="process_button" onClick="GetProcesses"><p>
+	<span id="display_processes">Process ID -- Process Name</span><p>
+	<textarea name="text_area" rows="14" cols="68"></textarea>
+</body>
+
+</html>

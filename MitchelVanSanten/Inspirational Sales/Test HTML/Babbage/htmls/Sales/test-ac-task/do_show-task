@@ -1,0 +1,183 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+
+fn=1100
+
+
+cb="callback(companyTaskCard,11,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "company task card" >> ${dir}/${fn}_new.html
+
+cb="callback(contactTaskCard,1012,12)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "contact task card" >> ${dir}/${fn}_new.html
+
+
+cb="callback(newSmallTask,11,0,0)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "New company task card" >> ${dir}/${fn}_new.html
+
+cb="callback(newSmallTask,0,1012,0)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "New contact task card" >> ${dir}/${fn}_new.html
+
+cb="callback(taskCard,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Task card allow edit contact" >> ${dir}/${fn}_new.html
+
+cb="callback(taskCard,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Task card NOT allow edit contact" >> ${dir}/${fn}_new.html
+
+cb="callback(newSmallTask,0,0,11)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "Task from Task card" >> ${dir}/${fn}_new.html
+
+
+cb="callback(newContactTaskCard,22,1022,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newTaskCard,22,1022,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newCompanyTaskCard,22,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newTaskCard,22,0,2,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+cb="callback(companyTaskCard,1,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+echo "check of emails zichtbaar zijn in company teask" >> ${dir}/${fn}_new.html
+
+
+
+
+# Task Main
+fn=1200
+kaart="main"
+cbOrg="callback(taskCard,11)"
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	\
+> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_org.html
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form 	\
+"callback:updateTask"									\
+"set:table[taskMain][task.subject][0][value]:AAAAA" 	\
+> ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form  \
+"callback:updateTask"									\
+> ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_new.html
+
+
+
+#Update And New
+fn=1210
+kaart="new"
+cbOrg="callback(taskCard,11)"
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	\
+> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_org.html
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form 	\
+"callback:updateAndNewTask"								\
+"set:table[taskMain][task.subject][0][value]:AAAAA" 	\
+> ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form  \
+"callback:updateAndNewTask"								\
+> ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_new.html
+
+

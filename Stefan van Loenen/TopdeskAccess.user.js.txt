@@ -1,0 +1,287 @@
+"use strict";
+// ==UserScript==
+// @name        TopdeskAccess
+// @namespace   guided.nl
+// @description Making Topdesk accessible
+// @include     https://topdesk.ictsc.uu.nl/*
+// @include     https://service.hu.nl/*
+// @include     https://service.acc.hu.nl/*
+// @version     0.3
+// @grant       none
+// ==/UserScript==
+//    Copyright (C) 2013       Guided Solutions
+//    Copyright (C) 2014-2017  Firm Ground
+//    Copyright (C) 2017  Babbage B.V.
+//
+//    This program is free software: you can redistribute it and/or modify
+//    it under the terms of the GNU General Public License as published by
+//    the Free Software Foundation, either version 3 of the License, or
+//    (at your option) any later version.
+//
+//    This program is distributed in the hope that it will be useful,
+//    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//    GNU General Public License for more details.
+//
+//    You should have received a copy of the GNU General Public License
+//    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+// Get all elements filtered by mtype attribute
+function getElementsByMtype (root, mType) {
+	if (typeof root.querySelectorAll === "function") {
+		return root.querySelectorAll("[mtype='" + mType + "']");
+	} else {
+		return []
+	}
+}
+
+function getMbuttons (root) {
+	return getElementsByMtype(root, "button");
+}
+
+function getImageButtons (root) {
+	return getElementsByMtype(root, "imagebutton");
+}
+
+function getTabButtonGroups (root) {
+	if (typeof root.querySelectorAll === "function") {
+		return root.querySelectorAll("div[guielement='TABBUTTONGROUP']");
+	} else {
+		return []
+	}
+}
+
+function getBlocks (root) {
+	if (typeof root.querySelectorAll === "function") {
+		return root.querySelectorAll("div[guielement='BLOCK']");
+	} else {
+		return []
+	}
+}
+
+function setRole(element, role) {
+	element.setAttribute("role", role);
+	return element;
+}
+
+function setRoles(nodes, role) {
+	for (var i=0; i < nodes.length; i++) {
+		setRole(nodes[i], role);
+	}
+	return nodes;
+}
+
+function addLandmarks(root) {
+	if (typeof root.querySelectorAll !== "function") {
+		return
+	}
+	var nodes = root.querySelectorAll("div[guielement='PROGRESS_TRAIL_RICH_TEXT_MEMO'],div[guielement='POPUPMENU']");
+	for (var i=0; i < nodes.length; i++) {
+		setRole(nodes[i], "complementary");
+	}
+	return nodes;
+}
+
+function fixInfoboxes (root) {
+	if (typeof root.querySelectorAll !== "function") {
+		return
+	}
+	var nodes = root.querySelectorAll("[mangoinfobox]");
+	for (var i=0; i < nodes.length; i++) {
+		nodes[i].setAttribute("aria-label", nodes[i].getAttribute("mangoinfobox"));
+	}
+	return nodes;
+}
+
+function fixTables(root) {
+	if (typeof root.querySelector !== "function") {
+		return
+	}
+	var grid = root.querySelector("div#columnsscroll");
+	if (grid) {
+		grid.setAttribute('role','grid');
+		var columns = root.querySelectorAll(".checkcolumn,.column");
+		for (var i=0; i < columns.length; i++) {
+			// Ugly, handle columns as rows since there's nothing else we can do
+			columns[i].setAttribute("role", "row");
+		}
+		var cells = root.querySelectorAll("span[line]");
+		for (var i=0; i < cells.length; i++) {
+			cells[i].setAttribute("role", "gridcell");
+		}
+	}
+}
+
+function labelUnlabeledButtons (root) {
+	if (typeof root.querySelectorAll !== "function") {
+		return
+	}
+	var buttons = root.querySelectorAll("[mtype='button']:not([aria-label]), [mtype='imagebutton']:not([aria-label])");
+	for (var i=0; i < buttons.length; i++) {
+		// Tabbuttons while editing an incident have text labels, so don't override the label...
+		if (buttons[i].textContent === "") {
+			buttons[i].setAttribute("aria-label", "Unlabeled");
+		}
+	}
+}
+
+function labelFormFields (root) {
+	if (typeof root.querySelectorAll !== "function") {
+		return
+	}
+	var inputs = root.querySelectorAll("input,textarea");
+	for (var i=0; i < inputs.length; i++) {
+		var input = inputs[i];
+		var parent = input.parentNode;
+		var index = Array.prototype.indexOf.call(parent.children, input);
+		for (var j=index; j > -1; j--) {
+			var label = parent.children[j];
+			if (label.getAttribute("mtype") == "label") {
+				label.removeAttribute("aria-label");
+				var tooltip = input.getAttribute("mangoinfobox");
+				if (tooltip) {
+					tooltip = tooltip.replace("<b>-</b>", "");
+					var el = document.createElement("span");
+					el.style.display = "none";
+					el.appendChild(document.createTextNode(tooltip));
+					el.setAttribute("id", "tooltip-" + input.id);
+					input.setAttribute("aria-describedby", el.id);
+					input.parentNode.appendChild(el);
+					if (tooltip.includes("ingevuld zijn")) {
+						input.setAttribute("aria-required", "true");
+					}
+					TooltipObserver.observe(input, { attributes: true, attributeFilter: ["mangoinfobox"]});
+				}
+				input.setAttribute("aria-labelledby", label.id);
+				input.removeAttribute("aria-label");
+				if (input.getAttribute("mtype") == "combobox") {
+					input.setAttribute("role", "combobox");
+					input.setAttribute("aria-autocomplete", "inline");
+				}
+				if (input.parentNode.getAttribute("guielement") == "PROGRESS_TRAIL_INPUT_CONTROL") {
+					input.setAttribute("aria-label", "Actie");
+				}
+				break;
+			}
+		}
+	}
+}
+
+function labelHeadings (root) {
+	function labelHeading (heading) {
+		if (heading.children.length == 2 && heading.children[0].tagName == "IMG") {
+			var label = heading.children[1];
+			var labelMType = label.getAttribute("mtype")
+			if (labelMType && labelMType.includes("label")) {
+				setRole(label, "heading");
+				label.setAttribute("aria-level", 2);
+			}
+		}
+	}
+	
+	if (typeof root.querySelectorAll !== "function") {
+		return
+	}
+	var headings = root.querySelectorAll("div[mtype='group']");
+	for (var i=0; i < headings.length; i++) {
+		var heading = headings[i];
+		labelHeading(heading);
+	}
+	/* This code seems to result in false positives, disabling for now	
+	var headings = root.querySelectorAll("div[guielement='BLOCK']");
+	for (var i=0; i < headings.length; i++) {
+		var heading = headings[i].nextElementSibling;
+		setRole(heading, "heading");
+		heading.setAttribute("aria-level", 2);
+	} */
+}
+
+function fixCheckboxes (root) {
+	if (typeof root.querySelectorAll !== "function") {
+		return
+	}
+	var checkboxes = root.querySelectorAll("div[mtype='checkbox']");
+	for (var i=0; i < checkboxes.length; i++) {
+		var checkbox = checkboxes[i];
+		var index = Array.prototype.indexOf.call(checkbox.parentNode.children, checkbox);
+		setRole(checkbox.children[0], "checkbox");
+		checkbox.children[0].setAttribute("aria-checked", checkbox.getAttribute("mangovalue"));
+		checkbox.children[0].setAttribute("tabindex", "0");
+		var label = checkbox.parentNode.children[index-1];
+		if (label) {
+			checkbox.children[0].setAttribute("aria-labelledby", label.id);
+		}
+		// An empty onClick handler ensures the click event
+		// Bubbles up to the <div> containing the checkbox
+		checkbox.children[0].addEventListener("click", function () {
+			return true;
+		}, false);
+		CheckboxObserver.observe(checkbox, { attributes: true, attributeFilter: ["mangovalue"] });
+	}
+}
+
+function fixWindows (root) {
+	if (typeof root.querySelectorAll !== "function") {
+		return
+	}
+	var windows = root.querySelectorAll("div[guielement='WINDOWCAPTION']");
+	for (var i=0; i < windows.length; i++) {
+		var window = windows[i].parentNode.parentNode;
+		var label = window.querySelectorAll("div[mtype='label']")[1];
+		setRole(window, "alert");
+		window.setAttribute("aria-labelledby", windows[i].id);
+		window.setAttribute("aria-describedby", label.id);
+	}
+}
+
+function addHeadingToTabGroups(root) {
+	var groups = getTabButtonGroups(root);
+	var heading = document.createElement("h2");
+	heading.textContent = "Tabbladen";
+	heading.setAttribute("style", "position: absolute; left: 0; top: -10000px; overflow: hidden;");
+	for (var i=0; i < groups.length; i++) {
+		groups[i].insertBefore(heading, groups[i].children[0]);
+	}
+}
+
+function init (root) {
+	setRoles(getMbuttons(root), "button");
+	setRoles(getImageButtons(root), "button");
+	labelUnlabeledButtons(root);
+	fixInfoboxes(root);
+	addLandmarks(root);
+	fixTables(root);
+	labelFormFields(root);
+	labelHeadings(root);
+	fixCheckboxes(root);
+	fixWindows(root);
+	addHeadingToTabGroups(root);
+}
+
+var addedNodesObserver = new MutationObserver(function (mutations) {
+	mutations.forEach(function (mutation) {
+		for (var i=0; i < mutation.addedNodes.length; i++) {
+			init(mutation.addedNodes[i]);
+		}
+	});
+});
+
+var TooltipObserver = new MutationObserver(function (mutations) {
+	mutations.forEach(function (mutation) {
+		if (mutation.type == "attributes" && mutation.attributeName == "mangoinfobox") {
+			var tooltip = document.getElementById("tooltip-" + mutation.target.id);
+			tooltip.innerHTML = mutation.target.getAttribute("mangoinfobox");
+		}
+	});
+});
+
+var CheckboxObserver = new MutationObserver(function (mutations) {
+	mutations.forEach(function (mutation) {
+		if (mutation.type == "attributes" && mutation.attributeName == "mangovalue") {
+			mutation.target.children[0].setAttribute("aria-checked", mutation.target.getAttribute("mangovalue"));
+		}
+	});
+});
+
+init(document);
+addedNodesObserver.observe(document, { childList: true, subtree: true });

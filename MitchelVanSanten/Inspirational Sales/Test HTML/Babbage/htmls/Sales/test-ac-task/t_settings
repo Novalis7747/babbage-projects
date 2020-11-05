@@ -1,0 +1,34 @@
+#!/bin/bash
+
+
+
+
+cb="callback(updateTask,contactCall)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"contactCall":"task.idRep":"0":"type":"select"	\
+table:"contactCall":"task.reminder":"0":"type":"select"	\
+table:"contactCall":"task.reminderDate":"0":"value":"29 Aug 2015"	\
+table:"contactCall":"task.reminderDate":"0":"type":"date"	\
+table:"contactCall":"task.reminderTime":"0":"value":"10:00"	\
+table:"contactCall":"task.reminderTime":"0":"type":"text"	\
+table:"contactCall":"task.idTask":"0":"value":"7"	\
+table:"contactCall":"task.idTask":"0":"type":"hidden"	\
+table:"contactCall":"task.idAccount":"0":"value":"1"	\
+table:"contactCall":"task.idAccount":"0":"type":"hidden"	\
+table:"contactCall":"task.idContact":"0":"value":"1007"	\
+table:"contactCall":"task.idContact":"0":"type":"hidden"	\
+table:"contactCall":"task.idCompany":"0":"value":"7"	\
+table:"contactCall":"task.idCompany":"0":"type":"hidden"	\
+table:"contactCall":"task.idCreator":"0":"value":"1"	\
+table:"contactCall":"task.idCreator":"0":"type":"hidden"	\
+table:"contactCall":"task.created":"0":"value":"42242"	\
+table:"contactCall":"task.created":"0":"type":"hidden"	\
+table:"contactCall":"task.doneDate":"0":"value":"0"	\
+table:"contactCall":"task.doneDate":"0":"type":"hidden"	\
+table:"contactCall":"task.doneTime":"0":"value":"0"	\
+table:"contactCall":"task.doneTime":"0":"type":"hidden"	\
+table:"contactCall":"task.idRep":"0":"value":"1"	\
+table:"contactCall":"task.reminder":"0":"value":"1"	\
+> ${dir}/${fn}_new.html 2>&1

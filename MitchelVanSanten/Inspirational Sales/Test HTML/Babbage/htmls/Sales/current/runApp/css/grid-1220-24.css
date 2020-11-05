@@ -1,0 +1,49 @@
+/* grid 1220 / 24 */
+
+	body 			{  width:1220px; margin:0px auto; }
+
+	div.cell_1	{ width:47px; margin-left:4px;}
+	div.cell_2	{ width:98px; margin-left:4px;}
+	div.cell_3	{ width:149px; margin-left:4px;}
+	div.cell_4	{ width:200px; margin-left:4px;}
+	div.cell_5	{ width:251px; margin-left:4px;}
+	div.cell_6	{ width:302px; margin-left:4px;}
+	div.cell_7	{ width:353px; margin-left:4px;}
+	div.cell_8	{ width:404px; margin-left:4px;}
+	div.cell_9	{ width:455px; margin-left:4px;}
+	div.cell_10	{ width:506px; margin-left:4px;}
+	div.cell_11	{ width:557px; margin-left:4px;}
+	div.cell_12	{ width:608px; margin-left:4px;}
+	div.cell_13	{ width:659px; margin-left:4px;}
+	div.cell_14	{ width:710px; margin-left:4px;}
+	div.cell_15	{ width:761px; margin-left:4px;}
+	div.cell_16	{ width:812px; margin-left:4px;}
+	div.cell_17	{ width:863px; margin-left:4px;}
+	div.cell_18	{ width:914px; margin-left:4px;}
+	div.cell_19	{ width:965px; margin-left:4px;}
+	div.cell_20	{ width:1016px; margin-left:4px;}
+	div.cell_21	{ width:1067px; margin-left:4px;}
+	div.cell_22	{ width:1118px; margin-left:4px;}
+	div.cell_23	{ width:1169px; margin-left:4px;}
+	div.cell_24	{ width:1220px; }
+
+	div.cell					{ min-height:2px; float:left; clear:none; overflow:hidden; text-overflow:clip;	white-space:nowrap;   }
+	div.cell.text				{ line-height:20px; vertical-align:middle; }
+	div.cellBox					{ float:left; clear:none; }
+
+	div.cellBox.right			{ float:right; }
+	div.cell.right				{ float:right; }
+	
+	div.cell:first-of-type		{ margin-left:0px; }
+	div.cellBox:first-of-type	{ margin-left:0px; }
+
+
+	.popOver				{ width:1230px; min-height:150px; margin-top:75px;}
+	.popOver.medium			{ width:771px; }  /* 15 cellen + 10 voor padding */
+	.popOver.small			{ width:363px; }  /* 7 cellen + 10 voor padding */
+	
+	.popOver-header			{ height:20px;					}
+	.popOver-headerClose	{ width:40px;					}
+	.popOver-headerTitle	{ width:calc( 100% - 75px ); 	}
+	.popOver-content		{ padding:15px 5px; 			}	
+	

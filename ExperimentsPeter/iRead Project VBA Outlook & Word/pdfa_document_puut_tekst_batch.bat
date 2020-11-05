@@ -1,0 +1,1 @@
+"C:\Program Files (x86)\Handy Tech\iRead\iRead.exe" pdfa_document_puur_tekst.pdf

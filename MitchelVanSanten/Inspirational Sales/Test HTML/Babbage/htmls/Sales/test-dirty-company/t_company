@@ -1,0 +1,50 @@
+#!/bin/bash
+
+
+
+
+cb="callback(insertCompany,newCompany)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cb}	\
+table:"newCompany":"company.name":"0":"value":"AAANieuweCompanyName"	\
+table:"newCompany":"company.name":"0":"type":"text"	\
+table:"newCompany":"company.idCompanyStatus":"0":"type":"select"	\
+table:"newCompany":"company.idSegment":"0":"type":"select"	\
+table:"newCompany":"company.idCompanySize":"0":"type":"select"	\
+table:"newCompany":"company.tel":"0":"value":""	\
+table:"newCompany":"company.tel":"0":"type":"text"	\
+table:"newCompany":"company.email":"0":"value":""	\
+table:"newCompany":"company.email":"0":"type":"text"	\
+table:"newCompany":"company.webSite":"0":"value":""	\
+table:"newCompany":"company.webSite":"0":"type":"text"	\
+table:"newCompany":"company.address":"0":"value":""	\
+table:"newCompany":"company.address":"0":"type":"text"	\
+table:"newCompany":"company.zipcode":"0":"value":""	\
+table:"newCompany":"company.zipcode":"0":"type":"text"	\
+table:"newCompany":"company.city":"0":"value":""	\
+table:"newCompany":"company.city":"0":"type":"text"	\
+table:"newCompany":"company.postAddress":"0":"value":""	\
+table:"newCompany":"company.postAddress":"0":"type":"text"	\
+table:"newCompany":"company.postZipcode":"0":"value":""	\
+table:"newCompany":"company.postZipcode":"0":"type":"text"	\
+table:"newCompany":"company.postCity":"0":"value":""	\
+table:"newCompany":"company.postCity":"0":"type":"text"	\
+table:"newCompany":"company.idRep":"0":"type":"select"	\
+table:"newCompany":"company.idCampagne":"0":"type":"select"	\
+table:"newCompany":"company.idCompany":"0":"value":"0"	\
+table:"newCompany":"company.idCompany":"0":"type":"hidden"	\
+table:"newCompany":"company.idAccount":"0":"value":"1"	\
+table:"newCompany":"company.idAccount":"0":"type":"hidden"	\
+table:"newCompany":"company.lastUpdated":"0":"value":"42241"	\
+table:"newCompany":"company.lastUpdated":"0":"type":"hidden"	\
+table:"newCompany":"company.created":"0":"value":"42241"	\
+table:"newCompany":"company.created":"0":"type":"hidden"	\
+table:"newCompany":"company.idTag":"0":"value":"0"	\
+table:"newCompany":"company.idTag":"0":"type":"hidden"	\
+table:"newCompany":"company.idCompanyStatus":"0":"value":"8"	\
+table:"newCompany":"company.idSegment":"0":"value":"1"	\
+table:"newCompany":"company.idCompanySize":"0":"value":"1"	\
+table:"newCompany":"company.idRep":"0":"value":"1"	\
+table:"newCompany":"company.idCampagne":"0":"value":"0"	\
+> ${dir}/${fn}_new.html 2>&1

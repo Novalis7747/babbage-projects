@@ -1,0 +1,53 @@
+Greasemonkey script.
+
+"window.onchange" wordt niet aangeroepen. De inhoud van de pagina veranderd wel.
+Oplossing voor nu is een "setInterval" functie van 7 sec.
+
+Vragen bij deze oplossing:
+- De performance blijft goed op mijn laptop na een hele dag werken. Intel i5.
+- Het lijkt stabiel te werken. Of het elegant is?
+- IE11, Windows 7, TrixIE 0.1.3.0: daar werkt in ieder geval de "setInterval".
+  Code in dit script er bijgezet. Externe library werd niet geladen.
+  Functies konden niet aangeroepen worden. HTTPS issue wellicht?
+
+
+20160920: Code geparkeerd.
+
+setTimeout(function() {
+  /*
+    Plaats de opmerking 'Intern:' voor alle interne berichten.
+  */
+  var isInternal = document.querySelectorAll('.event.web:not(.is-public)');
+  for (var counter = 0; counter < isInternal.length; ++counter) {
+    var xP = isInternal[counter].querySelector('p').innerHTML;
+    if (isInternal[counter].querySelector('p').innerHTML.indexOf('Intern:') !== -1) {
+      break;
+      /*
+        De break is nodig omdat IE11 I.C.M. TrixIE het script meerdere malen uitvoert.
+        Dit om situaties als 'Intern: Intern: Intern:' te voorkomen.
+      */
+    }
+    isInternal[counter].querySelector('p').innerHTML = 'Intern:' + ' ' + xP;
+  }
+}, 11000);
+
+
+
+/*
+<p>Ook bezig met dit ticket</p>
+<div class="user_photos clearfix">
+  <div class="ember-view" id="ember3630"><div style="left: 0px; transform: scaleX(1) scaleY(1);" data-original-title="" data-placement="in bottom" data-html="true" data-title="<div class=&quot;collision_tooltip&quot;>
+  <p class=&quot;name&quot;>Ditzo beheer</p>
+  <p class=&quot;status&quot;>Bekijken</p>
+</div>
+" class="ember-view user_photo _tooltip collision_avatar agent" id="ember4968"><div class="ember-view round-avatar" id="ember4969">  <figure class="thumbnail-container thumbnail-container--sm ">
+    <img src="https://secure.gravatar.com/avatar/bd65532275c18285405b12dd5bdd147d?d=https%3A//assets.zendesk.com/images/2016/default-avatar-80.png&amp;s=80&amp;r=g" alt="">
+    <!---->
+  </figure>
+</div>
+</div></div>
+<!----></div>
+
+Class:
+is-viewed-by-others
+*/

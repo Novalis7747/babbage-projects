@@ -1,0 +1,8 @@
+1;USB 2.0 Camera
+2;OKI MC5(3)x2/ES5(3)4x2 USB
+3;OKI MC5(3)x2/ES5(3)4x2 46B167
+4;USB 2800 Video
+5;Mijn afbeeldingen
+6;Generic Storage Device USB Device
+7;Silver Creations Sceye (iRead Now)
+8;Other Manufacturer Other Camera Model

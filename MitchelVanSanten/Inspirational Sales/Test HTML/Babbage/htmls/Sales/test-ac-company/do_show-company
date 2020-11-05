@@ -1,0 +1,88 @@
+#!/bin/bash
+
+
+tools="${HOME}/proAppNest/proAppNestTools/"
+dir=${0%\/*} 
+fname=${0##*-}
+loc=`pwd`
+tloc=${loc%\/*} 
+account=${tloc##*\/}
+
+printf " $fname $1 "
+
+app="Sales"
+user="manager@inspirationalsales.demo.nl"
+
+
+fn=1100
+
+cb="callback(companyCard,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(editCompanySettings,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyContactList,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(mergeCompanyForm,2)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(newCompanyCard,1,0)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+cb="callback(companyCard,1)"
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a="${cb}"		\
+> ${dir}/${fn}_new.html 2>&1
+
+
+# update company card
+fn=1200
+testVal="table[company][company.name][0][value]:AAAAAAA"
+kaart="settings"
+cbOrg="callback(editCompanySettings,2)"
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	\
+> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_org.html
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form "set:${testVal}" > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+
+php ${tools}/extract.php ${dir}/${kaart}_org.html form  > ${dir}/t_${kaart} 2>&1
+source ${dir}/t_${kaart}
+
+
+let fn+=1
+printf "."
+php ${tools}/do.php ${account}/index loginUser=${user} webapp=${app} a=${cbOrg}	> ${dir}/${fn}_new.html 2>&1
+
+cp ${dir}/${fn}_new.html ${dir}/${kaart}_new.html
+

@@ -1,0 +1,7 @@
+*.mo
+*.pot
+.sconsign.dblite
+*.pyc
+*.pyo
+*.nvda-addon
+/.vs/**
