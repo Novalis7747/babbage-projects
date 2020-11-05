@@ -114,3 +114,5 @@ class AppModule(appModuleHandler.AppModule):
 		"kb:control+shift+d": "reportEindDatum",
 		"kb:control+shift+p": "reportRestitutie",
 	}
+
+	#test
